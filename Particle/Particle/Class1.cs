@@ -40,6 +40,17 @@
         public float ElectricCharge;
 
         /// <summary>
+        /// Скорость элементарной частицы
+        /// </summary>
+        public float Speed;
+
+        /// <summary>
+        /// Импульс элементарной частицы.
+        /// </summary>
+        public float Impulse;       
+
+
+        /// <summary>
         /// Короткое определение для массы.
         /// </summary>
         public float m
@@ -75,6 +86,34 @@
             set { this.ElectricCharge = value; }
         }
 
+        /// <summary>
+        /// Краткое определение для скорости частицы.
+        /// </summary>
+        public float V
+        {
+            get { return this.Speed; }
+            set { this.Speed = value; }
+        }
+
+        /// <summary>
+        /// Краткое определение для импульса частицы.
+        /// </summary>
+        public float p
+        {
+            get { return this.Impulse; }
+            set { this.Impulse = value; }
+        }
+
+
+        /// <summary>
+        /// Функция для расчёта импульса частицы.
+        /// </summary>
+        /// <returns>Импульс частицы.</returns>
+        public float CountImpulse()
+        {
+            this.Impulse = this.Mass * this.Speed;
+            return this.Impulse;
+        }
 
     }
 }

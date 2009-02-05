@@ -44,6 +44,22 @@
             Электрический заряд частицы
             </summary>
         </member>
+        <member name="F:Particle.Particle.Speed">
+            <summary>
+            Скорость элементарной частицы
+            </summary>
+        </member>
+        <member name="F:Particle.Particle.Impulse">
+            <summary>
+            Импульс элементарной частицы.
+            </summary>
+        </member>
+        <member name="M:Particle.Particle.CountImpulse">
+            <summary>
+            Функция для расчёта импульса частицы.
+            </summary>
+            <returns>Импульс частицы.</returns>
+        </member>
         <member name="P:Particle.Particle.m">
             <summary>
             Короткое определение для массы.
@@ -62,6 +78,16 @@
         <member name="P:Particle.Particle.Q">
             <summary>
             Короткое определение для заряда частицы.
+            </summary>
+        </member>
+        <member name="P:Particle.Particle.V">
+            <summary>
+            Краткое определение для скорости частицы.
+            </summary>
+        </member>
+        <member name="P:Particle.Particle.p">
+            <summary>
+            Краткое определение для импульса частицы.
             </summary>
         </member>
     </members>
