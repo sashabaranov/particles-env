@@ -6,6 +6,7 @@ namespace ParameterList
 {
     public class ParameterList
     {
+        // за щеку
         /// <summary>
         /// Список параметров
         /// </summary>
