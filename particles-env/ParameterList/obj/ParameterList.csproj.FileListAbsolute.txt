@@ -1,0 +1,15 @@
+C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ParameterList\bin\Debug\ParameterList.dll
+C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ParameterList\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ParameterList\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ParameterList\obj\Debug\ParameterList.dll
+C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ParameterList\obj\Debug\ParameterList.pdb
+C:\Users\scrat\Desktop\particles-env\ParameterList\bin\Debug\ParameterList.dll
+C:\Users\scrat\Desktop\particles-env\ParameterList\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Desktop\particles-env\ParameterList\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Desktop\particles-env\ParameterList\obj\Debug\ParameterList.dll
+C:\Users\scrat\Desktop\particles-env\ParameterList\obj\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\bin\Debug\ParameterList.dll
+C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\bin\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ParameterList.dll
+C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ParameterList.pdb
