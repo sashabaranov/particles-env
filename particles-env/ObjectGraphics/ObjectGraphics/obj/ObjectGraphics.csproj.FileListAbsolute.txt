@@ -26,3 +26,10 @@ C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ObjectGraphic
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.dll
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.dll
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ParameterList.dll
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.dll
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.pdb

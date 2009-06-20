@@ -29,7 +29,9 @@ namespace particles_env
             
             if (EditDialog.ShowDialog() != DialogResult.Cancel)
             {
-               this.Expirement.pList = EditDialog.eList;
+                this.Expirement.pList = EditDialog.eList;
+                this.Expirement.Graphics.SetParameters(this.Expirement.pList);
+                Refresh();
             }
         }
 
@@ -46,6 +48,7 @@ namespace particles_env
         {
             this.Expirement.Graphics.SetDrawingBorder(this.Left + this.Width/2, this.Top + this.Height/2, this.Size);
             df = true;
+            Refresh();
         }
     }
 }

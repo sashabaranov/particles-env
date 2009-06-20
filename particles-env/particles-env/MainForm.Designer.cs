@@ -37,6 +37,7 @@ namespace particles_env
             this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,23 +65,24 @@ namespace particles_env
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новыйЭкспериментToolStripMenuItem,
-            this.открытьЭспериментToolStripMenuItem});
+            this.открытьЭспериментToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             this.файлToolStripMenuItem.Click += new System.EventHandler(this.файлToolStripMenuItem_Click);
             // 
             // новыйЭкспериментToolStripMenuItem
             // 
             this.новыйЭкспериментToolStripMenuItem.Name = "новыйЭкспериментToolStripMenuItem";
-            this.новыйЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.новыйЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.новыйЭкспериментToolStripMenuItem.Text = "Новый эксперимент";
             this.новыйЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.новыйЭкспериментToolStripMenuItem_Click);
             // 
             // открытьЭспериментToolStripMenuItem
             // 
             this.открытьЭспериментToolStripMenuItem.Name = "открытьЭспериментToolStripMenuItem";
-            this.открытьЭспериментToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.открытьЭспериментToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.открытьЭспериментToolStripMenuItem.Text = "Открыть эсперимент";
             // 
             // опцииToolStripMenuItem
@@ -94,7 +96,7 @@ namespace particles_env
             // addExpirementType
             // 
             this.addExpirementType.Name = "addExpirementType";
-            this.addExpirementType.Size = new System.Drawing.Size(229, 22);
+            this.addExpirementType.Size = new System.Drawing.Size(226, 22);
             this.addExpirementType.Text = "Добавить тип эксперимента";
             this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
@@ -106,10 +108,12 @@ namespace particles_env
             this.Tabs.Size = new System.Drawing.Size(851, 485);
             this.Tabs.TabIndex = 2;
             // 
-            // openFileDialog1
+            // выходToolStripMenuItem
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -141,6 +145,7 @@ namespace particles_env
         private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addExpirementType;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }
 

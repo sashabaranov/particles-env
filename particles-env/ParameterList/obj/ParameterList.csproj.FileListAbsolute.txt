@@ -13,3 +13,8 @@ C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\bin\Debug\Pa
 C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ParameterList.dll
 C:\Users\Dan\Documents\PROJECT\R-raspad\particles-env\ParameterList\obj\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ParameterList\bin\Debug\ParameterList.dll
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ParameterList\bin\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ParameterList\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ParameterList\obj\Debug\ParameterList.dll
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ParameterList\obj\Debug\ParameterList.pdb

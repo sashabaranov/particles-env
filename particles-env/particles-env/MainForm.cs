@@ -39,11 +39,14 @@ namespace particles_env
             if (c.ShowDialog() != DialogResult.Cancel)
             {
                 p.Expirement = c.ExpirementObject;
-                
 
+                
                 Tabs.TabPages.Add("exp" + ExpirementCount, "Ýêñïåðèìåíò " + ExpirementCount);
                 Tabs.TabPages[ExpirementCount].Controls.Add(p);
+                Tabs.TabPages[ExpirementCount].Focus();
+             
                 ExpirementCount++;
+
             }
 
         }
@@ -60,6 +63,11 @@ namespace particles_env
         private void MainForm_Load(object sender, EventArgs e)
         {
             ExpList = new ExpirementList();
+        }
+
+        private void âûõîäToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }

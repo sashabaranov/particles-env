@@ -29,3 +29,5 @@ C:\Users\scrat\Desktop\micro5\micro5\obj\Debug\micro5.Properties.Resources.resou
 C:\Users\scrat\Desktop\micro5\micro5\obj\Debug\micro5.csproj.GenerateResource.Cache
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro5\micro5\bin\Debug\ParameterList.dll
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro5\micro5\bin\Debug\ParameterList.pdb
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\micro5\micro5\obj\Debug\micro5.exe
+C:\Users\Dan\Documents\PROJECT\NEW+P\project\micro5\micro5\obj\Debug\micro5.pdb
