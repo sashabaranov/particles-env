@@ -98,6 +98,16 @@ namespace micro5lib
             Counting();
         }
 
+        public override ParameterList GetParameters()
+        {
+            ParameterList ReturnList = this.ParameterListTemplate;
+
+            ReturnList["E0"] = E0;
+            ReturnList["p0"] = p0;
+            ReturnList["V"] = V;
+            return ReturnList;
+        }
+
         /// <summary>
         /// Прорисовка
         /// </summary>

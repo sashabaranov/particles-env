@@ -28,3 +28,12 @@ C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\Expirement\bin\Debug\
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\Expirement\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\Expirement\obj\Debug\Expirement.dll
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\Expirement\obj\Debug\Expirement.pdb
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\Expirement.dll
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\Expirement.pdb
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\ObjectGraphics.dll
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\ParameterList.dll
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\ObjectGraphics.pdb
+C:\Users\scrat\Documents\project2\particles-env\Expirement\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\project2\particles-env\Expirement\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\project2\particles-env\Expirement\obj\Debug\Expirement.dll
+C:\Users\scrat\Documents\project2\particles-env\Expirement\obj\Debug\Expirement.pdb

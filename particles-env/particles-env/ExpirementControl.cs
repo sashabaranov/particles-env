@@ -25,11 +25,12 @@ namespace particles_env
         {
             ParametersEdit EditDialog = new ParametersEdit();
 
-            EditDialog.eList = this.Expirement.pList;
+            EditDialog.eList = this.Expirement.Graphics.GetParameters(); // метод, обратный SetParameters'у
             
             if (EditDialog.ShowDialog() != DialogResult.Cancel)
             {
                 this.Expirement.pList = EditDialog.eList;
+
                 this.Expirement.Graphics.SetParameters(this.Expirement.pList);
                 Refresh();
             }

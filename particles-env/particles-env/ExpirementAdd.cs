@@ -23,24 +23,38 @@ namespace particles_env
         {
             InitializeComponent();
 
-            foreach (ExpirementInfo p in e.eList)
+            ExpirementObject = new Expirement(); /* инициализация объекта эксперимента, в который будут вносится
+                                                    изминения, и который будет возвращёт обратно в MainForm    */
+
+            foreach (ExpirementInfo p in e.eList) // Создаём список типов экспериментов
             {
-                listBox1.Items.Add(p);
+                listBox1.Items.Add(p); // в списке будут p.ToString();
             }
         }
 
-        private void ContinueButton_Click(object sender, EventArgs e)
+        private void ContinueButton_Click(object sender, EventArgs e) // пользователь нажал на кнопку "продолжить"
         {
-            ConstructExpirement();
-
-            ParametersEdit EditDialog = new ParametersEdit();
-            EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate;
-            if (EditDialog.ShowDialog() != DialogResult.Cancel)
+            try
             {
-                ExpirementObject.pList = EditDialog.eList;
+                ConstructExpirement();
+            }
+            catch (NullReferenceException) //если эксперимент не выбран, будет сгенерированно исключение.
+            { 
+                MessageBox.Show("Пожалуйста, выбирите эксперимент");
+                return;
             }
 
-            ExpirementObject.Graphics.SetParameters(ExpirementObject.pList);
+            // всё хорошо, продолжаем создавать эксперимент
+
+            ParametersEdit EditDialog = new ParametersEdit(); // диалог редактирования параметров
+            EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate; // шаблон параметров и GraphicsPrimitive
+
+            if (EditDialog.ShowDialog() != DialogResult.Cancel) // если пользователь не закрыл диалог
+            {
+                //ExpirementObject.pList = EditDialog.eList; // переносим отредактированные параметры из диалога в объекта
+                ExpirementObject.Graphics.SetParameters(EditDialog.eList); // переносим напрямую
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();            
         }
@@ -59,8 +73,9 @@ namespace particles_env
         private void ConstructExpirement()
         {
             ExpirementObject = new Expirement();
-            ExpirementInfo Selected = (ExpirementInfo) listBox1.SelectedItem;
-            ExpirementObject.Graphics = Selected.GraphicsObj;
+
+            ExpirementInfo Selected = (ExpirementInfo)listBox1.SelectedItem;
+            ExpirementObject.Graphics = Selected.GraphicsObj; // сырой шаблон
         }
     }
 }

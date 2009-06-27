@@ -30,7 +30,7 @@
   <ItemGroup>
     <Reference Include="ObjectGraphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Documents\Visual Studio 2005\Projects\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.dll</HintPath>
+      <HintPath>..\..\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.dll</HintPath>
     </Reference>
     <Reference Include="ParameterList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

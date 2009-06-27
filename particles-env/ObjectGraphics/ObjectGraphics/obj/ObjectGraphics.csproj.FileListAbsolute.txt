@@ -33,3 +33,10 @@ C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\Object
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.dll
 C:\Users\Dan\Documents\PROJECT\NEW+P\project\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.pdb
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.dll
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.pdb
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ParameterList.dll
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.dll
+C:\Users\scrat\Documents\project2\particles-env\ObjectGraphics\ObjectGraphics\obj\Debug\ObjectGraphics.pdb

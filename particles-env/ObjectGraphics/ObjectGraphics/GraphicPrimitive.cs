@@ -90,5 +90,14 @@ namespace ObjectGraphics
             {
                 throw new Exception("Abstract SetParameters recieved");
             }
+
+            /// <summary>
+            /// Виртуальный метод для возвращения параметров
+            /// </summary>
+            /// <returns>Список параметров</returns>
+            public virtual ParameterList GetParameters()
+            {
+                throw new Exception("Abstract GetParameters recieved");
+            }
         }
 }
