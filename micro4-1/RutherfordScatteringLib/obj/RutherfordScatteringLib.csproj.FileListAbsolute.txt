@@ -1,0 +1,12 @@
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\RutherfordScatteringLib.dll
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\RutherfordScatteringLib.pdb
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\ObjectGraphics.dll
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\ParameterList.dll
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\Particle.dll
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\Particle.pdb
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\Particle.xml
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\ObjectGraphics.pdb
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\obj\Debug\RutherfordScatteringLib.dll
+C:\Users\scrat\Documents\project2\micro4-1\RutherfordScatteringLib\obj\Debug\RutherfordScatteringLib.pdb
