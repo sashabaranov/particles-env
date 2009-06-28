@@ -47,7 +47,7 @@ namespace particles_env
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Expirement.Graphics.SetDrawingBorder(this.Left + this.Width/2, this.Top + this.Height/2, this.Size);
+            this.Expirement.Graphics.SetDrawingBorder(this.Left, this.Top, this.Size);
             df = true;
             Refresh();
         }

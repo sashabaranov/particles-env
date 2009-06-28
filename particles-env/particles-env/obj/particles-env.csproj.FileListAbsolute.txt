@@ -84,3 +84,4 @@ C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particle
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles_env.ParametersEdit.resources
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles_env.Properties.Resources.resources
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles-env.csproj.GenerateResource.Cache
+C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Particle.dll

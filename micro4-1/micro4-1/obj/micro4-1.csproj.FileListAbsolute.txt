@@ -78,3 +78,10 @@ C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-1\bin\Debug\ObjectGr
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-1\micro4-1\obj\Debug\micro4_1.RutherfordStatWindow.resources
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-1\micro4-1\bin\Debug\ParameterList.dll
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-1\micro4-1\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4-1.exe
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4-1.pdb
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4_1.Form1.resources
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4_1.Properties.Resources.resources
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4_1.RutherfordStatWindow.resources
+C:\Users\scrat\Documents\project2\micro4-1\micro4-1\obj\Debug\micro4-1.csproj.GenerateResource.Cache

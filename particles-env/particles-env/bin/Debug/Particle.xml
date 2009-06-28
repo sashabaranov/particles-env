@@ -75,7 +75,7 @@
             Дефолтный конструктор
             </summary>
         </member>
-        <member name="M:Particle.Particle.#ctor(System.Single)">
+        <member name="M:Particle.Particle.#ctor(System.Double)">
             <summary>
             Консруктор с импортом энергии в объект
             </summary>

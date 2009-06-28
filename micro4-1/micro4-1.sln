@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "micro4-1", "micro4-1\micro4-1.csproj", "{3DDE8410-F702-4397-A0DC-1363C6A013A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutherfordDll", "..\RutherfordDll\RutherfordDll.csproj", "{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutherfordScatteringLib", "RutherfordScatteringLib\RutherfordScatteringLib.csproj", "{76D26049-0863-4F79-B561-C2075E2E5C9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +21,12 @@ Global
 		{3DDE8410-F702-4397-A0DC-1363C6A013A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3DDE8410-F702-4397-A0DC-1363C6A013A4}.Release|x86.ActiveCfg = Release|x86
 		{3DDE8410-F702-4397-A0DC-1363C6A013A4}.Release|x86.Build.0 = Release|x86
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8477C497-FB25-4FF8-ADCC-AC56DEAE9CF3}.Release|x86.ActiveCfg = Release|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D26049-0863-4F79-B561-C2075E2E5C9A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

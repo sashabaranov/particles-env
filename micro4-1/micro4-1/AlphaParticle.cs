@@ -19,7 +19,7 @@ namespace micro4_1
         float dx = 0;
         float dy = 0;
 
-        public static Particle Nucl; //внимание, классы в c# - ссылочные => копирования объектов не происходит.
+        public static Particle Nucl;
 
         #region Constructing
         public AlphaParticle(Particle Prototype,float b)

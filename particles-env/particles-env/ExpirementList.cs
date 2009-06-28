@@ -21,7 +21,7 @@ namespace particles_env
         public void LoadDll(string Path)
         {
             Assembly asm = Assembly.LoadFile(Path); //возможное исключение, нуждается в обработке при вызове
-            Type gType = asm.GetType("micro5lib.gType");
+            Type gType = asm.GetType("gLib.gType");
             object obj = Activator.CreateInstance(gType);
             FieldInfo[] membs = gType.GetFields();
 
