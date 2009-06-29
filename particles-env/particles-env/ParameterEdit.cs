@@ -26,5 +26,13 @@ namespace particles_env
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void ParameterEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

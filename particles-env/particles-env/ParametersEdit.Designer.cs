@@ -41,6 +41,7 @@ namespace particles_env
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(388, 342);
             this.listBox1.TabIndex = 0;
+            this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
             // label1
             // 

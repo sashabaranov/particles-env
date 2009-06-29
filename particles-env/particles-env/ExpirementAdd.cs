@@ -77,5 +77,10 @@ namespace particles_env
             ExpirementInfo Selected = (ExpirementInfo)listBox1.SelectedItem;
             ExpirementObject.Graphics = Selected.GraphicsObj; // сырой шаблон
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ContinueButton.Enabled = true;
+        }
     }
 }

@@ -18,10 +18,13 @@ namespace particles_env
             eList = new List<ExpirementInfo>();
         }
 
+        #region Старая LoadDll
+        /*
         public void LoadDll(string Path)
         {
             Assembly asm = Assembly.LoadFile(Path); //возможное исключение, нуждается в обработке при вызове
             Type gType = asm.GetType("gLib.gType");
+            
             object obj = Activator.CreateInstance(gType);
             FieldInfo[] membs = gType.GetFields();
 
@@ -39,6 +42,58 @@ namespace particles_env
             }
 
             eList.Add(new ExpirementInfo(Path, Name, sName, (GraphicPrimitive)obj));
+      
+        
+        }*/
+        #endregion
+
+        public void LoadDll(string Path)
+        {
+            try
+            {
+                Assembly asm = Assembly.LoadFrom(Path);
+                Type[] types = asm.GetTypes();
+
+                object obj = new object();
+                bool isModule = false;
+                
+                foreach (Type p in types)
+                {
+                    if (p.BaseType.ToString() == "ObjectGraphics.GraphicPrimitive")
+                    {
+                        obj = Activator.CreateInstance(p);
+                        isModule = true;
+                        break;
+                    }
+                }
+
+                if (isModule)
+                {
+                    FieldInfo[] membs = obj.GetType().GetFields();
+
+                    string Name = null;
+                    string sName = null; //будут передаваться в список
+
+                    foreach (FieldInfo p in membs)
+                    {
+                        switch (p.Name)
+                        {
+                            case "sName": sName = p.GetValue(obj).ToString(); break;
+                            case "ExpirementName": Name = p.GetValue(obj).ToString(); break;
+                        }
+                    }
+
+                    eList.Add(new ExpirementInfo(Path, Name, sName, (GraphicPrimitive)obj));
+                }
+      
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Что-то пошло не так:\n" + e.ToString());
+            }
+
+            
+
         }
     }
 

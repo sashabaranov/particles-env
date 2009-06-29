@@ -50,6 +50,14 @@ namespace particles_env
             CurrentParameterEditor.Dispose();
         }
 
+        private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ChangeButton_Click(sender, e);
+            }
+        }
+
     
     }
 }

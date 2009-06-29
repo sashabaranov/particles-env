@@ -52,10 +52,10 @@ namespace micro4_1
             ay = fy / 6.7f;
 
             this.vy += ay;
-            this.y -= this.vy;
+            this.y -= (float)this.vy;
 
             this.vx += ax;
-            this.x += this.vx;
+            this.x += (float)this.vx;
         }
         #endregion
 

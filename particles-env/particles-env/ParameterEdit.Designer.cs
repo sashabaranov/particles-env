@@ -29,8 +29,9 @@ namespace particles_env
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.ValueBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ValueBox = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -42,13 +43,6 @@ namespace particles_env
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // ValueBox
-            // 
-            this.ValueBox.Location = new System.Drawing.Point(53, 16);
-            this.ValueBox.Name = "ValueBox";
-            this.ValueBox.Size = new System.Drawing.Size(100, 20);
-            this.ValueBox.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(159, 14);
@@ -59,18 +53,37 @@ namespace particles_env
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ValueBox
+            // 
+            this.ValueBox.Location = new System.Drawing.Point(53, 16);
+            this.ValueBox.Name = "ValueBox";
+            this.ValueBox.PromptChar = '.';
+            this.ValueBox.Size = new System.Drawing.Size(100, 20);
+            this.ValueBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 26);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Используйте запятую при\r\nуказании дробных значений.";
+            // 
             // ParameterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 54);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(254, 78);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ValueBox);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ParameterEdit";
             this.Text = "Задать параметр";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ParameterEdit_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +92,8 @@ namespace particles_env
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ValueBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox ValueBox;
+        private System.Windows.Forms.Label label2;
     }
 }

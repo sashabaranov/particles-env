@@ -33,11 +33,11 @@ namespace particles_env
             this.ôàéëToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.íîâûéİêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.îòêğûòüİñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.âûõîäToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.îïöèèToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.âûõîäToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,22 +68,29 @@ namespace particles_env
             this.îòêğûòüİñïåğèìåíòToolStripMenuItem,
             this.âûõîäToolStripMenuItem});
             this.ôàéëToolStripMenuItem.Name = "ôàéëToolStripMenuItem";
-            this.ôàéëToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.ôàéëToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ôàéëToolStripMenuItem.Text = "Ôàéë";
             this.ôàéëToolStripMenuItem.Click += new System.EventHandler(this.ôàéëToolStripMenuItem_Click);
             // 
             // íîâûéİêñïåğèìåíòToolStripMenuItem
             // 
             this.íîâûéİêñïåğèìåíòToolStripMenuItem.Name = "íîâûéİêñïåğèìåíòToolStripMenuItem";
-            this.íîâûéİêñïåğèìåíòToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.íîâûéİêñïåğèìåíòToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.íîâûéİêñïåğèìåíòToolStripMenuItem.Text = "Íîâûé ıêñïåğèìåíò";
             this.íîâûéİêñïåğèìåíòToolStripMenuItem.Click += new System.EventHandler(this.íîâûéİêñïåğèìåíòToolStripMenuItem_Click);
             // 
             // îòêğûòüİñïåğèìåíòToolStripMenuItem
             // 
             this.îòêğûòüİñïåğèìåíòToolStripMenuItem.Name = "îòêğûòüİñïåğèìåíòToolStripMenuItem";
-            this.îòêğûòüİñïåğèìåíòToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.îòêğûòüİñïåğèìåíòToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.îòêğûòüİñïåğèìåíòToolStripMenuItem.Text = "Îòêğûòü ıñïåğèìåíò";
+            // 
+            // âûõîäToolStripMenuItem
+            // 
+            this.âûõîäToolStripMenuItem.Name = "âûõîäToolStripMenuItem";
+            this.âûõîäToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.âûõîäToolStripMenuItem.Text = "Âûõîä";
+            this.âûõîäToolStripMenuItem.Click += new System.EventHandler(this.âûõîäToolStripMenuItem_Click);
             // 
             // îïöèèToolStripMenuItem
             // 
@@ -96,7 +103,7 @@ namespace particles_env
             // addExpirementType
             // 
             this.addExpirementType.Name = "addExpirementType";
-            this.addExpirementType.Size = new System.Drawing.Size(226, 22);
+            this.addExpirementType.Size = new System.Drawing.Size(229, 22);
             this.addExpirementType.Text = "Äîáàâèòü òèï ıêñïåğèìåíòà";
             this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
@@ -108,12 +115,9 @@ namespace particles_env
             this.Tabs.Size = new System.Drawing.Size(851, 485);
             this.Tabs.TabIndex = 2;
             // 
-            // âûõîäToolStripMenuItem
+            // openFileDialog1
             // 
-            this.âûõîäToolStripMenuItem.Name = "âûõîäToolStripMenuItem";
-            this.âûõîäToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.âûõîäToolStripMenuItem.Text = "Âûõîä";
-            this.âûõîäToolStripMenuItem.Click += new System.EventHandler(this.âûõîäToolStripMenuItem_Click);
+            this.openFileDialog1.Filter = "Áèáëèîòåêè DLL|*.dll|Âñå ôàéëû|*.*";
             // 
             // MainForm
             // 

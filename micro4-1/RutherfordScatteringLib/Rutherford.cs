@@ -7,12 +7,12 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace gLib
+namespace RutherfordScatteringLib
 {
     using ParameterList;
     using Particle;
     
-    public class gType  : GraphicPrimitive
+    public class  RutherfordScatteringLib : GraphicPrimitive
     {
         public string sName = "RutherfordScatteringLib";
         public string ExpirementName = "Рассеяние Резерфорда";
@@ -62,7 +62,7 @@ namespace gLib
         /// <summary>
         /// Без него не загрузить
         /// </summary>
-        public gType() : base(0, 0, new Size())
+        public RutherfordScatteringLib() : base(0, 0, new Size())
         {
             AddParametersToTemplate();
         }
@@ -72,12 +72,14 @@ namespace gLib
         /// </summary>
         /// <param name="Left">x левого верхнего угла</param>
         /// <param name="Top">y левого верхнего угла</param>
-        public gType(int Left, int Top, Size Size) : base(Left, Top, Size)
+        public RutherfordScatteringLib(int Left, int Top, Size Size)
+            : base(Left, Top, Size)
         {
             this.Left = Left;
             this.Top = Top;
 
             this.Size = Size;
+            AddParametersToTemplate();
         }
 
 

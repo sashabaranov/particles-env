@@ -55,8 +55,10 @@ namespace particles_env
         {
             if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
-                //ExpList.LoadDll(openFileDialog1.FileName);
-                Dlls.Add(openFileDialog1.FileName);
+                if(!Dlls.Contains(openFileDialog1.FileName))
+                {
+                    Dlls.Add(openFileDialog1.FileName);
+                }
             }
         }
 
@@ -68,7 +70,7 @@ namespace particles_env
 
         private void ‚˚ıÓ‰ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            this.Dispose();
         }
 
         private ExpirementList GenerateNewExpirementList()
@@ -81,6 +83,5 @@ namespace particles_env
             }
             return Lst;
         }
-
     }
 }
