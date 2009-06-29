@@ -71,8 +71,6 @@ C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\particle
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Expirement.dll
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\ObjectGraphics.dll
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\ParameterList.dll
-C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Particle.pdb
-C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Particle.xml
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Expirement.pdb
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\ObjectGraphics.pdb
 C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\ParameterList.pdb
@@ -84,4 +82,3 @@ C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particle
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles_env.ParametersEdit.resources
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles_env.Properties.Resources.resources
 C:\Users\scrat\Documents\project2\particles-env\particles-env\obj\Debug\particles-env.csproj.GenerateResource.Cache
-C:\Users\scrat\Documents\project2\particles-env\particles-env\bin\Debug\Particle.dll
