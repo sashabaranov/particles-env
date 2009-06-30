@@ -5,12 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using MDK;
 
 namespace particles_env
 {
-    using ParameterList;
-
     public partial class ParametersEdit : Form
     {
         public ParameterList eList;

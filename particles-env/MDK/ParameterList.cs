@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParameterList
+namespace MDK
 {
     public class ParameterList
     {

@@ -1,19 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ObjectGraphics;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
+using MDK;
 using ZedGraph;
 
 
 namespace micro4_1
 {
-    using Particle;
-
     public partial class RutherfordStat : GraphicPrimitive
     {
         public Particle Alpha;

@@ -93,3 +93,9 @@ C:\Users\scrat\Documents\project2\micro4-1\micro4-1\bin\Debug\Particle.pdb
 C:\Users\scrat\Documents\project2\micro4-1\micro4-1\bin\Debug\Particle.xml
 C:\Users\scrat\Documents\project2\micro4-1\micro4-1\bin\Debug\ObjectGraphics.pdb
 C:\Users\scrat\Documents\project2\micro4-1\micro4-1\bin\Debug\ParameterList.pdb
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\micro4-1.exe
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\micro4_1.Form1.resources
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\micro4_1.Properties.Resources.resources
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\micro4_1.RutherfordStatWindow.resources
+C:\Users\scrat\Documents\project-test\micro4-1\micro4-1\obj\Debug\micro4-1.csproj.GenerateResource.Cache

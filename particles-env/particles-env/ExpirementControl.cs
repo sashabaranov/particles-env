@@ -5,11 +5,10 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using MDK;
 
 namespace particles_env
 {
-    using Expirement;
-
     public partial class ExpirementControl : UserControl
     {
         bool df;

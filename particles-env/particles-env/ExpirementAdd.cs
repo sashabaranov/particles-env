@@ -5,13 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using MDK;
 
 namespace particles_env
 {
-    using Expirement;
-    using ObjectGraphics;
-
     public partial class ExpirementAdd : Form
     {
         /// <summary>

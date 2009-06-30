@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ObjectGraphics;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using MDK;
 
 namespace RutherfordScatteringLib
-{
-    using ParameterList;
-    using Particle;
-    
+{   
     public class  RutherfordScatteringLib : GraphicPrimitive
     {
         public string sName = "RutherfordScatteringLib";

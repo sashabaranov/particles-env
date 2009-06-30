@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MDK;
 
 namespace RutherfordScatteringLib
 {
-    using Particle;
     class AlphaParticle : Particle
     {
         float r = 0;

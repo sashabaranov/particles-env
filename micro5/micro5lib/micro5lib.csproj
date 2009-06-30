@@ -28,17 +28,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ObjectGraphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\particles-env\ObjectGraphics\ObjectGraphics\bin\Debug\ObjectGraphics.dll</HintPath>
-    </Reference>
-    <Reference Include="ParameterList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\particles-env\ParameterList\bin\Debug\ParameterList.dll</HintPath>
-    </Reference>
-    <Reference Include="Particle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\micro5\bin\Debug\Particle.dll</HintPath>
+      <HintPath>..\..\particles-env\MDK\bin\Debug\MDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

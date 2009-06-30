@@ -4,7 +4,7 @@ using System.Text;
 using System.Reflection;
 using System.IO;
 using System.Windows.Forms;
-using ObjectGraphics;
+using MDK;
 
 namespace particles_env
 {
@@ -59,7 +59,7 @@ namespace particles_env
                 
                 foreach (Type p in types)
                 {
-                    if (p.BaseType.ToString() == "ObjectGraphics.GraphicPrimitive")
+                    if (p.BaseType.ToString() == "MDK.GraphicPrimitive")
                     {
                         obj = Activator.CreateInstance(p);
                         isModule = true;

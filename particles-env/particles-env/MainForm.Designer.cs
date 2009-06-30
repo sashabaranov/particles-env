@@ -63,6 +63,7 @@ namespace particles_env
             // 
             // файлToolStripMenuItem
             // 
+            this.файлToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новыйЭкспериментToolStripMenuItem,
             this.открытьЭспериментToolStripMenuItem,
@@ -75,36 +76,46 @@ namespace particles_env
             // новыйЭкспериментToolStripMenuItem
             // 
             this.новыйЭкспериментToolStripMenuItem.Name = "новыйЭкспериментToolStripMenuItem";
-            this.новыйЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.новыйЭкспериментToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.новыйЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.новыйЭкспериментToolStripMenuItem.Text = "Новый эксперимент";
             this.новыйЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.новыйЭкспериментToolStripMenuItem_Click);
             // 
             // открытьЭспериментToolStripMenuItem
             // 
             this.открытьЭспериментToolStripMenuItem.Name = "открытьЭспериментToolStripMenuItem";
-            this.открытьЭспериментToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.открытьЭспериментToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.открытьЭспериментToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.открытьЭспериментToolStripMenuItem.Text = "Открыть эсперимент";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // опцииToolStripMenuItem
             // 
+            this.опцииToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.опцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addExpirementType});
             this.опцииToolStripMenuItem.Name = "опцииToolStripMenuItem";
-            this.опцииToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.опцииToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.опцииToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.опцииToolStripMenuItem.Text = "Опции";
+            this.опцииToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
             // addExpirementType
             // 
+            this.addExpirementType.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.addExpirementType.Name = "addExpirementType";
-            this.addExpirementType.Size = new System.Drawing.Size(229, 22);
+            this.addExpirementType.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                        | System.Windows.Forms.Keys.O)));
+            this.addExpirementType.Size = new System.Drawing.Size(304, 22);
             this.addExpirementType.Text = "Добавить тип эксперимента";
+            this.addExpirementType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addExpirementType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
             // Tabs

@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ObjectGraphics;
 
-
-namespace Expirement
+namespace MDK
 {
-    using ParameterList;
-
     public class Expirement
     {
         /// <summary>

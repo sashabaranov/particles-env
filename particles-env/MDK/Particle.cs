@@ -1,4 +1,4 @@
-﻿namespace Particle
+﻿namespace MDK
 {
     /// <summary>
     /// Класс для элементарной частицы

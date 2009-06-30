@@ -2,9 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ObjectGraphics
+namespace MDK
 {
-    using ParameterList;
         public abstract class GraphicPrimitive
         {
             /// <summary>

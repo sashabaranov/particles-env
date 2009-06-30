@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ObjectGraphics;
 using System.Drawing;
+using MDK;
 
 namespace micro5lib
 {
-    using Particle;
-    using ParameterList;
-
     public static class info
     {
         public static string ExpirementName = "Релятивистский распад частицы";
