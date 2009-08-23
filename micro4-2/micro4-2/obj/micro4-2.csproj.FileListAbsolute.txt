@@ -18,3 +18,9 @@ C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-2\micro4-2\obj\Debug
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-2\micro4-2\obj\Debug\resonance.Form1.resources
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-2\micro4-2\obj\Debug\resonance.Properties.Resources.resources
 C:\Users\scrat\Documents\Visual Studio 2005\Projects\micro4-2\micro4-2\obj\Debug\micro4-2.csproj.GenerateResource.Cache
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\micro4-2.exe
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\micro4-2.pdb
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\resonance.Form1.resources
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\resonance.Properties.Resources.resources
+C:\Users\Dan\Documents\PROJECT\particles-env\micro4-2\micro4-2\obj\Debug\micro4-2.csproj.GenerateResource.Cache

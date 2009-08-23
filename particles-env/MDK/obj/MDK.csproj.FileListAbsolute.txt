@@ -3,3 +3,8 @@ C:\Users\scrat\Documents\project-test\particles-env\MDK\bin\Debug\MDK.dll
 C:\Users\scrat\Documents\project-test\particles-env\MDK\bin\Debug\MDK.pdb
 C:\Users\scrat\Documents\project-test\particles-env\MDK\obj\Debug\MDK.dll
 C:\Users\scrat\Documents\project-test\particles-env\MDK\obj\Debug\MDK.pdb
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\MDK\bin\Debug\MDK.dll
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\MDK\bin\Debug\MDK.pdb
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\MDK\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\MDK\obj\Debug\MDK.dll
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\MDK\obj\Debug\MDK.pdb
