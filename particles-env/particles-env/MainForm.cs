@@ -115,5 +115,29 @@ namespace particles_env
             }
             return Lst;
         }
+
+        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExpirementStats c = new ExpirementStats(GenerateNewExpirementList()); //объект диалога
+
+            if (c.ShowDialog() != DialogResult.Cancel)
+            {
+                ExpirementControl p = new ExpirementControl();
+                p.Expirement = c.ExpirementObject;
+
+
+                Tabs.TabPages.Add("exp" + ExpirementCount, "Эксперимент " + ExpirementCount);
+                Tabs.TabPages[ExpirementCount].Controls.Add(p);
+                Tabs.TabPages[ExpirementCount].Focus();
+
+                ExpirementCount++;
+
+            }
+        }
+
+        private void Tabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

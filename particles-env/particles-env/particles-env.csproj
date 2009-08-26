@@ -40,6 +40,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExperimentStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExperimentStats.Designer.cs">
+      <DependentUpon>ExperimentStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExpirementAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExperimentStats.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExperimentStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExpirementAdd.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExpirementAdd.cs</DependentUpon>
