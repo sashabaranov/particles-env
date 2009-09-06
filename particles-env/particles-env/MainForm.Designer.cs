@@ -36,10 +36,11 @@ namespace particles_env
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tabs = new System.Windows.Forms.TabControl();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.экспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tabs = new System.Windows.Forms.TabControl();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,8 +122,25 @@ namespace particles_env
             this.addExpirementType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
+            // экспериментToolStripMenuItem
+            // 
+            this.экспериментToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.статистикаToolStripMenuItem,
+            this.testToolStripMenuItem});
+            this.экспериментToolStripMenuItem.Name = "экспериментToolStripMenuItem";
+            this.экспериментToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.экспериментToolStripMenuItem.Text = "Эксперимент";
+            // 
+            // статистикаToolStripMenuItem
+            // 
+            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
+            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.статистикаToolStripMenuItem.Text = "Статистика";
+            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
+            // 
             // Tabs
             // 
+            this.Tabs.AccessibleName = "TabView";
             this.Tabs.Location = new System.Drawing.Point(0, 27);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
@@ -134,20 +152,12 @@ namespace particles_env
             // 
             this.openFileDialog1.Filter = "Библиотеки DLL|*.dll|Все файлы|*.*";
             // 
-            // экспериментToolStripMenuItem
+            // testToolStripMenuItem
             // 
-            this.экспериментToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.статистикаToolStripMenuItem});
-            this.экспериментToolStripMenuItem.Name = "экспериментToolStripMenuItem";
-            this.экспериментToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.экспериментToolStripMenuItem.Text = "Эксперимент";
-            // 
-            // статистикаToolStripMenuItem
-            // 
-            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
-            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.статистикаToolStripMenuItem.Text = "Статистика";
-            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -182,6 +192,7 @@ namespace particles_env
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem экспериментToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

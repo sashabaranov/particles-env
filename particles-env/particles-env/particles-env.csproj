@@ -40,12 +40,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExperimentStats.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExperimentStats.Designer.cs">
-      <DependentUpon>ExperimentStats.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExpirementAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +53,12 @@
       <DependentUpon>ExpirementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpirementList.cs" />
+    <Compile Include="ExpStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpStats.Designer.cs">
+      <DependentUpon>ExpStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,10 +79,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ExperimentStats.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ExperimentStats.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ExpirementAdd.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExpirementAdd.cs</DependentUpon>
@@ -90,6 +86,10 @@
     <EmbeddedResource Include="ExpirementControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ExpirementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpStats.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExpStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <SubType>Designer</SubType>

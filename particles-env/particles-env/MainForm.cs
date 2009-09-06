@@ -118,8 +118,8 @@ namespace particles_env
 
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExpirementStats c = new ExpirementStats(GenerateNewExpirementList()); //объект диалога
-
+            //ExpirementStats c = new ExpirementStats(GenerateNewExpirementList()); //объект диалога
+            ExpStats c = new ExpStats(GenerateNewExpirementList());
             if (c.ShowDialog() != DialogResult.Cancel)
             {
                 ExpirementControl p = new ExpirementControl();
@@ -137,6 +137,16 @@ namespace particles_env
 
         private void Tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabControl tab = new TabControl();
+            for (int i = 0; i < tab.TabPages.Count; i++)
+            {
+                MessageBox.Show(tab.TabPages[i].Name);
+            }
 
         }
     }

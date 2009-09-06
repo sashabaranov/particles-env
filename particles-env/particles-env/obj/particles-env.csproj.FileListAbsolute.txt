@@ -112,4 +112,4 @@ C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Deb
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles-env.csproj.GenerateResource.Cache
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\bin\Debug\ZedGraph.dll
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.Stats.resources
-C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExperimentStats.resources
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExpStats.resources
