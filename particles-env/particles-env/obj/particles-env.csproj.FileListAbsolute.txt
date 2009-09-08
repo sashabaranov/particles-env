@@ -103,8 +103,6 @@ C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\bin\Deb
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\bin\Debug\MDK.dll
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\bin\Debug\MDK.pdb
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExpirementAdd.resources
-C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExpirementControl.resources
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.MainForm.resources
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ParameterEdit.resources
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ParametersEdit.resources
@@ -113,3 +111,5 @@ C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Deb
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\bin\Debug\ZedGraph.dll
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.Stats.resources
 C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExpStats.resources
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExperimentAdd.resources
+C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\obj\Debug\particles_env.ExperimentControl.resources

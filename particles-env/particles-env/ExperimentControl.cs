@@ -9,15 +9,15 @@ using MDK;
 
 namespace particles_env
 {
-    public partial class ExpirementControl : UserControl
+    public partial class ExperimentControl : UserControl
     {
         bool df;
-        public Expirement Expirement;
+        public Experiment Expirement;
 
-        public ExpirementControl()
+        public ExperimentControl()
         {
             InitializeComponent();
-            this.Expirement = new Expirement();
+            this.Expirement = new Experiment();
         }
 
         private void setParameters_Click(object sender, EventArgs e)

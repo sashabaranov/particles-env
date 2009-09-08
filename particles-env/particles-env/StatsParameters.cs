@@ -6,10 +6,10 @@ using System.Drawing;
 
 namespace particles_env
 {
-    class StatsParameters
+    public class StatsParameters
     {
-        public Color color = Color.Blue;
-        public PointPairList pList;
-        public String title = "My great experiment!";
+        public List<Color> color;
+        public List<PointPairList> ppList;
+        public List<String> title;
     }
 }

@@ -9,13 +9,13 @@ using MDK;
 namespace particles_env
 {
     [Serializable]
-    public class ExpirementList
+    public class ExperimentList
     {
-        public List<ExpirementInfo> eList;
+        public List<ExperimentInfo> eList;
 
-        public ExpirementList()
+        public ExperimentList()
         {
-            eList = new List<ExpirementInfo>();
+            eList = new List<ExperimentInfo>();
         }
 
         #region Старая LoadDll
@@ -41,7 +41,7 @@ namespace particles_env
                 }
             }
 
-            eList.Add(new ExpirementInfo(Path, Name, sName, (GraphicPrimitive)obj));
+            eList.Add(new ExperimentInfo(Path, Name, sName, (GraphicPrimitive)obj));
       
         
         }*/
@@ -83,7 +83,7 @@ namespace particles_env
                         }
                     }
 
-                    eList.Add(new ExpirementInfo(Path, Name, sName, (GraphicPrimitive)obj));
+                    eList.Add(new ExperimentInfo(Path, Name, sName, (GraphicPrimitive)obj));
                 }
       
             }
@@ -98,15 +98,15 @@ namespace particles_env
     }
 
     [Serializable]
-    public class ExpirementInfo
+    public class ExperimentInfo
     {
         public string Path;
         public string Name;
         public string sName;
         public GraphicPrimitive GraphicsObj;
 
-        public ExpirementInfo() { }
-        public ExpirementInfo(string Path, string Name, string sName, GraphicPrimitive g)
+        public ExperimentInfo() { }
+        public ExperimentInfo(string Path, string Name, string sName, GraphicPrimitive g)
         {
             this.Path = Path;
             this.Name = Name;

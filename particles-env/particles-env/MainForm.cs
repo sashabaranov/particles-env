@@ -13,7 +13,7 @@ namespace particles_env
     public partial class MainForm : Form
     {
         int ExpirementCount;
-        static ExpirementList ExpList;
+        static ExperimentList ExpList;
         List<string> Dlls;
 
         public MainForm()
@@ -34,11 +34,11 @@ namespace particles_env
 
         private void новыйЭкспериментToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExpirementAdd c = new ExpirementAdd(GenerateNewExpirementList()); //объект диалога
+            ExperimentAdd c = new ExperimentAdd(GenerateNewExpirementList()); //объект диалога
 
             if (c.ShowDialog() != DialogResult.Cancel)
             {
-                ExpirementControl p = new ExpirementControl();
+                ExperimentControl p = new ExperimentControl();
                 p.Expirement = c.ExpirementObject;
 
                 
@@ -66,7 +66,7 @@ namespace particles_env
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ExpList = new ExpirementList();
+            ExpList = new ExperimentList();
 
             AddModulesFromDefaultFolder();
 
@@ -105,9 +105,9 @@ namespace particles_env
             this.Dispose();
         }
 
-        private ExpirementList GenerateNewExpirementList()
+        private ExperimentList GenerateNewExpirementList()
         {
-            ExpirementList Lst = new ExpirementList();
+            ExperimentList Lst = new ExperimentList();
 
             foreach (string p in Dlls)
             {
@@ -119,10 +119,10 @@ namespace particles_env
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //ExpirementStats c = new ExpirementStats(GenerateNewExpirementList()); //объект диалога
-            ExpStats c = new ExpStats(GenerateNewExpirementList());
+            ExpStats c = new ExpStats(GenerateNewExpirementList(), ref this.Tabs);
             if (c.ShowDialog() != DialogResult.Cancel)
             {
-                ExpirementControl p = new ExpirementControl();
+                ExperimentControl p = new ExperimentControl();
                 p.Expirement = c.ExpirementObject;
 
 

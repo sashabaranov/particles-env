@@ -13,7 +13,7 @@ namespace particles_env
 {
     public partial class Stats : Form
     {
-        public Stats()
+        public Stats(StatsParameters sp)
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace particles_env
             // create the curves
             foreach(StatsParameters Parameter in ParametersList)
             {
-                BarItem myCurve = myPane.AddBar(Parameter.title, Parameter.pList, Parameter.color);
+                //BarItem myCurve = myPane.AddBar(Parameter.title, Parameter.ppList, Parameter.color);
             }
 
             // Fill the axis background with a color gradient

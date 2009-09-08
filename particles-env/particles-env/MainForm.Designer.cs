@@ -38,9 +38,9 @@ namespace particles_env
             this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
             this.ıêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ñòàòèñòèêàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,6 +138,13 @@ namespace particles_env
             this.ñòàòèñòèêàToolStripMenuItem.Text = "Ñòàòèñòèêà";
             this.ñòàòèñòèêàToolStripMenuItem.Click += new System.EventHandler(this.ñòàòèñòèêàToolStripMenuItem_Click);
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // Tabs
             // 
             this.Tabs.AccessibleName = "TabView";
@@ -151,13 +158,6 @@ namespace particles_env
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Áèáëèîòåêè DLL|*.dll|Âñå ôàéëû|*.*";
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -185,7 +185,6 @@ namespace particles_env
         private System.Windows.Forms.ToolStripMenuItem ôàéëToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem íîâûéİêñïåğèìåíòToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem îòêğûòüİñïåğèìåíòToolStripMenuItem;
-        private System.Windows.Forms.TabControl Tabs;
         private System.Windows.Forms.ToolStripMenuItem îïöèèToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addExpirementType;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -193,6 +192,7 @@ namespace particles_env
         private System.Windows.Forms.ToolStripMenuItem ıêñïåğèìåíòToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ñòàòèñòèêàToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        public System.Windows.Forms.TabControl Tabs;
     }
 }
 

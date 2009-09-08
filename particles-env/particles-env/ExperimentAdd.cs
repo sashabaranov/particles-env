@@ -9,21 +9,21 @@ using MDK;
 
 namespace particles_env
 {
-    public partial class ExpirementAdd : Form
+    public partial class ExperimentAdd : Form
     {
         /// <summary>
         /// Объект, который будем возвращать.
         /// </summary>
-        public Expirement ExpirementObject;
+        public Experiment ExpirementObject;
 
-        public ExpirementAdd(ExpirementList e)
+        public ExperimentAdd(ExperimentList e)
         {
             InitializeComponent();
 
-            ExpirementObject = new Expirement(); /* инициализация объекта эксперимента, в который будут вносится
+            ExpirementObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
                                                     изминения, и который будет возвращёт обратно в MainForm    */
 
-            foreach (ExpirementInfo p in e.eList) // Создаём список типов экспериментов
+            foreach (ExperimentInfo p in e.eList) // Создаём список типов экспериментов
             {
                 listBox1.Items.Add(p); // в списке будут p.ToString();
             }
@@ -37,7 +37,7 @@ namespace particles_env
             }
             catch (NullReferenceException) //если эксперимент не выбран, будет сгенерированно исключение.
             { 
-                MessageBox.Show("Пожалуйста, выбирите эксперимент");
+                MessageBox.Show("Пожалуйста, выберите эксперимент");
                 return;
             }
 
@@ -69,9 +69,9 @@ namespace particles_env
 
         private void ConstructExpirement()
         {
-            ExpirementObject = new Expirement();
+            ExpirementObject = new Experiment();
 
-            ExpirementInfo Selected = (ExpirementInfo)listBox1.SelectedItem;
+            ExperimentInfo Selected = (ExperimentInfo)listBox1.SelectedItem;
             ExpirementObject.Graphics = Selected.GraphicsObj; // сырой шаблон
         }
 

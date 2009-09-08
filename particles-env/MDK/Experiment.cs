@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MDK
 {
-    public class Expirement
+    public class Experiment
     {
         /// <summary>
         /// Визуализация
@@ -16,7 +16,7 @@ namespace MDK
         /// </summary>
         public ParameterList pList;
 
-        public Expirement()
+        public Experiment()
         {
             pList = new ParameterList();
         }

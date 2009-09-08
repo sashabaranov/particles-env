@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace MDK
 {
@@ -97,6 +98,11 @@ namespace MDK
             public virtual ParameterList GetParameters()
             {
                 throw new Exception("Abstract GetParameters recieved");
+            }
+
+            public virtual PointPairList GetResults()
+            {
+                throw new Exception("Abstract GetResults recieved");
             }
         }
 }

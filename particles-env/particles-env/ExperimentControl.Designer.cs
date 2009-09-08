@@ -1,6 +1,6 @@
 namespace particles_env
 {
-    partial class ExpirementControl
+    partial class ExperimentControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -63,14 +63,14 @@ namespace particles_env
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ExpirementControl
+            // ExperimentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.setParameters);
-            this.Name = "ExpirementControl";
+            this.Name = "ExperimentControl";
             this.Size = new System.Drawing.Size(643, 364);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
             this.ResumeLayout(false);

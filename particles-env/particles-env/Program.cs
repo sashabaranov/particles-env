@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+
+/*
+ * Задаем: энергию пи-минус мезона
+ * 
+ */
 namespace particles_env
 {
     static class Program
