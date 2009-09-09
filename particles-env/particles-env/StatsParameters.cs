@@ -1,3 +1,4 @@
+// StatsParameters.cs
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,8 @@ namespace particles_env
 {
     public class StatsParameters
     {
-        public List<Color> color;
-        public List<PointPairList> ppList;
-        public List<String> title;
+        public List<Color> color = new List<Color>();
+        public List<PointPairList> ppList = new List<PointPairList>();
+        public List<String> title = new List<String>();
     }
 }

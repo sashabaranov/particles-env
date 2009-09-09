@@ -133,7 +133,8 @@
     <Compile Include="Stats.Designer.cs">
       <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
-    <Compile Include="StatsParameters.cs" />
+    <Compile Include="StatsParameters.cs">
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MDK\MDK.csproj">

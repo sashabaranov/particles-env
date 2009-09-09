@@ -1,3 +1,4 @@
+// ExpStats.cs
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,15 +37,17 @@ namespace particles_env
             StatsParameters myStatsParams = new StatsParameters();
             ExperimentInfo expType = (ExperimentInfo)listBox1.SelectedItem;
             ExperimentControl expCtrl;
-            for (int i = 0; i < tc.TabPages.Count;i++)
+            for (int i = 0; i < tc.TabPages.Count; i++)
             {
                 expCtrl = (ExperimentControl)tc.TabPages[i].Controls[0];
                 /*
                  * TODO: показать форму со статистикой.
                  */
-                myStatsParams.color[i] = Color.Red;
-                myStatsParams.title[i] = string.Format("Ёксперимент {0}", i);
-                //myStatsParams.ppList[i] = expCtrl.Expirement.Graphics.GetResults();
+
+                myStatsParams.color.Add(Color.Red);
+                myStatsParams.title.Add(string.Format("Ёксперимент {0}", i));
+
+                //myStatsParams.ppList.Add(expCtrl.Expirement.Graphics.GetResults());
             }
         }
     }
