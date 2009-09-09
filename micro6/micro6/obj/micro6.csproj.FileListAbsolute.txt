@@ -1,0 +1,8 @@
+C:\Users\scrat\Desktop\svn\micro6\micro6\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\scrat\Desktop\svn\micro6\micro6\bin\Debug\micro6.dll
+C:\Users\scrat\Desktop\svn\micro6\micro6\bin\Debug\micro6.pdb
+C:\Users\scrat\Desktop\svn\micro6\micro6\bin\Debug\MDK.dll
+C:\Users\scrat\Desktop\svn\micro6\micro6\bin\Debug\ZedGraph.dll
+C:\Users\scrat\Desktop\svn\micro6\micro6\bin\Debug\MDK.pdb
+C:\Users\scrat\Desktop\svn\micro6\micro6\obj\Debug\micro6.dll
+C:\Users\scrat\Desktop\svn\micro6\micro6\obj\Debug\micro6.pdb
