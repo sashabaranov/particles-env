@@ -138,11 +138,6 @@ namespace particles_env
             }
         }
 
-        private void Tabs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TabControl tab = new TabControl();
@@ -156,6 +151,20 @@ namespace particles_env
         private void Tabs_TabIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("changed!");
+        }
+
+        private void Tabs_Resize(object sender, EventArgs e)
+        {
+            foreach (TabPage Page in Tabs.TabPages)
+            {
+                ExperimentControl c = (ExperimentControl) Page.Controls[0];
+                
+                c.Left = Page.Left;
+                c.Top  = Page.Top;
+                c.Size = Page.Size; 
+
+                c.Expirement.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
+            }
         }
 
     }

@@ -156,8 +156,8 @@ namespace particles_env
             this.Tabs.SelectedIndex = 0;
             this.Tabs.Size = new System.Drawing.Size(845, 485);
             this.Tabs.TabIndex = 2;
+            this.Tabs.Resize += new System.EventHandler(this.Tabs_Resize);
             this.Tabs.TabIndexChanged += new System.EventHandler(this.Tabs_TabIndexChanged);
-            this.Tabs.SelectedIndexChanged += new System.EventHandler(this.Tabs_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
@@ -176,6 +176,7 @@ namespace particles_env
             this.Text = "Среда для работы с элементарными частицами";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.Tabs_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
