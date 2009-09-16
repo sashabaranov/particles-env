@@ -104,7 +104,7 @@ namespace RutherfordScatteringLib
             //начинаем рисовать
             DrawParticle(Nucl, e.Graphics, Pens.Blue);
 
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < this.Width*3/4; i++)
             {
                 foreach (AlphaParticle a in Particles)
                 {
