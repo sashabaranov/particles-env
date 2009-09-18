@@ -7,8 +7,8 @@ namespace micro6
 {
     class GammaPair
     {
-        GammaParticle Minor;
-        GammaParticle Major;
+        public GammaParticle Minor;
+        public GammaParticle Major;
 
         public int ParticlesCount;
         public static int bottom;
@@ -36,6 +36,26 @@ namespace micro6
                 First.Minor.Energy != Second.Minor.Energy) return true;
             else return false;
         }
+
+        public static bool operator >(GammaPair First, GammaPair Second)
+        {
+            if (Second.Minor.Energy > First.Minor.Energy
+                &&
+                Second.Major.Energy < First.Major.Energy
+                &&
+                Second.ParticlesCount > First.ParticlesCount) return true;
+            else return false;
+        }
+        public static bool operator <(GammaPair First, GammaPair Second)
+        {
+            if (Second.Minor.Energy < First.Minor.Energy
+                &&
+                Second.Major.Energy > First.Major.Energy
+                &&
+                Second.ParticlesCount < First.ParticlesCount) return true;
+            else return false;
+        }
+
 
         public Point[] PointsToDraw()
         {

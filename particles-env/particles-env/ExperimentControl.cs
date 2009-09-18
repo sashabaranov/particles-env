@@ -40,7 +40,7 @@ namespace particles_env
             if (df)
             {
                 this.Expirement.Graphics.Draw(e);
-                
+                df = false;
             }
         }
 
