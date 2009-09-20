@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("micro3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Упругое столкновение двух частиц")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("micro3")]

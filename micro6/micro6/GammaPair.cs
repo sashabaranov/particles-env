@@ -36,23 +36,17 @@ namespace micro6
                 First.Minor.Energy != Second.Minor.Energy) return true;
             else return false;
         }
-
-        public static bool operator >(GammaPair First, GammaPair Second)
+        
+        public bool IsWiderThan(GammaPair s)
         {
-            if (Second.Minor.Energy > First.Minor.Energy
-                &&
-                Second.Major.Energy < First.Major.Energy
-                &&
-                Second.ParticlesCount > First.ParticlesCount) return true;
+            if (this.Minor.Energy < s.Minor.Energy &&
+                this.Major.Energy > s.Major.Energy) return true;
             else return false;
         }
-        public static bool operator <(GammaPair First, GammaPair Second)
+
+        public bool IsHigherThan(GammaPair s)
         {
-            if (Second.Minor.Energy < First.Minor.Energy
-                &&
-                Second.Major.Energy > First.Major.Energy
-                &&
-                Second.ParticlesCount < First.ParticlesCount) return true;
+            if (this.ParticlesCount > s.ParticlesCount) return true;
             else return false;
         }
 

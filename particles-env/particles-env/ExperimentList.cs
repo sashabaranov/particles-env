@@ -18,82 +18,42 @@ namespace particles_env
             eList = new List<ExperimentInfo>();
         }
 
-        #region Старая LoadDll
-        /*
+        Type x;
         public void LoadDll(string Path)
         {
-            Assembly asm = Assembly.LoadFile(Path); //возможное исключение, нуждается в обработке при вызове
-            Type gType = asm.GetType("gLib.gType");
-            
-            object obj = Activator.CreateInstance(gType);
-            FieldInfo[] membs = gType.GetFields();
-
-            string Name = null;
-            string sName = null; //будут передаваться в список
-            
-            foreach (FieldInfo p in membs)
-            {
-                //MessageBox.Show(p.Name + " : " + p.GetValue(obj).ToString());
-                switch (p.Name)
-                {
-                    case "sName": sName = p.GetValue(obj).ToString(); break;
-                    case "ExpirementName": Name = p.GetValue(obj).ToString(); break;                           
-                }
-            }
-
-            eList.Add(new ExperimentInfo(Path, Name, sName, (GraphicPrimitive)obj));
-      
-        
-        }*/
-        #endregion
-
-        public void LoadDll(string Path)
-        {
+           
             try
             {
+
                 Assembly asm = Assembly.LoadFrom(Path);
                 Type[] types = asm.GetTypes();
 
                 object obj = new object();
                 bool isModule = false;
-                
+
                 foreach (Type p in types)
                 {
-                    if (p.BaseType.ToString() == "MDK.GraphicPrimitive")
+                    if (p.BaseType.ToString().CompareTo("MDK.GraphicPrimitive") == 0)
                     {
-                        obj = Activator.CreateInstance(p);
-                        isModule = true;
+                        LoadModule(p, Path);
                         break;
                     }
                 }
-
-                if (isModule)
-                {
-                    FieldInfo[] membs = obj.GetType().GetFields();
-
-                    string Name = null;
-                    string sName = null; //будут передаваться в список
-
-                    foreach (FieldInfo p in membs)
-                    {
-                        switch (p.Name)
-                        {
-                            case "sName": sName = p.GetValue(obj).ToString(); break;
-                            case "ExpirementName": Name = p.GetValue(obj).ToString(); break;
-                        }
-                    }
-
-                    eList.Add(new ExperimentInfo(Path, Name, sName, (GraphicPrimitive)obj));
-                }
-      
             }
             catch (Exception e)
             {
-                MessageBox.Show("Что-то пошло не так:\n" + e.ToString());
+                MessageBox.Show("Что-то пошло не так:\n" + e.ToString() + "\n К тому-же, мы пытались загрузить "+Path);
             }
+        }
 
+        void LoadModule(Type x, string p)
+        {
+            object obj = Activator.CreateInstance(x);
+
+            string Name = (string) obj.GetType().GetField("ExpirementName").GetValue(obj);
+            string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
             
-
+            eList.Add(new ExperimentInfo(p, Name, sName, (GraphicPrimitive)obj));
         }
     }
 
