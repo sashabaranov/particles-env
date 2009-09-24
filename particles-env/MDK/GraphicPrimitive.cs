@@ -5,7 +5,7 @@ using ZedGraph;
 
 namespace MDK
 {
-        public abstract class GraphicPrimitive
+        public abstract partial class GraphicPrimitive
         {
             /// <summary>
             /// Координаты объекта(Top,Left - обязательны).

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MDK
 {
-    public class ParameterList
+    public partial class ParameterList
     {
         /// <summary>
         /// Список параметров

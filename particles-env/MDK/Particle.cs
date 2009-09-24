@@ -3,7 +3,7 @@
     /// <summary>
     /// Класс для элементарной частицы
     /// </summary>
-    public class Particle
+    public partial class Particle
     {
         /// <summary>
         /// Координата X частицы
