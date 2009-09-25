@@ -24,7 +24,9 @@ namespace MDK
             /// Имя эксперимента.
             /// </summary>
             public string ExpirementName;
-            
+          
+
+
             /// <summary>
             /// Шаблон списка параметров.
             /// </summary>

@@ -81,7 +81,6 @@ namespace RutherfordScatteringLib
             this.Size = Size;
 
             AddParametersToTemplate();
-
         }
 
 

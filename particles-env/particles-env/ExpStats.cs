@@ -35,25 +35,29 @@ namespace particles_env
             //    experiments.Add(l);
             //}
             StatsParameters myStatsParams = new StatsParameters();
-            String expType = ((ExperimentInfo)listBox1.SelectedItem).Name;
+            Type expType = ((ExperimentInfo)listBox1.SelectedItem).GraphicsObj.GetType();
+           
             ExperimentControl expCtrl;
             Random rnd = new Random(DateTime.Now.Millisecond);
-            for (int i = 0; i < tc.TabPages.Count;i++)
+            int i = 0;
+            foreach (TabPage tab in tc.TabPages)
             {
-                expCtrl = (ExperimentControl)tc.TabPages[i].Controls[0];
-                MessageBox.Show(expType);
-                MessageBox.Show(expCtrl.Expirement.Graphics.ExpirementName);
-                if (expCtrl.Expirement.Graphics.ExpirementName!=expType) return;
-                myStatsParams.color.Add(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
-                myStatsParams.title.Add(string.Format("Эксперимент {0}", i));
-                PointPairList results = expCtrl.Expirement.Graphics.GetResults();
-                if (results.Count == 0)
-                {
-                    MessageBox.Show("Извините, данный эксперимент не поставляет статистики.");
-                    return;
-                }
-                myStatsParams.ppList.Add(results);
                 
+                expCtrl = (ExperimentControl)tab.Controls[0];
+
+                if (expType == expCtrl.Expirement.Graphics.GetType())
+                {
+                    myStatsParams.color.Add(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
+                    myStatsParams.title.Add(string.Format("Эксперимент {0}", i));
+                    PointPairList results = expCtrl.Expirement.Graphics.GetResults();
+                    if (results.Count == 0)
+                    {
+                        MessageBox.Show("Извините, данный эксперимент не поставляет статистики.");
+                        return;
+                    }
+                    myStatsParams.ppList.Add(results);
+                }
+                i++;
             }
             Stats statsWin = new Stats(myStatsParams);
             statsWin.Show();
