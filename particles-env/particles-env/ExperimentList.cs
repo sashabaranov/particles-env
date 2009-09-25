@@ -50,7 +50,8 @@ namespace particles_env
         {
             object obj = Activator.CreateInstance(x);
 
-            string Name = (string) obj.GetType().GetField("ExpirementName").GetValue(obj);
+            
+            string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
             string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
             
             eList.Add(new ExperimentInfo(p, Name, sName, (GraphicPrimitive)obj));

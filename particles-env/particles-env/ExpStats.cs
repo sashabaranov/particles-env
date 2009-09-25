@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MDK;
+using ZedGraph;
 
 namespace particles_env
 {
@@ -34,20 +35,24 @@ namespace particles_env
             //    experiments.Add(l);
             //}
             StatsParameters myStatsParams = new StatsParameters();
-            ExperimentInfo expType = (ExperimentInfo)listBox1.SelectedItem;
+            String expType = ((ExperimentInfo)listBox1.SelectedItem).Name;
             ExperimentControl expCtrl;
             Random rnd = new Random(DateTime.Now.Millisecond);
             for (int i = 0; i < tc.TabPages.Count;i++)
             {
                 expCtrl = (ExperimentControl)tc.TabPages[i].Controls[0];
-                /*
-                 * TODO: показать форму со статистикой.
-                 */
-                
+                MessageBox.Show(expType);
+                MessageBox.Show(expCtrl.Expirement.Graphics.ExpirementName);
+                if (expCtrl.Expirement.Graphics.ExpirementName!=expType) return;
                 myStatsParams.color.Add(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
                 myStatsParams.title.Add(string.Format("Эксперимент {0}", i));
-                
-                myStatsParams.ppList.Add(expCtrl.Expirement.Graphics.GetResults());
+                PointPairList results = expCtrl.Expirement.Graphics.GetResults();
+                if (results.Count == 0)
+                {
+                    MessageBox.Show("Извините, данный эксперимент не поставляет статистики.");
+                    return;
+                }
+                myStatsParams.ppList.Add(results);
                 
             }
             Stats statsWin = new Stats(myStatsParams);

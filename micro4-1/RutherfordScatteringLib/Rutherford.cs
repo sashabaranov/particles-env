@@ -13,6 +13,7 @@ namespace RutherfordScatteringLib
     {
         public string sName = "RutherfordScatteringLib";
         public string ExpirementName = "Рассеяние Резерфорда";
+
         #region Поля
 
         /// <summary>
@@ -78,7 +79,9 @@ namespace RutherfordScatteringLib
             this.Top = Top;
 
             this.Size = Size;
+
             AddParametersToTemplate();
+
         }
 
 

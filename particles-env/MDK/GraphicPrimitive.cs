@@ -20,6 +20,11 @@ namespace MDK
             /// </summary>
             protected Size Size;
 
+            ///<summary>
+            /// Имя эксперимента.
+            /// </summary>
+            public string ExpirementName;
+            
             /// <summary>
             /// Шаблон списка параметров.
             /// </summary>
@@ -102,7 +107,9 @@ namespace MDK
 
             public virtual PointPairList GetResults()
             {
-                throw new Exception("Abstract GetResults recieved");
+                //throw new Exception("Abstract GetResults recieved");
+                
+                return new PointPairList();
             }
         }
 }
