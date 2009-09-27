@@ -11,20 +11,24 @@ namespace particles_env
     public partial class ParameterEdit : Form
     {
         public double Value;
-
+        List<char> OkChars = new List<char>();
         public ParameterEdit(string sName, double DefaultValue)
         {
             InitializeComponent();
 
             this.label1.Text = sName;
             this.ValueBox.Text = DefaultValue.ToString();
+
+            
+            OkChars.Add(',');
+            OkChars.Add('-');
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             bool NumericFlag = true;
-            foreach (char a in ValueBox.Text) if (!char.IsDigit(a) && a != ',') NumericFlag = false;
-            if (NumericFlag)
+            
+            if (CheckParameter())
             {
                 this.Value = double.Parse(this.ValueBox.Text);
                 this.DialogResult = DialogResult.OK;
@@ -32,6 +36,20 @@ namespace particles_env
             }
             else MessageBox.Show("Неправильно введён параметр");
         }
+
+        private bool CheckParameter()
+        {
+            bool ok = true;
+
+            foreach (char c in ValueBox.Text)
+            {
+                if (!OkChars.Contains(c) && !char.IsNumber(c)) ok = false;
+            }
+
+            return ok;
+        }
+
+
 
         private void ParameterEdit_KeyDown(object sender, KeyEventArgs e)
         {
