@@ -31,7 +31,7 @@
   <ItemGroup>
     <Reference Include="MDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\particles-env\MDK\bin\Debug\MDK.dll</HintPath>
+      <HintPath>..\..\build\MDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

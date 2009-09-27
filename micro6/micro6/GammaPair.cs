@@ -12,8 +12,6 @@ namespace micro6
         public GammaParticle Major;
 
         public int ParticlesCount;
-        public static int bottom;
-        public static int middle;
 
         public GammaPair(double energy)
         {
@@ -57,10 +55,10 @@ namespace micro6
 
             PointPairList Points = new PointPairList(); 
            
-            Points.Add((int)(Minor.Energy+middle), bottom);
-            Points.Add((int)(Minor.Energy+middle), bottom + ParticlesCount);
-            Points.Add((int)(Major.Energy+middle), bottom + ParticlesCount);
-            Points.Add((int)(Major.Energy+middle), bottom);
+            Points.Add((int)(Minor.Energy), 0);
+            Points.Add((int)(Minor.Energy), ParticlesCount);
+            Points.Add((int)(Major.Energy), ParticlesCount);
+            Points.Add((int)(Major.Energy), 0);
                            
             
             return Points;
