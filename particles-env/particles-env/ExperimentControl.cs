@@ -42,6 +42,7 @@ namespace particles_env
                 this.Expirement.Graphics.Draw(e);
                 if (this.Expirement.Graphics.ComponentFlag)
                 {
+                    if (Controls.Count >= 3) Controls.Remove(this.Controls[2]);
                     this.Controls.Add(this.Expirement.Graphics.ctrl);
                 }
                 df = false;

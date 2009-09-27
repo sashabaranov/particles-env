@@ -58,8 +58,8 @@ namespace micro6
             PointPairList Points = new PointPairList(); 
            
             Points.Add((int)(Minor.Energy+middle), bottom);
-            Points.Add((int)(Minor.Energy+middle), bottom - ParticlesCount);
-            Points.Add((int)(Major.Energy+middle), bottom - ParticlesCount);
+            Points.Add((int)(Minor.Energy+middle), bottom + ParticlesCount);
+            Points.Add((int)(Major.Energy+middle), bottom + ParticlesCount);
             Points.Add((int)(Major.Energy+middle), bottom);
                            
             
