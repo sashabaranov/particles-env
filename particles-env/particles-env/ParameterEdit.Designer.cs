@@ -72,6 +72,7 @@ namespace particles_env
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ParameterEdit";
+            this.ShowIcon = false;
             this.Text = "Задать параметр";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ParameterEdit_KeyDown);
             this.ResumeLayout(false);

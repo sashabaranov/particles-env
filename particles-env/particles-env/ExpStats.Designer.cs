@@ -58,6 +58,7 @@ namespace particles_env
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Name = "ExpStats";
+            this.ShowIcon = false;
             this.Text = "Статистика";
             this.ResumeLayout(false);
 

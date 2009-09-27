@@ -81,7 +81,9 @@ namespace particles_env
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.MaximizeBox = false;
             this.Name = "ParametersEdit";
+            this.ShowIcon = false;
             this.Text = "Задать параметры";
             this.Load += new System.EventHandler(this.ParametersEdit_Load);
             this.ResumeLayout(false);

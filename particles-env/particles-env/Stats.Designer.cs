@@ -53,7 +53,9 @@ namespace particles_env
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 350);
             this.Controls.Add(this.experimentGraph);
+            this.MaximizeBox = false;
             this.Name = "Stats";
+            this.ShowIcon = false;
             this.Text = "Stats";
             this.Load += new System.EventHandler(this.Stats_Load);
             this.ResumeLayout(false);
