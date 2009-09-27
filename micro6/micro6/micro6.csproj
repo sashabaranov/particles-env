@@ -38,9 +38,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.2.878, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GammaEnergy.cs" />
+    <Compile Include="GammaEnergy.cs">
+    </Compile>
     <Compile Include="GammaPair.cs" />
     <Compile Include="GammaParticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

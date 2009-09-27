@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Experiment.cs" />
-    <Compile Include="GraphicPrimitive.cs" />
+    <Compile Include="GraphicPrimitive.cs">
+    </Compile>
     <Compile Include="ParameterList.cs" />
     <Compile Include="Particle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

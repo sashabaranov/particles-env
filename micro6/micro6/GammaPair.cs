@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using ZedGraph;
 
 namespace micro6
 {
@@ -51,15 +52,17 @@ namespace micro6
         }
 
 
-        public Point[] PointsToDraw()
+        public PointPairList PointsToDraw()
         {
 
-            Point[] Points = { 
-                                new Point((int)(Minor.Energy+middle), bottom),
-                                new Point((int)(Minor.Energy+middle), bottom - ParticlesCount),
-                                new Point((int)(Major.Energy+middle), bottom - ParticlesCount),
-                                new Point((int)(Major.Energy+middle), bottom)
-                             };
+            PointPairList Points = new PointPairList(); 
+           
+            Points.Add((int)(Minor.Energy+middle), bottom);
+            Points.Add((int)(Minor.Energy+middle), bottom - ParticlesCount);
+            Points.Add((int)(Major.Energy+middle), bottom - ParticlesCount);
+            Points.Add((int)(Major.Energy+middle), bottom);
+                           
+            
             return Points;
         }
 

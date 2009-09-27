@@ -113,5 +113,10 @@ namespace MDK
                 
                 return new PointPairList();
             }
+
+          
+           
+            public bool ComponentFlag = false;
+            public Control ctrl;
         }
 }

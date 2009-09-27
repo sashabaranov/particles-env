@@ -40,8 +40,14 @@ namespace particles_env
             if (df)
             {
                 this.Expirement.Graphics.Draw(e);
+                if (this.Expirement.Graphics.ComponentFlag)
+                {
+                    this.Controls.Add(this.Expirement.Graphics.ctrl);
+                }
                 df = false;
+                
             }
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
