@@ -72,7 +72,7 @@ namespace particles_env
             ExpList = new ExperimentList();
 
             AddModulesFromDefaultFolder();
-
+            this.DoubleBuffered = true;
         }
 
         private void AddModulesFromDefaultFolder()

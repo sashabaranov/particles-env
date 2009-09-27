@@ -38,7 +38,7 @@ namespace particles_env
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Статистика";
+            this.button1.Text = "Показать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -58,7 +58,7 @@ namespace particles_env
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Name = "ExpStats";
-            this.Text = "ExpStats";
+            this.Text = "Статистика";
             this.ResumeLayout(false);
 
         }

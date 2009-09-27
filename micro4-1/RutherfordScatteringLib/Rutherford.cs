@@ -269,7 +269,7 @@ namespace RutherfordScatteringLib
             ParameterListTemplate.Add("Заряд ядра", "Q", 47);
             ParameterListTemplate.Add("Минимальное прицельное расстояние", "bMin", -50);
             ParameterListTemplate.Add("Максимальное прицельное расстояние", "bMax", 50);
-            ParameterListTemplate.Add("Количество частиц", "pN", 30);
+            ParameterListTemplate.Add("Количество частиц", "pN", 10);
             ParameterListTemplate.Add("Начальная скороть частиц", "V", 1);
         }
 

@@ -39,7 +39,7 @@ namespace particles_env
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 48);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(388, 342);
+            this.listBox1.Size = new System.Drawing.Size(388, 173);
             this.listBox1.TabIndex = 0;
             this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
@@ -54,7 +54,7 @@ namespace particles_env
             // 
             // DoneButton
             // 
-            this.DoneButton.Location = new System.Drawing.Point(12, 396);
+            this.DoneButton.Location = new System.Drawing.Point(15, 227);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
             this.DoneButton.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace particles_env
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(98, 396);
+            this.ChangeButton.Location = new System.Drawing.Point(101, 227);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(75, 23);
             this.ChangeButton.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace particles_env
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 486);
+            this.ClientSize = new System.Drawing.Size(412, 265);
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.label1);
