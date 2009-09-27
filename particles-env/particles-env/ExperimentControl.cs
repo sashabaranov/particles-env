@@ -13,6 +13,7 @@ namespace particles_env
     {
         bool df;
         public Experiment Expirement;
+        Bitmap Drawing;
 
         public ExperimentControl()
         {
@@ -37,16 +38,27 @@ namespace particles_env
 
         private void ExpirementControl_Paint(object sender, PaintEventArgs e)
         {
+            if(Drawing == null) Drawing = new Bitmap(this.Width,this.Height);
+
             if (df)
             {
-                this.Expirement.Graphics.Draw(e);
+                Drawing = new Bitmap(this.Width, this.Height);
+
+                PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), this.Size));
+                this.Expirement.Graphics.Draw(a);
+                e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
+
                 if (this.Expirement.Graphics.ComponentFlag)
                 {
                     if (Controls.Count >= 3) Controls.Remove(this.Controls[2]);
                     this.Controls.Add(this.Expirement.Graphics.ctrl);
                 }
                 df = false;
-                
+
+            }
+            else
+            {
+                e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
             }
           
         }

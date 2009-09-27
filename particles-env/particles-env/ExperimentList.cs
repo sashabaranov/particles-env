@@ -36,9 +36,11 @@ namespace particles_env
                     if (p.BaseType.ToString().CompareTo("MDK.GraphicPrimitive") == 0)
                     {
                         LoadModule(p, Path);
+                        isModule = true;
                         break;
                     }
                 }
+                if (!isModule) MessageBox.Show("Данный файл не является модулем");
             }
             catch (Exception e)
             {
@@ -50,7 +52,6 @@ namespace particles_env
         {
             object obj = Activator.CreateInstance(x);
 
-            
             string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
             string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
             

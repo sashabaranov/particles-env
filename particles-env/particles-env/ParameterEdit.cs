@@ -22,9 +22,15 @@ namespace particles_env
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Value = double.Parse(this.ValueBox.Text);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            bool NumericFlag = true;
+            foreach (char a in ValueBox.Text) if (!char.IsDigit(a) && a != ',') NumericFlag = false;
+            if (NumericFlag)
+            {
+                this.Value = double.Parse(this.ValueBox.Text);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else MessageBox.Show("Неправильно введён параметр");
         }
 
         private void ParameterEdit_KeyDown(object sender, KeyEventArgs e)

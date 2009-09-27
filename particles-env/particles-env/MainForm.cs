@@ -167,5 +167,15 @@ namespace particles_env
             }
         }
 
+        private void Tabs_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            
+        }
+
+        private void Tabs_Selected(object sender, TabControlEventArgs e)
+        {
+            Tabs.SelectedTab.Invalidate();
+        }
+
     }
 }

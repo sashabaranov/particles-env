@@ -59,6 +59,7 @@ namespace particles_env
             this.ValueBox.PromptChar = '.';
             this.ValueBox.Size = new System.Drawing.Size(100, 20);
             this.ValueBox.TabIndex = 3;
+            this.ValueBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ParameterEdit_KeyDown);
             // 
             // ParameterEdit
             // 
