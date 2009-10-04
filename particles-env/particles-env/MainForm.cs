@@ -43,6 +43,17 @@ namespace particles_env
                 p.Size = Tabs.Size;
                 p.Left = Tabs.Left;
 
+
+                //ќбработчик нужд эксперимента
+                switch (c.ExpirementObject.Graphics.Needs)
+                {
+                    case ExpirementNeeds.None: break;
+                    case ExpirementNeeds.Normal: break; //нормальный обработчик
+                    case ExpirementNeeds.ZedGraph: break; //добавить контрол Zedgraph'а
+                    case ExpirementNeeds.XNA: break;//включить 3д-режим
+                }
+
+
                 p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;
                 
                 Tabs.TabPages.Add("exp" + ExpirementCount, "Ёксперимент " + ExpirementCount);
@@ -69,8 +80,6 @@ namespace particles_env
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ExpList = new ExperimentList();
-
             AddModulesFromDefaultFolder();
             this.DoubleBuffered = true;
         }

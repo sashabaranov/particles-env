@@ -8,6 +8,11 @@ namespace MDK
         public abstract partial class GraphicPrimitive
         {
             /// <summary>
+            /// Нужды эксперимента
+            /// </summary>
+            public ExpirementNeeds Needs;            
+
+            /// <summary>
             /// Координаты объекта(Top,Left - обязательны).
             /// </summary>
             protected int Top;
@@ -119,4 +124,8 @@ namespace MDK
             public bool ComponentFlag = false;
             public Control ctrl;
         }
+
+
+    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA };
+
 }

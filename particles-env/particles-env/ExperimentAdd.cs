@@ -85,5 +85,11 @@ namespace particles_env
                 case Keys.Enter: ContinueButton_Click(sender, e); break;
             }
         }
+
+        private void ExperimentAdd_Load(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
