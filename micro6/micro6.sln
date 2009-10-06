@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "micro6", "micro6\micro6.csproj", "{50D2D1BD-98F9-4A9F-8AA4-F1E2BEAD4BEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CDAE9507-CDA5-42BA-9209-6F96409D3019}"
+	ProjectSection(SolutionItems) = preProject
+		GammaEnergy.ico = GammaEnergy.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -69,8 +69,8 @@ namespace particles_env
         {
             ExpirementObject = new Experiment();
 
-            ExperimentInfo Selected = (ExperimentInfo)listBox1.SelectedItem;
-            ExpirementObject.Graphics = Selected.GraphicsObj; // сырой шаблон
+            
+            ExpirementObject.Graphics = lst.eList[listBox1.SelectedIndex].GraphicsObj; // сырой шаблон
         }
 
 
@@ -95,9 +95,9 @@ namespace particles_env
                 e.Graphics.DrawRectangle(Pens.Red, e.Bounds);
                 
             }
-            e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top);
+            e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top + 10);
             Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
-            e.Graphics.DrawString(inf.Name, fnt, Brushes.Black, e.Bounds.Left + 30, e.Bounds.Top + 10);
+            e.Graphics.DrawString(inf.Name, fnt, Brushes.Black, e.Bounds.Left + 35, e.Bounds.Top + 10);
             
             Invalidate();
         }

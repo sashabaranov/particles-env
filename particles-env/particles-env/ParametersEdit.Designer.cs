@@ -28,33 +28,15 @@ namespace particles_env
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.DoneButton = new System.Windows.Forms.Button();
-            this.ChangeButton = new System.Windows.Forms.Button();
+            this.eDescription = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 48);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(388, 173);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(404, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Кликните на параметр и нажмите \"Изменить\", чтобы изменить его значение.";
             // 
             // DoneButton
             // 
-            this.DoneButton.Location = new System.Drawing.Point(15, 227);
+            this.DoneButton.Location = new System.Drawing.Point(12, 494);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
             this.DoneButton.TabIndex = 2;
@@ -62,30 +44,37 @@ namespace particles_env
             this.DoneButton.UseVisualStyleBackColor = true;
             this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
             // 
-            // ChangeButton
+            // eDescription
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(101, 227);
-            this.ChangeButton.Name = "ChangeButton";
-            this.ChangeButton.Size = new System.Drawing.Size(75, 23);
-            this.ChangeButton.TabIndex = 3;
-            this.ChangeButton.Text = "Изменить";
-            this.ChangeButton.UseVisualStyleBackColor = true;
-            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
+            this.eDescription.AutoSize = true;
+            this.eDescription.Location = new System.Drawing.Point(151, 12);
+            this.eDescription.Name = "eDescription";
+            this.eDescription.Size = new System.Drawing.Size(57, 13);
+            this.eDescription.TabIndex = 3;
+            this.eDescription.Text = "Описание";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 114);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // ParametersEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 265);
-            this.Controls.Add(this.ChangeButton);
+            this.ClientSize = new System.Drawing.Size(725, 529);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.eDescription);
             this.Controls.Add(this.DoneButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
             this.MaximizeBox = false;
             this.Name = "ParametersEdit";
             this.ShowIcon = false;
             this.Text = "Задать параметры";
             this.Load += new System.EventHandler(this.ParametersEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,9 +82,8 @@ namespace particles_env
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button DoneButton;
-        private System.Windows.Forms.Button ChangeButton;
+        private System.Windows.Forms.Label eDescription;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -11,7 +11,13 @@ namespace particles_env
 {
     public partial class ParametersEdit : Form
     {
+        #region Данные из внешнего мира
+        Image ExpirementPicture;
+        String Description;
+
         public ParameterList eList;
+        #endregion
+
 
         public ParametersEdit()
         {
@@ -20,47 +26,40 @@ namespace particles_env
 
         private void ParametersEdit_Load(object sender, EventArgs e)
         {
+            //передаём данные
+            pictureBox1.Image = this.ExpirementPicture;
+            eDescription.Text = this.Description;
+
+
+            int _top = 150;
+            //Создаём контроллы
             foreach (ParameterListUnit Unit in eList.Parameters)
             {
-                listBox1.Items.Add(Unit);
+                ParameterControl c = new ParameterControl(EditingType.TextBox, Unit);
+                c.Left = 0;
+                c.Top = _top;
+                _top += c.Height;
+
+                Controls.Add(c);
             }
 
-            listBox1.Focus();
+            
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType().ToString().Contains("ParameterControl"))
+                {
+                    ParameterControl a = (ParameterControl)c;
+                    eList[a.Unit.sName] = a.Value;
+                }
+            }
             this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
-
-        private void ChangeButton_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem != null)
-            {
-                int SelectedIndex = listBox1.SelectedIndex; //сохраняем индекс
-                ParameterListUnit Selected = (ParameterListUnit)listBox1.SelectedItem; //берём текущий элемент
-                ParameterEdit CurrentParameterEditor = new ParameterEdit(Selected.sName + ":", Selected.Value); //создаём форму
-
-                if (CurrentParameterEditor.ShowDialog() != DialogResult.Cancel)
-                {
-                    Selected.Value = CurrentParameterEditor.Value;
-
-                    listBox1.Items[SelectedIndex] = Selected;
-
-                }
-                CurrentParameterEditor.Dispose();
-            }
-        }
-
-        private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                ChangeButton_Click(sender, e);
-            }
-        }
-
     
     }
 }

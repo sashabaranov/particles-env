@@ -69,5 +69,21 @@ namespace particles_env
             df = true;
             Refresh();
         }
+
+        private void ñîõğàíèòüÑêğèíøîòToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() != DialogResult.Abort)
+            {           
+                Drawing.Save(saveFileDialog1.FileName);
+            }
+
+            
+        }
+
+
+        private void ExperimentControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) contextMenuStrip1.Show(this, e.Location);
+        }
     }
 }

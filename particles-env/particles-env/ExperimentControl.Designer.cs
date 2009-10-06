@@ -28,8 +28,13 @@ namespace particles_env
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.setParameters = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.сохранить—криншотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // setParameters
@@ -52,6 +57,25 @@ namespace particles_env
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранить—криншотToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 26);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "»зображение Bitmap|*.bmp";
+            // 
+            // сохранить—криншотToolStripMenuItem
+            // 
+            this.сохранить—криншотToolStripMenuItem.Image = global::particles_env.Properties.Resources.monitor;
+            this.сохранить—криншотToolStripMenuItem.Name = "сохранить—криншотToolStripMenuItem";
+            this.сохранить—криншотToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.сохранить—криншотToolStripMenuItem.Text = "—охранить скриншот";
+            this.сохранить—криншотToolStripMenuItem.Click += new System.EventHandler(this.сохранить—криншотToolStripMenuItem_Click);
+            // 
             // ExperimentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -61,6 +85,8 @@ namespace particles_env
             this.Name = "ExperimentControl";
             this.Size = new System.Drawing.Size(643, 364);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExperimentControl_MouseClick);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -69,5 +95,8 @@ namespace particles_env
 
         private System.Windows.Forms.Button setParameters;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem сохранить—криншотToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
