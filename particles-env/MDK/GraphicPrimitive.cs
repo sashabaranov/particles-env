@@ -5,7 +5,7 @@ using ZedGraph;
 
 namespace MDK
 {
-        public abstract partial class GraphicPrimitive
+        public abstract class GraphicPrimitive
         {
             /// <summary>
             /// Нужды эксперимента
@@ -50,11 +50,6 @@ namespace MDK
                 get { return Size.Height; }
                 set { Size.Height = value; }
             }
-            
-            /// <summary>
-            /// Описание объекта.
-            /// </summary>
-            protected String Description;
 
             /// <summary>
             /// Абстрактный конструктор.

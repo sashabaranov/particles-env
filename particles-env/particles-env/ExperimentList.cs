@@ -4,12 +4,17 @@ using System.Text;
 using System.Reflection;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 using MDK;
+
 
 namespace particles_env
 {
+    /// <summary>
+    /// Внутренний класс для хранения списка экспериментов и их загрузки
+    /// </summary>
     [Serializable]
-    public class ExperimentList
+    public partial class ExperimentList
     {
         public List<ExperimentInfo> eList;
 
@@ -19,9 +24,12 @@ namespace particles_env
         }
 
         Type x;
+        /// <summary>
+        /// Загрузка модуля из dll-библиотеки
+        /// </summary>
+        /// <param name="Path">Путь к dll-библиотеке</param>
         public void LoadDll(string Path)
         {
-           
             try
             {
 
@@ -33,14 +41,14 @@ namespace particles_env
 
                 foreach (Type p in types)
                 {
-                    if (p.BaseType.ToString().CompareTo("MDK.GraphicPrimitive") == 0)
+                    if (p.BaseType.FullName.ToString().CompareTo("MDK.GraphicPrimitive") == 0 )
                     {
                         LoadModule(p, Path);
                         isModule = true;
                         break;
                     }
                 }
-                if (!isModule) MessageBox.Show("Данный файл не является модулем");
+                if (!isModule) MessageBox.Show("Файл "+Path+" не является модулем");
             }
             catch (Exception e)
             {
@@ -48,31 +56,44 @@ namespace particles_env
             }
         }
 
+        /// <summary>
+        /// Загрузчик модуля(после проверки)
+        /// </summary>
+        /// <param name="x">Загружаемый тип</param>
+        /// <param name="p">Путь</param>
         void LoadModule(Type x, string p)
         {
             object obj = Activator.CreateInstance(x);
             string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
             string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
 
-            eList.Add(new ExperimentInfo(p, Name, sName, (GraphicPrimitive)obj));
+            Icon ico = new Icon(@"modules\icons\" + sName + ".ico");
+
+            eList.Add(new ExperimentInfo(p, ico, Name, sName, (GraphicPrimitive)obj));
         }
     }
 
+    /// <summary>
+    /// Внутренний класс для хранения информации об эксперименте
+    /// </summary>
     [Serializable]
-    public class ExperimentInfo
+    public partial class ExperimentInfo
     {
         public string Path;
         public string Name;
         public string sName;
         public GraphicPrimitive GraphicsObj;
-
+        public Icon ico;
+        
         public ExperimentInfo() { }
-        public ExperimentInfo(string Path, string Name, string sName, GraphicPrimitive g)
-        {
+
+        public ExperimentInfo(string Path, Icon _ico, string Name, string sName, GraphicPrimitive g)
+        { 
             this.Path = Path;
             this.Name = Name;
             this.sName = sName;
             this.GraphicsObj = g;
+            this.ico = _ico;
         }
         public override string ToString()
         {

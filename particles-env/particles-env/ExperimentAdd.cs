@@ -11,6 +11,7 @@ namespace particles_env
 {
     public partial class ExperimentAdd : Form
     {
+        ExperimentList lst;
         /// <summary>
         /// Объект, который будем возвращать.
         /// </summary>
@@ -18,6 +19,7 @@ namespace particles_env
 
         public ExperimentAdd(ExperimentList e)
         {
+            lst = e;
             InitializeComponent();
 
             ExpirementObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
@@ -25,7 +27,7 @@ namespace particles_env
 
             foreach (ExperimentInfo p in e.eList) // Создаём список типов экспериментов
             {
-                listBox1.Items.Add(p); // в списке будут p.ToString();
+                listBox1.Items.Add(p.ToString()); // в списке будут p.ToString();
             }
         }
 
@@ -71,10 +73,6 @@ namespace particles_env
             ExpirementObject.Graphics = Selected.GraphicsObj; // сырой шаблон
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ContinueButton.Enabled = true;
-        }
 
         private void ExperimentAdd_KeyDown(object sender, KeyEventArgs e)
         {
@@ -86,10 +84,35 @@ namespace particles_env
             }
         }
 
+
+        private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            ExperimentInfo inf = lst.eList[e.Index];
+
+            if (e.State == DrawItemState.HotLight)
+            {
+                e.Graphics.DrawRectangle(Pens.Red, e.Bounds);
+                
+            }
+            e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top);
+            Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
+            e.Graphics.DrawString(inf.Name, fnt, Brushes.Black, e.Bounds.Left + 30, e.Bounds.Top + 10);
+            
+            Invalidate();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ContinueButton.Enabled = true;
+        }
+
         private void ExperimentAdd_Load(object sender, EventArgs e)
         {
+            listBox1.ItemHeight = 60;
             
         }
+
 
     }
 }

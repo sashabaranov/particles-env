@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutherfordScatteringLib", "RutherfordScatteringLib\RutherfordScatteringLib.csproj", "{76D26049-0863-4F79-B561-C2075E2E5C9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{282DD4D4-D77D-438E-95AD-EBF1E0D9FB87}"
+	ProjectSection(SolutionItems) = preProject
+		RutherfordScatteringLib.ico = RutherfordScatteringLib.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
