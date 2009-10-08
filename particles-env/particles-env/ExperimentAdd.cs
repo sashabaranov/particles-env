@@ -95,8 +95,12 @@ namespace particles_env
                 e.Graphics.DrawRectangle(Pens.Red, e.Bounds);
                 
             }
-            e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top + 10);
+            //e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top + 10);
+
+            e.Graphics.DrawImage(Image.FromHbitmap(inf.ico.GetHbitmap()), e.Bounds.Left, e.Bounds.Top + 10);
+            
             Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
+            
             e.Graphics.DrawString(inf.Name, fnt, Brushes.Black, e.Bounds.Left + 35, e.Bounds.Top + 10);
             
             Invalidate();

@@ -67,8 +67,8 @@ namespace particles_env
             string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
             string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
 
-            Icon ico = new Icon(@"modules\icons\" + sName + ".ico");
-
+            Bitmap ico = new Bitmap(@"modules\icons\" + sName + ".bmp");
+            
             eList.Add(new ExperimentInfo(p, ico, Name, sName, (GraphicPrimitive)obj));
         }
     }
@@ -83,11 +83,11 @@ namespace particles_env
         public string Name;
         public string sName;
         public GraphicPrimitive GraphicsObj;
-        public Icon ico;
+        public Bitmap ico;
         
         public ExperimentInfo() { }
 
-        public ExperimentInfo(string Path, Icon _ico, string Name, string sName, GraphicPrimitive g)
+        public ExperimentInfo(string Path, Bitmap _ico, string Name, string sName, GraphicPrimitive g)
         { 
             this.Path = Path;
             this.Name = Name;
