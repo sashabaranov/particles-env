@@ -4,10 +4,10 @@ mkdir build\modules
 mkdir build\modules\icons
 
 msbuild micro4-1\micro4-1.sln
-copy micro4-1\*.ico build\modules\icons
+copy micro4-1\*.bmp build\modules\icons
 
 msbuild micro6\micro6.sln
-copy micro6\*.ico build\modules\icons
+copy micro6\*.bmp build\modules\icons
 
 
 del build\*.pdb
