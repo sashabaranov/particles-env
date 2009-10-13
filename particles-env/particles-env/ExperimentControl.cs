@@ -38,7 +38,7 @@ namespace particles_env
 
         private void ExpirementControl_Paint(object sender, PaintEventArgs e)
         {
-            if(Drawing == null) Drawing = new Bitmap(this.Width,this.Height);
+            Drawing = new Bitmap(this.Width,this.Height);
 
             if (df)
             {
@@ -62,7 +62,6 @@ namespace particles_env
                 }
 
                 df = false;
-
             }
             else
             {

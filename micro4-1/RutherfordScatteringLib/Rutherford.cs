@@ -102,6 +102,7 @@ namespace RutherfordScatteringLib
             //инициализируемся
             Nucl.x = this.Left + this.Size.Width / 2;
             Nucl.y = this.Top + this.Size.Height / 2;
+            
             b = GenerateB((int)pNum, (int)bMin, (int)bMax);
             AddParticles(b);
             b_flag = true;
@@ -114,15 +115,44 @@ namespace RutherfordScatteringLib
                 foreach (AlphaParticle a in Particles)
                 {
                     a.Move();
-
-                    DrawParticle(a, e.Graphics, Pens.Red);
-                   
+                    DrawParticle(a, e.Graphics, Pens.Red);   
                 }
             }
 
-            //чистим мусор
+            // чистим мусор
             Particles.Clear();
+
+            // подписи и обозначения
+
+            Font fnt = new Font("Arial", 12, FontStyle.Regular);
+
+            
+            float nx = (float)(Nucl.x + 20 * Math.Cos(45 * Math.PI / 180));
+            float ny = (float)(Nucl.y + 20 * Math.Sin(45 * Math.PI / 180));
+            e.Graphics.DrawLine(Pens.Black, nx, ny, (float)(nx + Width * Math.Cos(45 * Math.PI / 180)/6), (float)(ny + Width * Math.Sin(45 * Math.PI / 180)/6));
+            nx += (float)(Width * Math.Cos(45 * Math.PI / 180) / 6);
+            ny += (float)(Width * Math.Sin(45 * Math.PI / 180) / 6);
+            e.Graphics.DrawLine(Pens.Black, nx, ny, nx + 40, ny);
+            e.Graphics.DrawString("Ядро атома", fnt, Brushes.Black, nx + 50, ny - 10);
+            e.Graphics.DrawRectangle(Pens.DarkBlue, nx + 40, ny - 11, 112, 22);
+            
+            float b_min = b[0];
+            for (int j = 1; j < b.Length; j++)
+            {
+                if (b[j] < b_min) b_min = b[j];
+            }
+            
+            nx = (float)(this.Left + 2 * Width / 5);
+            ny = Nucl.y - b_min + 10;
+            e.Graphics.DrawLine(Pens.Black, nx, ny, (float)(nx - Width * Math.Cos(66 * Math.PI / 180) / 7),(float)(ny + Width * Math.Sin(66 * Math.PI / 180) / 7));
+            nx -= (float)(Width * Math.Cos(66 * Math.PI / 180) / 7);
+            ny += (float)(Width * Math.Sin(66 * Math.PI / 180) / 7);
+            e.Graphics.DrawLine(Pens.Black, nx, ny, nx - 40, ny);
+
+            e.Graphics.DrawString("Траектория частицы", fnt, Brushes.Black, nx - 200, ny - 10);
+            e.Graphics.DrawRectangle(Pens.DarkBlue, nx - 210, ny - 11, 170, 22);
         }
+
 
         public void AddParticles(float[] bArray)
         {
