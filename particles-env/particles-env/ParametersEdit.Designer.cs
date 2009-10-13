@@ -46,6 +46,7 @@ namespace particles_env
             // 
             // eDescription
             // 
+            this.eDescription.AccessibleName = "_eDescription";
             this.eDescription.AutoSize = true;
             this.eDescription.Location = new System.Drawing.Point(151, 12);
             this.eDescription.Name = "eDescription";

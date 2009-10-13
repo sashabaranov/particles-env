@@ -12,8 +12,8 @@ namespace particles_env
     public partial class ParametersEdit : Form
     {
         #region Данные из внешнего мира
-        Image ExpirementPicture;
-        String Description;
+        public Image ExpirementPicture;
+        public String Description;
 
         public ParameterList eList;
         #endregion

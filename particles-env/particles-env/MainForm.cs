@@ -40,16 +40,26 @@ namespace particles_env
             {
                 ExperimentControl p = new ExperimentControl();
                 p.Expirement = c.ExpirementObject;
+                
                 p.Size = Tabs.Size;
                 p.Left = Tabs.Left;
+                p.Top = Tabs.Top - 25;
 
+                p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, p.Size);
 
                 //Обработчик нужд эксперимента
-                switch (c.ExpirementObject.Graphics.Needs)
+                switch (p.Expirement.Graphics.Needs)
                 {
                     case ExpirementNeeds.None: break;
                     case ExpirementNeeds.Normal: break; //нормальный обработчик
-                    case ExpirementNeeds.ZedGraph: break; //добавить контрол Zedgraph'а
+                    case ExpirementNeeds.ZedGraph: 
+                        //добавить контролл
+                        ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
+                        p.Controls.Add(zgc);
+
+                        c.ExpirementObject.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
+                        break; 
+
                     case ExpirementNeeds.XNA: break;//включить 3д-режим
                 }
 

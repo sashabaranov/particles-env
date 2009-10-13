@@ -42,23 +42,37 @@ namespace particles_env
 
             if (df)
             {
-                Drawing = new Bitmap(this.Width, this.Height);
+                //Drawing = new Bitmap(this.Width, this.Height);
+                
 
-                PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), this.Size));
-                this.Expirement.Graphics.Draw(a);
-                e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
-
-                if (this.Expirement.Graphics.ComponentFlag)
+                switch (this.Expirement.Graphics.Needs)
                 {
-                    if (Controls.Count >= 3) Controls.Remove(this.Controls[2]);
-                    this.Controls.Add(this.Expirement.Graphics.ctrl);
+                    case ExpirementNeeds.Normal:
+                        PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), this.Size));
+                        this.Expirement.Graphics.Draw(a);
+                        e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
+                        df = false;
+                        break;
+
+                    case ExpirementNeeds.ZedGraph:
+                        this.Expirement.Graphics.Draw(e);
+                        df = false;
+                        break;
+
                 }
+
                 df = false;
 
             }
             else
             {
-                e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
+                switch (this.Expirement.Graphics.Needs)
+                {
+                    case ExpirementNeeds.Normal: 
+                        e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));  break;
+                    case ExpirementNeeds.ZedGraph:  break;
+                }
+                    
             }
           
         }

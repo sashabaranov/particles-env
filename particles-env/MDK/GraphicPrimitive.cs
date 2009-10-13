@@ -8,6 +8,16 @@ namespace MDK
         public abstract class GraphicPrimitive
         {
             /// <summary>
+            /// Описание эксперимента
+            /// </summary>
+            public string Description;
+
+            public string GetDescription()
+            {
+                return Description;
+            }
+            
+            /// <summary>
             /// Нужды эксперимента
             /// </summary>
             public ExpirementNeeds Needs;            
@@ -30,8 +40,6 @@ namespace MDK
             /// </summary>
             public string ExpirementName;
           
-
-
             /// <summary>
             /// Шаблон списка параметров.
             /// </summary>
@@ -114,10 +122,11 @@ namespace MDK
                 return new PointPairList();
             }
 
-          
-           
-            public bool ComponentFlag = false;
-            public Control ctrl;
+            public virtual void CreateControl(ZedGraphControl zgc)
+            {
+                throw new Exception("Abstract CreateControl recieved");
+            }
+
         }
 
 

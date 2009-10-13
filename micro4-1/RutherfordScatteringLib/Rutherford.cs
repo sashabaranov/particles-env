@@ -64,6 +64,7 @@ namespace RutherfordScatteringLib
         /// </summary>
         public RutherfordScatteringLib() : base(0, 0, new Size())
         {
+            this.Needs = ExpirementNeeds.Normal;
             AddParametersToTemplate();
         }
 
@@ -75,6 +76,7 @@ namespace RutherfordScatteringLib
         public RutherfordScatteringLib(int Left, int Top, Size Size)
             : base(Left, Top, Size)
         {
+            this.Needs = ExpirementNeeds.Normal;
             this.Left = Left;
             this.Top = Top;
 

@@ -46,7 +46,11 @@ namespace particles_env
             // всё хорошо, продолжаем создавать эксперимент
 
             ParametersEdit EditDialog = new ParametersEdit(); // диалог редактирования параметров
+            
+            //передаём данные в новый диалог
             EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate; // шаблон параметров и GraphicsPrimitive
+            EditDialog.Description = ExpirementObject.Graphics.GetDescription();
+
 
             if (EditDialog.ShowDialog() != DialogResult.Cancel) // если пользователь не закрыл диалог
             {
@@ -68,8 +72,6 @@ namespace particles_env
         private void ConstructExpirement()
         {
             ExpirementObject = new Experiment();
-
-            
             ExpirementObject.Graphics = lst.eList[listBox1.SelectedIndex].GraphicsObj; // сырой шаблон
         }
 
@@ -97,10 +99,9 @@ namespace particles_env
             }
             //e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top + 10);
 
+
             e.Graphics.DrawImage(Image.FromHbitmap(inf.ico.GetHbitmap()), e.Bounds.Left, e.Bounds.Top);
-            
             Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
-            
             e.Graphics.DrawString(inf.Name, fnt, Brushes.Black, e.Bounds.Left + 65, e.Bounds.Top + 10);
             
             Invalidate();
