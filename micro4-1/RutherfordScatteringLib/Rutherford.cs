@@ -11,8 +11,10 @@ namespace RutherfordScatteringLib
 {   
     public class  RutherfordScatteringLib : GraphicPrimitive
     {
-        public string sName = "RutherfordScatteringLib";
-        public string ExpirementName = "Рассеяние Резерфорда";
+        public override ExpirementAbout GetAbout()
+        {
+            return new ExpirementAbout("RutherfordScatteringLib", "Рассеяние Резерфорда", "Рассеяние альфа-частиц на атомах");
+        }
 
         #region Поля
 

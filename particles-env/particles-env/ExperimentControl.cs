@@ -38,13 +38,11 @@ namespace particles_env
 
         private void ExpirementControl_Paint(object sender, PaintEventArgs e)
         {
-            Drawing = new Bitmap(this.Width,this.Height);
-
+            if (Drawing == null) Drawing = new Bitmap(this.Width, this.Height);
             if (df)
             {
-                //Drawing = new Bitmap(this.Width, this.Height);
+                Drawing = new Bitmap(this.Width, this.Height);
                 
-
                 switch (this.Expirement.Graphics.Needs)
                 {
                     case ExpirementNeeds.Normal:

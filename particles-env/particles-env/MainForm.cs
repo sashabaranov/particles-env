@@ -167,11 +167,6 @@ namespace particles_env
 
         }
 
-        private void Tabs_TabIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("changed!");
-        }
-
         private void Tabs_Resize(object sender, EventArgs e)
         {
             foreach (TabPage Page in Tabs.TabPages)

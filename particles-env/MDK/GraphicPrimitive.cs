@@ -5,131 +5,138 @@ using ZedGraph;
 
 namespace MDK
 {
-        public abstract class GraphicPrimitive
+    public abstract class GraphicPrimitive
+    {
+
+        /// <summary>
+        /// Нужды эксперимента
+        /// </summary>
+        public ExpirementNeeds Needs;
+
+        /// <summary>
+        /// Координаты объекта(Top,Left - обязательны).
+        /// </summary>
+        protected int Top;
+        protected int Left;
+        protected int Right;
+        protected int Bottom;
+
+        /// <summary>
+        /// Размер объекта
+        /// </summary>
+        protected Size Size;
+
+        /// <summary>
+        /// Шаблон списка параметров.
+        /// </summary>
+        public ParameterList ParameterListTemplate;
+
+
+        public virtual ExpirementAbout GetAbout()
         {
-            /// <summary>
-            /// Описание эксперимента
-            /// </summary>
-            public string Description;
+            return new ExpirementAbout();
+        }
 
-            public string GetDescription()
-            {
-                return Description;
-            }
-            
-            /// <summary>
-            /// Нужды эксперимента
-            /// </summary>
-            public ExpirementNeeds Needs;            
+        /// <summary>
+        /// Публичные Width и Height для задания размера.
+        /// </summary>
+        public int Width
+        {
+            get { return Size.Width; }
+            set { Size.Width = value; }
+        }
+        public int Height
+        {
+            get { return Size.Height; }
+            set { Size.Height = value; }
+        }
 
-            /// <summary>
-            /// Координаты объекта(Top,Left - обязательны).
-            /// </summary>
-            protected int Top;
-            protected int Left;
-            protected int Right;
-            protected int Bottom;
-
-            /// <summary>
-            /// Размер объекта
-            /// </summary>
-            protected Size Size;
-
-            ///<summary>
-            /// Имя эксперимента.
-            /// </summary>
-            public string ExpirementName;
-          
-            /// <summary>
-            /// Шаблон списка параметров.
-            /// </summary>
-            public ParameterList ParameterListTemplate;
-
-            /// <summary>
-            /// Публичные Width и Height для задания размера.
-            /// </summary>
-            public int Width
-            {
-                get{ return Size.Width; }
-                set{ Size.Width = value; }
-            }
-            public int Height
-            {
-                get { return Size.Height; }
-                set { Size.Height = value; }
-            }
-
-            /// <summary>
-            /// Абстрактный конструктор.
-            /// Задаёт верхний левый угол графического примитива.
-            /// </summary>
-            /// <param name="Left">Левая граница(x).</param>
-            /// <param name="Top">Верхняя граница(y).</param>
-            /// <param name="_Size">Размер</param>
-            public GraphicPrimitive(int Left, int Top, Size _Size)
-            {
-                this.Top = Top;
-                this.Left = Left;
-                this.Size = _Size;
-                
-            }
-
-
-            /// <summary>
-            /// Задаёт границы рисования.
-            /// </summary>
-            /// <param name="Left">Левая граница(x).</param>
-            /// <param name="Top">Верхняя граница(y).</param>
-            /// <param name="_Size">Размер</param>
-            public void SetDrawingBorder(int Left, int Top, Size _Size)
-            {
-                this.Top = Top;
-                this.Left = Left;
-                this.Size = _Size;
-            }
-
-            /// <summary>
-            /// Функция для перегурзки в будующем,используется для прорисовки объекта.
-            /// </summary>
-            /// <param name="e">PaintEventArgs-аргумент,позволяющий рисовать.</param>
-            public virtual void Draw(PaintEventArgs e)
-            {
-                throw new Exception("Abstract Draw recieved");
-            }
-
-            /// <summary>
-            /// Виртуальный метод для получения параметров.
-            /// </summary>
-            /// <param name="pList">Список параметров</param>
-            public virtual void SetParameters(ParameterList pList)
-            {
-                throw new Exception("Abstract SetParameters recieved");
-            }
-
-            /// <summary>
-            /// Виртуальный метод для возвращения параметров
-            /// </summary>
-            /// <returns>Список параметров</returns>
-            public virtual ParameterList GetParameters()
-            {
-                throw new Exception("Abstract GetParameters recieved");
-            }
-
-            public virtual PointPairList GetResults()
-            {
-                //throw new Exception("Abstract GetResults recieved");
-                
-                return new PointPairList();
-            }
-
-            public virtual void CreateControl(ZedGraphControl zgc)
-            {
-                throw new Exception("Abstract CreateControl recieved");
-            }
+        /// <summary>
+        /// Абстрактный конструктор.
+        /// Задаёт верхний левый угол графического примитива.
+        /// </summary>
+        /// <param name="Left">Левая граница(x).</param>
+        /// <param name="Top">Верхняя граница(y).</param>
+        /// <param name="_Size">Размер</param>
+        public GraphicPrimitive(int Left, int Top, Size _Size)
+        {
+            this.Top = Top;
+            this.Left = Left;
+            this.Size = _Size;
 
         }
 
 
+        /// <summary>
+        /// Задаёт границы рисования.
+        /// </summary>
+        /// <param name="Left">Левая граница(x).</param>
+        /// <param name="Top">Верхняя граница(y).</param>
+        /// <param name="_Size">Размер</param>
+        public void SetDrawingBorder(int Left, int Top, Size _Size)
+        {
+            this.Top = Top;
+            this.Left = Left;
+            this.Size = _Size;
+        }
+
+        /// <summary>
+        /// Функция для перегурзки в будующем,используется для прорисовки объекта.
+        /// </summary>
+        /// <param name="e">PaintEventArgs-аргумент,позволяющий рисовать.</param>
+        public virtual void Draw(PaintEventArgs e)
+        {
+            throw new Exception("Abstract Draw recieved");
+        }
+
+        /// <summary>
+        /// Виртуальный метод для получения параметров.
+        /// </summary>
+        /// <param name="pList">Список параметров</param>
+        public virtual void SetParameters(ParameterList pList)
+        {
+            throw new Exception("Abstract SetParameters recieved");
+        }
+
+        /// <summary>
+        /// Виртуальный метод для возвращения параметров
+        /// </summary>
+        /// <returns>Список параметров</returns>
+        public virtual ParameterList GetParameters()
+        {
+            throw new Exception("Abstract GetParameters recieved");
+        }
+
+        public virtual PointPairList GetResults()
+        {
+            //throw new Exception("Abstract GetResults recieved");
+
+            return new PointPairList();
+        }
+
+        public virtual void CreateControl(ZedGraphControl zgc)
+        {
+            throw new Exception("Abstract CreateControl recieved");
+        }
+
+    }
+
     public enum ExpirementNeeds { None, Normal, ZedGraph, XNA };
+
+    public class ExpirementAbout
+    {
+        public string sName;
+        public string Name;
+        public string Description;
+
+        public ExpirementAbout() { }
+
+        public ExpirementAbout(string _sName, string _Name, string _Description)
+        {
+            this.sName = _sName;
+            this.Name = _Name;
+            this.Description = _Description;
+        }
+    }
 
 }

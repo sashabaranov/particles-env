@@ -64,12 +64,13 @@ namespace particles_env
         void LoadModule(Type x, string p)
         {
             object obj = Activator.CreateInstance(x);
-            string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
+            /*string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
             string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
 
-            Bitmap ico = new Bitmap(@"modules\icons\" + sName + ".bmp");
+            Bitmap ico = new Bitmap(@"modules\icons\" + sName + ".bmp");*/
             
-            eList.Add(new ExperimentInfo(p, ico, Name, sName, (GraphicPrimitive)obj));
+            
+            eList.Add(new ExperimentInfo(p, (GraphicPrimitive)obj));
         }
     }
 
@@ -80,24 +81,34 @@ namespace particles_env
     public partial class ExperimentInfo
     {
         public string Path;
-        public string Name;
-        public string sName;
+        public ExpirementAbout About;
         public GraphicPrimitive GraphicsObj;
-        public Bitmap ico;
+        
+        public Bitmap Ico;
+        public Bitmap BigIco;
         
         public ExperimentInfo() { }
 
-        public ExperimentInfo(string Path, Bitmap _ico, string Name, string sName, GraphicPrimitive g)
-        { 
+        public ExperimentInfo(string Path, GraphicPrimitive g)
+        {
+            About = g.GetAbout();
+            
             this.Path = Path;
-            this.Name = Name;
-            this.sName = sName;
             this.GraphicsObj = g;
-            this.ico = _ico;
+            
+            MakeIcons();
+            
         }
+
+        void MakeIcons()
+        {
+            Ico = new Bitmap(@"modules\icons\"+About.sName+".bmp");
+            BigIco = new Bitmap(@"modules\icons\" + About.sName + ".bmp");
+        }
+
         public override string ToString()
         {
-            return this.Name;
+            return this.About.Name;
         }
     }
 }

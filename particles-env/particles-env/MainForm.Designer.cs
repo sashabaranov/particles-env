@@ -144,7 +144,6 @@ namespace particles_env
             this.Tabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabs_Selecting);
             this.Tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tabs_Selected);
             this.Tabs.Resize += new System.EventHandler(this.Tabs_Resize);
-            this.Tabs.TabIndexChanged += new System.EventHandler(this.Tabs_TabIndexChanged);
             // 
             // openFileDialog1
             // 
