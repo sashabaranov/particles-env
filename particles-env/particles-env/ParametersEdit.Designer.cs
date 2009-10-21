@@ -56,6 +56,7 @@ namespace particles_env
             // 
             // pictureBox1
             // 
+            this.pictureBox1.AccessibleName = "Picture";
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 114);

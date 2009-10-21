@@ -50,7 +50,7 @@ namespace particles_env
             //передаём данные в новый диалог
             EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate; // шаблон параметров и GraphicsPrimitive
             EditDialog.Description = lst.eList[listBox1.SelectedIndex].About.Description;
-
+            EditDialog.ExpirementPicture = lst.eList[listBox1.SelectedIndex].BigIco;
 
             if (EditDialog.ShowDialog() != DialogResult.Cancel) // если пользователь не закрыл диалог
             {
