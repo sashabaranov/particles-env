@@ -89,21 +89,17 @@ namespace particles_env
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            e.DrawBackground();
-            ExperimentInfo inf = lst.eList[e.Index];
-
-            if (e.State == DrawItemState.HotLight)
+            if (lst.eList.Count > 0)
             {
-                e.Graphics.DrawRectangle(Pens.Red, e.Bounds);
+                e.DrawBackground();
+                ExperimentInfo inf = lst.eList[e.Index];
+
+                if(inf.Ico != null) e.Graphics.DrawImage(Image.FromHbitmap(inf.Ico.GetHbitmap()), e.Bounds.Left, e.Bounds.Top);
+
+                Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
                 
+                e.Graphics.DrawString(inf.About.Name, fnt, Brushes.Black, e.Bounds.Left + 65, e.Bounds.Top + 10);
             }
-            //e.Graphics.DrawIcon(inf.ico, e.Bounds.Left, e.Bounds.Top + 10);
-
-
-            e.Graphics.DrawImage(Image.FromHbitmap(inf.Ico.GetHbitmap()), e.Bounds.Left, e.Bounds.Top);
-            Font fnt = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
-            e.Graphics.DrawString(inf.About.Name, fnt, Brushes.Black, e.Bounds.Left + 65, e.Bounds.Top + 10);
-            
             Invalidate();
         }
 

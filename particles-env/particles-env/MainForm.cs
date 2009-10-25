@@ -131,10 +131,12 @@ namespace particles_env
         {
             ExperimentList Lst = new ExperimentList();
 
+            
             foreach (string p in Dlls)
             {
                 Lst.LoadDll(p);
             }
+            
             return Lst;
         }
 

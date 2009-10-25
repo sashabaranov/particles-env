@@ -23,7 +23,6 @@ namespace particles_env
             eList = new List<ExperimentInfo>();
         }
 
-        Type x;
         /// <summary>
         /// Загрузка модуля из dll-библиотеки
         /// </summary>
@@ -43,7 +42,9 @@ namespace particles_env
                 {
                     if (p.BaseType.FullName.ToString().CompareTo("MDK.GraphicPrimitive") == 0 )
                     {
-                        LoadModule(p, Path);
+                        object objj = Activator.CreateInstance(p);
+                        eList.Add(new ExperimentInfo(Path, (GraphicPrimitive)objj));
+
                         isModule = true;
                         break;
                     }
@@ -64,11 +65,6 @@ namespace particles_env
         void LoadModule(Type x, string p)
         {
             object obj = Activator.CreateInstance(x);
-            /*string Name = (string)obj.GetType().GetField("ExpirementName").GetValue(obj);
-            string sName = (string)obj.GetType().GetField("sName").GetValue(obj); //будут передаваться в список
-
-            Bitmap ico = new Bitmap(@"modules\icons\" + sName + ".bmp");*/
-            
             
             eList.Add(new ExperimentInfo(p, (GraphicPrimitive)obj));
         }
@@ -102,8 +98,11 @@ namespace particles_env
 
         void MakeIcons()
         {
-            Ico = new Bitmap(@"modules\icons\"+About.sName+".bmp");
-            BigIco = new Bitmap(@"modules\icons\" + About.sName + ".bmp");
+            string IcoPath = @"modules\icons\" + About.sName + ".bmp";
+            string BigIcoPath = @"modules\icons\" + About.sName + ".bmp";
+            
+            if(File.Exists(IcoPath)) Ico = new Bitmap(IcoPath);
+            if(File.Exists(BigIcoPath)) BigIco = new Bitmap(BigIcoPath);
         }
 
         public override string ToString()
