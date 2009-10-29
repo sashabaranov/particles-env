@@ -9,7 +9,7 @@ namespace MDK
         /// <summary>
         ///  ласс, дл€ рассчЄта столкновени€ частиц
         /// </summary>
-        class Collide
+        public class Collide
         {
             #region ѕол€
             private double v01; // скорость первой частицы в ц-системе
@@ -47,17 +47,30 @@ namespace MDK
             private void Calculation()
             {
                 double v1 = v01 * (m1 + m2) / m2;
-                double V = v1 - v01;
-                double V = m1 * v1 / (m1 + m2);
+                
+                V = v1 - v01;
                 double v2 = 0;
 
-                double v1a = (m2 / (m1 + m2)) * (v1 - v2) + V;
-                double v2a = (m1 / (m1 + m2)) * (v1 - v2) + V;
+                v1a = (m2 / (m1 + m2)) * (v1 - v2) + V;
+                v2a = (m1 / (m1 + m2)) * (v1 - v2) + V;
 
-                double tetaMax = Math.Asin(m2 / m1);
+                double X = Math.Asin((v2a * (m1 + m2)) / (2 * m1 * V))*2;
+
+                teta1 = 1 / Math.Atan((m2 * Math.Sign(X)) / (m1 + m2 * Math.Cos(X)));
+                teta2 = (Math.PI - X) / 2;
+                
+                tetaMax = Math.Asin(m2 / m1);
 
                 //возвращать что-либо пока нигде не требуетс€
             }
+
+            public double teta1;
+            public double teta2;
+            public double tetaMax;
+
+            public double v1a;
+            public double v2a;
+            public double V;
         }
     }
 }
