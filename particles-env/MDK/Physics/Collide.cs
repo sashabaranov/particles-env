@@ -13,8 +13,8 @@ namespace MDK
         {
             #region Поля
             private double v01; // скорость первой частицы в ц-системе
-            private double m1;  // масса первой(движущейся) частицы в ц-системе
-            private double m2;  // масса второй частицы
+            public  double m1;  // масса первой(движущейся) частицы в ц-системе
+            public double m2;  // масса второй частицы
             #endregion
 
             #region Конструкторы
@@ -42,12 +42,13 @@ namespace MDK
                 this.m1 = m1;
 
                 this.m2 = m2;
+                Calculation();
             }
             #endregion
             private void Calculation()
             {
-                double v1 = v01 * (m1 + m2) / m2;
-                
+                v1 = v01 * (m1 + m2) / m2;
+
                 V = v1 - v01;
                 double v2 = 0;
 
@@ -61,8 +62,11 @@ namespace MDK
                 
                 tetaMax = Math.Asin(m2 / m1);
 
+                
                 //возвращать что-либо пока нигде не требуется
             }
+
+            public double v1;
 
             public double teta1;
             public double teta2;
