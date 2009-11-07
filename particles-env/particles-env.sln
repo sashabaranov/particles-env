@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "particles-env", "particles-env\particles-env.csproj", "{6853F418-6022-4EEF-AD4A-FA1F49B749B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDK", "MDK\MDK.csproj", "{2AD78AA5-9286-4195-9F52-0FECC5019690}"
