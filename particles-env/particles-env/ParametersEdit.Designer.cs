@@ -31,7 +31,7 @@ namespace particles_env
             this.DoneButton = new System.Windows.Forms.Button();
             this.eDescription = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.d_values_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DoneButton
@@ -63,11 +63,22 @@ namespace particles_env
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // d_values_button
+            // 
+            this.d_values_button.Location = new System.Drawing.Point(94, 494);
+            this.d_values_button.Name = "d_values_button";
+            this.d_values_button.Size = new System.Drawing.Size(146, 23);
+            this.d_values_button.TabIndex = 5;
+            this.d_values_button.Text = "Восстановить параметры";
+            this.d_values_button.UseVisualStyleBackColor = true;
+            this.d_values_button.Click += new System.EventHandler(this.d_values_button_Click);
+            // 
             // ParametersEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 529);
+            this.Controls.Add(this.d_values_button);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.eDescription);
             this.Controls.Add(this.DoneButton);
@@ -76,7 +87,6 @@ namespace particles_env
             this.ShowIcon = false;
             this.Text = "Задать параметры";
             this.Load += new System.EventHandler(this.ParametersEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +97,6 @@ namespace particles_env
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.Label eDescription;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button d_values_button;
     }
 }

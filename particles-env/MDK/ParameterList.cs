@@ -95,6 +95,12 @@ namespace MDK
         public double Value;
 
         /// <summary>
+        /// Значание параметра по умолчанию
+        /// </summary>
+        public double dValue;
+
+
+        /// <summary>
         /// Конструктор
         /// </summary>
         /// <param name="Name">Полное название</param>
@@ -105,6 +111,7 @@ namespace MDK
             this.Name = Name;
             this.sName = shortName;
             this.Value = Value;
+            this.dValue = Value;
         }
 
         public override string ToString()

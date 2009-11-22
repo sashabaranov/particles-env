@@ -77,6 +77,18 @@ namespace particles_env
 
             this.Close();
         }
+
+        private void d_values_button_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType().ToString().Contains("ParameterControl"))
+                {
+                    ParameterControl a = (ParameterControl)c;
+                    a.Value = a.Unit.dValue;
+                }
+            }
+        }
     
     }
 }
