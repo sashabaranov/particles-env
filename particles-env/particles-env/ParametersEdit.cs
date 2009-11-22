@@ -33,14 +33,30 @@ namespace particles_env
 
 
             int _top = 150;
+            int _left = 0;
+            
             //Создаём контроллы
-            foreach (ParameterListUnit Unit in eList.Parameters)
+            for(int i = 0; i< eList.Parameters.Count; i++)
             {
-                ParameterControl c = new ParameterControl(EditingType.TextBox, Unit);
-                c.Left = 0;
-                c.Top = _top;
-                _top += c.Height;
+                ParameterControl c = new ParameterControl(EditingType.TextBox, eList.Parameters[i]);
 
+
+                c.Left = _left;
+                c.Top = _top;
+
+                if ((i+1) % 2 == 0)
+                {
+                    _top += c.Height;
+                    _left -= c.Width + 20;
+
+                }
+                else
+                {
+                    _left += c.Width + 20;
+                }
+
+
+                
                 Controls.Add(c);
             }
 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Xml.Serialization;
 using MDK;
 
 namespace particles_env
@@ -191,6 +192,24 @@ namespace particles_env
         private void Tabs_Selected(object sender, TabControlEventArgs e)
         {
             Tabs.SelectedTab.Invalidate();
+        }
+
+        private void SaveExpirement(object sender, EventArgs e)
+        {
+            if (Tabs.TabPages.Count > 0)
+            {
+                if (SaveDialog.ShowDialog() != DialogResult.Abort && SaveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    ExperimentControl p = (ExperimentControl) Tabs.TabPages[Tabs.SelectedIndex].Controls[0];
+                    XmlSerializer xmlFormat = new XmlSerializer(p.Expirement.GetType());
+
+                    MessageBox.Show(SaveDialog.FileName);
+                    FileStream fStream = new FileStream(SaveDialog.FileName, FileMode.OpenOrCreate);
+
+                    xmlFormat.Serialize(fStream, p.Expirement);
+                }
+            }
+            else MessageBox.Show("Извините, но у вас же нет открытых экспериментов!", "Ошибка");
         }
 
     }
