@@ -63,21 +63,12 @@ namespace particles_env
             switch (t)
             {
                 case EditingType.None: break;
-                case EditingType.TextBox: AddTextBox(Unit.dValue); break; // добавляем textbox
+                case EditingType.TextBox: AddTextBox(Unit.Value); break; // добавляем textbox
                 case EditingType.Scroll: break;
             }
         }
 
-        /*public void RestoreTextValues(double v)
-        {
-            foreach (Control c in this.Controls)
-            {
-                if (c.GetType().ToString().Contains("TextBox") && c.Name == bname)
-                {
-                    c.Text = v;
-                }
-            }
-        }*/
+
 
         private void AddTextBox( double v)
         {
