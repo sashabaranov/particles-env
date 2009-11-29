@@ -1,10 +1,13 @@
-﻿namespace MDK
+﻿using System;
+
+namespace MDK
 {
     /// <summary>
     /// Класс для элементарной частицы
     /// </summary>
     public partial class Particle
     {
+        #region Поля
         /// <summary>
         /// Координата X частицы
         /// </summary>
@@ -59,8 +62,8 @@
         /// <summary>
         /// Импульс элементарной частицы.
         /// </summary>
-        public double Impulse;       
-
+        public double Impulse;
+        
 
         /// <summary>
         /// Короткое определение для массы.
@@ -81,12 +84,12 @@
         }
 
         /// <summary>
-        /// Короткое определение для времени жизни.
+        /// Короткое определение для энергии.
         /// </summary>
-        public double t
+        public double E
         {
-            get { return this.LifeTime; }
-            set { this.LifeTime = value; }
+            get { return this.Energy; }
+            set { this.Energy = value; }
         }
 
         /// <summary>
@@ -115,8 +118,9 @@
             get { return this.Impulse; }
             set { this.Impulse = value; }
         }
+        #endregion
 
-
+        #region
         /// <summary>
         /// Функция для расчёта импульса частицы.
         /// </summary>
@@ -141,5 +145,21 @@
         {
             this.Energy = Energy;
         }
+
+        /// <summary>
+        /// Подсчёт инварианта массы от распавшихся частиц
+        /// </summary>
+        /// <param name="FixedParticles">Массив частиц-продуктов распада</param>
+        public void CollapsedFrom(Particle[] FixedParticles)
+        {
+            foreach (Particle p in FixedParticles)
+            {
+                this.Energy  += p.Energy;
+                this.Impulse += p.Impulse; // TODO: сделать векторное сложение
+            }
+
+            this.Mass = Math.Sqrt(this.E * this.E + this.p * this.p); // инвариант массы
+        }
+        #endregion
     }
 }
