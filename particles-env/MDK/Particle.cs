@@ -158,6 +158,11 @@ namespace MDK
                 this.Impulse += p.Impulse; // TODO: сделать векторное сложение
             }
 
+            CountMassInvariant();
+        }
+
+        public void CountMassInvariant()
+        {
             this.Mass = Math.Sqrt(this.E * this.E + this.p * this.p); // инвариант массы
         }
         #endregion
