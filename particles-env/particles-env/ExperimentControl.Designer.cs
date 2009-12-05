@@ -28,13 +28,17 @@ namespace particles_env
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.setParameters = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.сохранить—криншотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ParametersGrid = new System.Windows.Forms.DataGridView();
+            this.dataSet1 = new System.Data.DataSet();
+            this.Parameters = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Values = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // setParameters
@@ -64,10 +68,6 @@ namespace particles_env
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(192, 26);
             // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "»зображение Bitmap|*.bmp";
-            // 
             // сохранить—криншотToolStripMenuItem
             // 
             this.сохранить—криншотToolStripMenuItem.Image = global::particles_env.Properties.Resources.monitor;
@@ -76,10 +76,43 @@ namespace particles_env
             this.сохранить—криншотToolStripMenuItem.Text = "—охранить скриншот";
             this.сохранить—криншотToolStripMenuItem.Click += new System.EventHandler(this.сохранить—криншотToolStripMenuItem_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "»зображение Bitmap|*.bmp";
+            // 
+            // ParametersGrid
+            // 
+            this.ParametersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ParametersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ParametersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Parameters,
+            this.Values});
+            this.ParametersGrid.Location = new System.Drawing.Point(399, 0);
+            this.ParametersGrid.Name = "ParametersGrid";
+            this.ParametersGrid.Size = new System.Drawing.Size(244, 361);
+            this.ParametersGrid.TabIndex = 2;
+            this.ParametersGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ParametersGrid_CellEndEdit);
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            // 
+            // Parameters
+            // 
+            this.Parameters.HeaderText = "ѕараметры";
+            this.Parameters.Name = "Parameters";
+            this.Parameters.ReadOnly = true;
+            // 
+            // Values
+            // 
+            this.Values.HeaderText = "«начени€";
+            this.Values.Name = "Values";
+            // 
             // ExperimentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ParametersGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.setParameters);
             this.Name = "ExperimentControl";
@@ -87,6 +120,7 @@ namespace particles_env
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExperimentControl_MouseClick);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -98,5 +132,9 @@ namespace particles_env
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem сохранить—криншотToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView ParametersGrid;
+        private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parameters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Values;
     }
 }

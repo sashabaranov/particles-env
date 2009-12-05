@@ -51,7 +51,6 @@ namespace particles_env
             this.statusStrip1.Size = new System.Drawing.Size(845, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // menuStrip1
             // 
@@ -74,7 +73,6 @@ namespace particles_env
             this.ôàéëToolStripMenuItem.Name = "ôàéëToolStripMenuItem";
             this.ôàéëToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ôàéëToolStripMenuItem.Text = "Ôàéë";
-            this.ôàéëToolStripMenuItem.Click += new System.EventHandler(this.ôàéëToolStripMenuItem_Click);
             // 
             // íîâûéİêñïåğèìåíòToolStripMenuItem
             // 

@@ -86,15 +86,33 @@ namespace particles_env
             if (saveFileDialog1.ShowDialog() != DialogResult.Abort)
             {           
                 Drawing.Save(saveFileDialog1.FileName);
-            }
-
-            
+            }            
         }
 
 
         private void ExperimentControl_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right) contextMenuStrip1.Show(this, e.Location);
+        }
+
+
+        public void LoadParameters(ParameterList List)
+        {
+            foreach (ParameterListUnit u in List.Parameters)
+            {
+                int index = ParametersGrid.Rows.Add();
+                ParametersGrid.Rows[index].Cells["Parameters"].Value = u.sName;
+                ParametersGrid.Rows[index].Cells["Values"].Value = u.Value;
+            }
+        }
+
+        private void ParametersGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            string ParameterName = (string) ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
+            //this.Expirement.pList[ParameterName] = (double) ParametersGrid[e.ColumnIndex, e.RowIndex].Value;
+            Expirement.pList.Parameters[e.RowIndex].Value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
+
+            Expirement.Graphics.SetParameters(Expirement.pList);
         }
     }
 }

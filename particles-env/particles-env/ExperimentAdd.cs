@@ -43,6 +43,8 @@ namespace particles_env
                 return;
             }
 
+            #region старое использование EditDialog'а
+            /*
             // всё хорошо, продолжаем создавать эксперимент
 
             ParametersEdit EditDialog = new ParametersEdit(); // диалог редактирования параметров
@@ -51,12 +53,10 @@ namespace particles_env
             EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate; // шаблон параметров и GraphicsPrimitive
             EditDialog.Description = lst.eList[listBox1.SelectedIndex].About.Description;
             EditDialog.ExpirementPicture = lst.eList[listBox1.SelectedIndex].BigIco;
+            */
+            #endregion
 
-            if (EditDialog.ShowDialog() != DialogResult.Cancel) // если пользователь не закрыл диалог
-            {
-                //ExpirementObject.pList = EditDialog.eList; // переносим отредактированные параметры из диалога в объекта
-                ExpirementObject.Graphics.SetParameters(EditDialog.eList); // переносим напрямую
-            }
+            Description.Text = lst.eList[listBox1.SelectedIndex].About.Description;
 
             this.DialogResult = DialogResult.OK;
             this.Close();            
@@ -105,6 +105,7 @@ namespace particles_env
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Description.Text = lst.eList[listBox1.SelectedIndex].About.Description;
             ContinueButton.Enabled = true;
         }
 

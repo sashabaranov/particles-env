@@ -23,16 +23,6 @@ namespace particles_env
             Dlls = new List<string>();
         }
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void файлToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void новыйЭкспериментToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExperimentAdd c = new ExperimentAdd(GenerateNewExpirementList()); //объект диалога
@@ -64,7 +54,10 @@ namespace particles_env
                     case ExpirementNeeds.XNA: break;//включить 3д-режим
                 }
 
+                p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
+                p.Expirement.pList = p.Expirement.Graphics.ParameterListTemplate;
 
+                p.Expirement.Graphics.SetParameters(p.Expirement.Graphics.ParameterListTemplate);
                 p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;
                 
                 Tabs.TabPages.Add("exp" + ExpirementCount, "Эксперимент " + ExpirementCount);
@@ -72,7 +65,6 @@ namespace particles_env
                 Tabs.TabPages[ExpirementCount].Focus();
              
                 ExpirementCount++;
-
             }
 
         }
