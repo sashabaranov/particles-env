@@ -34,11 +34,10 @@ namespace particles_env
             this.ñîõðàíèòüÑêðèíøîòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ParametersGrid = new System.Windows.Forms.DataGridView();
-            this.dataSet1 = new System.Data.DataSet();
             this.Parameters = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Values = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSet1 = new System.Data.DataSet();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // setParameters
@@ -82,20 +81,21 @@ namespace particles_env
             // 
             // ParametersGrid
             // 
-            this.ParametersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ParametersGrid.AllowUserToAddRows = false;
+            this.ParametersGrid.AllowUserToDeleteRows = false;
+            this.ParametersGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ParametersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ParametersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Parameters,
             this.Values});
-            this.ParametersGrid.Location = new System.Drawing.Point(399, 0);
+            this.ParametersGrid.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ParametersGrid.EnableHeadersVisualStyles = false;
+            this.ParametersGrid.Location = new System.Drawing.Point(443, 0);
             this.ParametersGrid.Name = "ParametersGrid";
-            this.ParametersGrid.Size = new System.Drawing.Size(244, 361);
+            this.ParametersGrid.RowHeadersVisible = false;
+            this.ParametersGrid.Size = new System.Drawing.Size(200, 364);
             this.ParametersGrid.TabIndex = 2;
             this.ParametersGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ParametersGrid_CellEndEdit);
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // Parameters
             // 
@@ -108,10 +108,16 @@ namespace particles_env
             this.Values.HeaderText = "Çíà÷åíèÿ";
             this.Values.Name = "Values";
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            // 
             // ExperimentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.ParametersGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.setParameters);
@@ -120,7 +126,6 @@ namespace particles_env
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExperimentControl_MouseClick);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

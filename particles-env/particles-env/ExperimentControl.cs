@@ -98,19 +98,41 @@ namespace particles_env
 
         public void LoadParameters(ParameterList List)
         {
+            Expirement.pList = List;
             foreach (ParameterListUnit u in List.Parameters)
             {
                 int index = ParametersGrid.Rows.Add();
                 ParametersGrid.Rows[index].Cells["Parameters"].Value = u.sName;
+                ParametersGrid.Rows[index].Cells["Parameters"].ToolTipText = u.Name;
+
                 ParametersGrid.Rows[index].Cells["Values"].Value = u.Value;
+                ParametersGrid.Rows[index].Cells["Values"].ToolTipText = u.Name;
             }
         }
 
         private void ParametersGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             string ParameterName = (string) ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
-            //this.Expirement.pList[ParameterName] = (double) ParametersGrid[e.ColumnIndex, e.RowIndex].Value;
-            Expirement.pList.Parameters[e.RowIndex].Value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
+            //double value = Expirement.pList.Parameters[e.RowIndex].Value;
+            
+            if(!double.TryParse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value, out Expirement.pList.Parameters[e.RowIndex].Value))
+            {
+                MessageBox.Show("Неправильно введён параметр!");
+                ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Expirement.pList.Parameters[e.RowIndex].dValue;
+                Expirement.pList.Parameters[e.RowIndex].Value = Expirement.pList.Parameters[e.RowIndex].dValue;
+            }
+            /*
+            try
+            {
+                value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неправильно введено значение!");
+            }
+            */
+
+          //  Expirement.pList.Parameters[e.RowIndex].Value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
 
             Expirement.Graphics.SetParameters(Expirement.pList);
         }

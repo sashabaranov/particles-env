@@ -112,7 +112,12 @@ namespace particles_env
         private void ExperimentAdd_Load(object sender, EventArgs e)
         {
             listBox1.ItemHeight = 60;
-            
+        }
+
+        private void CanceButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
 
