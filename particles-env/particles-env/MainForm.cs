@@ -35,8 +35,11 @@ namespace particles_env
                 p.Size = Tabs.Size;
                 p.Left = Tabs.Left;
                 p.Top = Tabs.Top - 25;
-
-                p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, p.Size);
+                
+                Size _Size = p.Size;
+                _Size.Width -= 200;
+                
+                p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
 
                 //Обработчик нужд эксперимента
                 switch (p.Expirement.Graphics.Needs)
@@ -46,6 +49,7 @@ namespace particles_env
                     case ExpirementNeeds.ZedGraph: 
                         //добавить контролл
                         ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
+                        zgc.Size = _Size;
                         p.Controls.Add(zgc);
 
                         c.ExpirementObject.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а

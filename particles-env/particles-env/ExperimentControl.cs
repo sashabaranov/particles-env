@@ -46,7 +46,8 @@ namespace particles_env
                 switch (this.Expirement.Graphics.Needs)
                 {
                     case ExpirementNeeds.Normal:
-                        PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), this.Size));
+                        Size _Size = new Size(this.Width - ParametersGrid.Height, this.Height);
+                        PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), _Size));
                         this.Expirement.Graphics.Draw(a);
                         e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
                         df = false;

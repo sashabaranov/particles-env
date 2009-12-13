@@ -28,7 +28,6 @@ namespace particles_env
         /// </summary>
         private void InitializeComponent()
         {
-            this.setParameters = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.сохранить—криншотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,19 +39,9 @@ namespace particles_env
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // setParameters
-            // 
-            this.setParameters.Location = new System.Drawing.Point(3, 3);
-            this.setParameters.Name = "setParameters";
-            this.setParameters.Size = new System.Drawing.Size(121, 23);
-            this.setParameters.TabIndex = 0;
-            this.setParameters.Text = "«адать параметры";
-            this.setParameters.UseVisualStyleBackColor = true;
-            this.setParameters.Click += new System.EventHandler(this.setParameters_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(130, 3);
+            this.button1.Location = new System.Drawing.Point(0, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 1;
@@ -120,7 +109,6 @@ namespace particles_env
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.ParametersGrid);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.setParameters);
             this.Name = "ExperimentControl";
             this.Size = new System.Drawing.Size(643, 364);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
@@ -132,7 +120,6 @@ namespace particles_env
 
         #endregion
 
-        private System.Windows.Forms.Button setParameters;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem сохранить—криншотToolStripMenuItem;
