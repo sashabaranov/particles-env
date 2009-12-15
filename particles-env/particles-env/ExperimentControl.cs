@@ -46,7 +46,7 @@ namespace particles_env
                 switch (this.Expirement.Graphics.Needs)
                 {
                     case ExpirementNeeds.Normal:
-                        Size _Size = new Size(this.Width - ParametersGrid.Height, this.Height);
+                        Size _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), _Size));
                         this.Expirement.Graphics.Draw(a);
                         e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
@@ -56,6 +56,20 @@ namespace particles_env
                     case ExpirementNeeds.ZedGraph:
                         this.Expirement.Graphics.Draw(e);
                         df = false;
+                        break;
+                    
+                    case ExpirementNeeds.Graph:
+                        ZedGraph.ZedGraphControl graph = (ZedGraph.ZedGraphControl)this.Controls.Find("ZedGraphControl", true)[0];
+                        ZedGraph.PointPairList points = this.Expirement.Graphics.GetPoints();
+                        ZedGraph.LineItem curve;
+                        graph.GraphPane.CurveList.Clear();
+                        curve = graph.GraphPane.AddCurve("График", points, Color.Blue, ZedGraph.SymbolType.Default);
+                        curve.Symbol.Fill = new ZedGraph.Fill(Color.White);
+                        curve.Symbol.Size = 2;
+                        _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
+                        graph.Size = _Size;
+                        graph.AxisChange();
+                        graph.Refresh();
                         break;
 
                 }

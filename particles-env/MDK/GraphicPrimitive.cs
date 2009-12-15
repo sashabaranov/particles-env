@@ -119,9 +119,24 @@ namespace MDK
             throw new Exception("Abstract CreateControl recieved");
         }
 
+        /* ExpirimentNeeds.Graph */
+
+        /// <summary>
+        /// Поставка информации о графике: заголовок, x title, y title
+        /// </summary>
+        /// <param name="pane">GraphPane, где будет виден сам график</param>
+        public virtual void SetGraphInfo(ZedGraph.GraphPane pane)
+        {
+            throw new Exception("Abstract SetGraphInfo recieved");
+        }
+
+        public virtual ZedGraph.PointPairList GetPoints()
+        {
+            return new ZedGraph.PointPairList();
+        }
     }
 
-    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA };
+    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA, Graph };
 
     public class ExpirementAbout
     {

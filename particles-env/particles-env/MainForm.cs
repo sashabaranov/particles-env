@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using MDK;
+using ZedGraph;
 
 namespace particles_env
 {
@@ -56,6 +57,22 @@ namespace particles_env
                         break; 
 
                     case ExpirementNeeds.XNA: break;//включить 3д-режим
+                    case ExpirementNeeds.Graph:
+                        ZedGraphControl graph = new ZedGraphControl();
+                        graph.Size = _Size;
+                        p.Controls.Add(graph);
+                        
+                        GraphPane myPane;
+                        /*graph.Top = 0; 
+                        graph.Left = 0;
+                        graph.Height = this.Height;
+                        graph.Width = this.Width;
+                        */
+                        myPane = graph.GraphPane;
+                        c.ExpirementObject.Graphics.SetGraphInfo(myPane);
+                        myPane.Legend.IsVisible = false;
+                        myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
+                        break;
                 }
 
                 p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
@@ -102,7 +119,8 @@ namespace particles_env
 
                     foreach (FileInfo Module in Modules)
                     {
-                        Dlls.Add(Module.FullName); // проверка неуместна, метод вызывается при загрузке программы.
+                        if(Module.Name!="MDK.dll" && Module.Name!="ZedGraph")
+                            Dlls.Add(Module.FullName); // проверка неуместна, метод вызывается при загрузке программы.
                     }
                 }
                 else
