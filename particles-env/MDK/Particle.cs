@@ -152,6 +152,8 @@ namespace MDK
         /// <param name="FixedParticles">Массив частиц-продуктов распада</param>
         public void CollapsedFrom(Particle[] FixedParticles)
         {
+            this.Energy  = 0;
+            this.Impulse = 0;
             foreach (Particle p in FixedParticles)
             {
                 this.Energy  += p.Energy;
@@ -163,7 +165,7 @@ namespace MDK
 
         public void CountMassInvariant()
         {
-            this.Mass = Math.Sqrt(this.E * this.E + this.p * this.p); // инвариант массы
+            this.Mass = Math.Sqrt(this.E * this.E - this.p * this.p); // инвариант массы
         }
         #endregion
     }

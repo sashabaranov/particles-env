@@ -57,6 +57,18 @@ namespace particles_env
             }
         }
 
+        public Type[] GetTypes()
+        {
+            List<Type> types = new List<Type>();
+
+            foreach (ExperimentInfo inf in eList)
+            {
+                types.Add(inf.GraphicsObj.GetType());
+            }
+            
+            return types.ToArray();
+        }
+
         /// <summary>
         /// Загрузчик модуля(после проверки)
         /// </summary>

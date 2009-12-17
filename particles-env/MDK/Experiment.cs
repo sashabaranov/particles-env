@@ -4,7 +4,8 @@ using System.Text;
 
 namespace MDK
 {
-    public partial class Experiment
+    [Serializable]
+    public class Experiment
     {
         /// <summary>
         /// Визуализация

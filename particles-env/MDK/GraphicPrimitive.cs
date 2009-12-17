@@ -2,9 +2,10 @@
 using System.Drawing;
 using System.Windows.Forms;
 using ZedGraph;
-
+using System.Xml.Serialization;
 namespace MDK
 {
+    [Serializable][XmlInclude(typeof(GraphicPrimitive))]
     public abstract class GraphicPrimitive
     {
 

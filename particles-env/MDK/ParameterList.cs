@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MDK
 {
+    [Serializable]
     public partial class ParameterList
     {
         /// <summary>
@@ -74,6 +75,7 @@ namespace MDK
         }
 
     }
+    [Serializable]
     public class ParameterListUnit
     {
         /// <summary>
@@ -113,6 +115,11 @@ namespace MDK
             this.Value = Value;
             this.dValue = Value;
         }
+
+        /// <summary>
+        ///  онструктор без параметров дл€ сериализации
+        /// </summary>
+        public ParameterListUnit() { }
 
         public override string ToString()
         {

@@ -30,34 +30,37 @@ namespace particles_env
 
             if (c.ShowDialog() != DialogResult.Cancel)
             {
-                ExperimentControl p = new ExperimentControl();
-                p.Expirement = c.ExpirementObject;
-                
-                p.Size = Tabs.Size;
-                p.Left = Tabs.Left;
-                p.Top = Tabs.Top - 25;
-                
-                Size _Size = p.Size;
-                _Size.Width -= 200;
-                
-                p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
+                AddNewTabWithExpirement(c.ExpirementObject);
+            }
 
-                //Обработчик нужд эксперимента
-                switch (p.Expirement.Graphics.Needs)
-                {
-                    case ExpirementNeeds.None: break;
-                    case ExpirementNeeds.Normal: break; //нормальный обработчик
-                    case ExpirementNeeds.ZedGraph: 
-                        //добавить контролл
-                        ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
-                        zgc.Size = _Size;
-                        p.Controls.Add(zgc);
+        }
 
-                        c.ExpirementObject.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
-                        break; 
+        public void AddNewTabWithExpirement(Experiment c)
+        {
+                }
 
-                    case ExpirementNeeds.XNA: break;//включить 3д-режим
-                    case ExpirementNeeds.Graph:
+            Size _Size = p.Size;
+            _Size.Width -= 200;
+
+            p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
+
+            //Обработчик нужд эксперимента
+            switch (p.Expirement.Graphics.Needs)
+            {
+                case ExpirementNeeds.None: break;
+                case ExpirementNeeds.Normal: break; //нормальный обработчик
+                case ExpirementNeeds.ZedGraph:
+                    //добавить контролл
+                    ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
+                    zgc.Size = _Size;
+                    p.Controls.Add(zgc);
+
+                    p.Expirement.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
+                    break;
+
+                case ExpirementNeeds.XNA: break;//включить 3д-режим
+ 				case ExpirementNeeds.XNA: break;//включить 3д-режим
+                case ExpirementNeeds.Graph:
                         ZedGraphControl graph = new ZedGraphControl();
                         graph.Size = _Size;
                         p.Controls.Add(graph);
@@ -74,20 +77,19 @@ namespace particles_env
                         myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
                         break;
                 }
-
-                p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
-                p.Expirement.pList = p.Expirement.Graphics.ParameterListTemplate;
-
-                p.Expirement.Graphics.SetParameters(p.Expirement.Graphics.ParameterListTemplate);
-                p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;
-                
-                Tabs.TabPages.Add("exp" + ExpirementCount, "Эксперимент " + ExpirementCount);
-                Tabs.TabPages[ExpirementCount].Controls.Add(p);
-                Tabs.TabPages[ExpirementCount].Focus();
-             
-                ExpirementCount++;
             }
 
+            p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
+            p.Expirement.pList = p.Expirement.Graphics.ParameterListTemplate;
+
+            p.Expirement.Graphics.SetParameters(p.Expirement.Graphics.ParameterListTemplate);
+            p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;
+
+            Tabs.TabPages.Add("exp" + ExpirementCount, "Эксперимент " + ExpirementCount);
+            Tabs.TabPages[ExpirementCount].Controls.Add(p);
+            Tabs.TabPages[ExpirementCount].Focus();
+
+            ExpirementCount++;
         }
 
         private void addExpirementType_Click(object sender, EventArgs e)
@@ -208,23 +210,53 @@ namespace particles_env
             Tabs.SelectedTab.Invalidate();
         }
 
-        private void SaveExpirement(object sender, EventArgs e)
+        private void SaveExperiment(object sender, EventArgs e)
         {
             if (Tabs.TabPages.Count > 0)
             {
-                if (SaveDialog.ShowDialog() != DialogResult.Abort && SaveDialog.ShowDialog() != DialogResult.Cancel)
+                DialogResult d = SaveDialog.ShowDialog();
+                if (d != DialogResult.Abort && d != DialogResult.Cancel)
                 {
-                    ExperimentControl p = (ExperimentControl) Tabs.TabPages[Tabs.SelectedIndex].Controls[0];
-                    XmlSerializer xmlFormat = new XmlSerializer(p.Expirement.GetType());
+                    ExperimentControl p = (ExperimentControl)Tabs.TabPages[Tabs.SelectedIndex].Controls[0];
+                    try
+                    {
+                        XmlSerializer xmlFormat = new XmlSerializer(p.Expirement.GetType(), new Type[] {p.Expirement.Graphics.GetType()} );
+                        FileStream fStream = new FileStream(SaveDialog.FileName, FileMode.OpenOrCreate);
 
-                    MessageBox.Show(SaveDialog.FileName);
-                    FileStream fStream = new FileStream(SaveDialog.FileName, FileMode.OpenOrCreate);
+                        xmlFormat.Serialize(fStream, p.Expirement);
+                   }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Что-то пошло не так:\r\n" + ex.Message);
+                    }
 
-                    xmlFormat.Serialize(fStream, p.Expirement);
+                    
                 }
             }
             else MessageBox.Show("Извините, но у вас же нет открытых экспериментов!", "Ошибка");
         }
+
+        private void LoadExperiment(object sender, EventArgs e)
+        {
+            DialogResult d = openExperimentDialog.ShowDialog();
+            
+            if (d == DialogResult.OK)
+            {
+                try
+                {
+                    XmlSerializer xmlFormat = new XmlSerializer(typeof(Experiment), GenerateNewExpirementList().GetTypes());
+                    Experiment obj = (Experiment)xmlFormat.Deserialize(new FileStream(openExperimentDialog.FileName, FileMode.Open));
+
+                    AddNewTabWithExpirement(obj);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Что-то пошло не так: " + ex.Message);
+                }
+            }
+
+        }
+
 
     }
 }
