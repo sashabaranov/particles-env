@@ -63,9 +63,11 @@ namespace particles_env
                         ZedGraph.PointPairList points = this.Expirement.Graphics.GetPoints();
                         ZedGraph.LineItem curve;
                         graph.GraphPane.CurveList.Clear();
-                        curve = graph.GraphPane.AddCurve("График", points, Color.Blue, ZedGraph.SymbolType.Default);
+                        curve = graph.GraphPane.AddCurve("График", points, Color.Blue, ZedGraph.SymbolType.None);
                         curve.Symbol.Fill = new ZedGraph.Fill(Color.White);
                         curve.Symbol.Size = 2;
+                        //curve.Line.IsSmooth = true;
+                        //curve.Line.SmoothTension = 0.3f;
                         _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         graph.Size = _Size;
                         graph.AxisChange();
