@@ -37,7 +37,12 @@ namespace particles_env
 
         public void AddNewTabWithExpirement(Experiment c)
         {
-                }
+            ExperimentControl p = new ExperimentControl();
+            p.Expirement = c;
+
+            p.Size = Tabs.Size;
+            p.Left = Tabs.Left;
+            p.Top = Tabs.Top - 25;
 
             Size _Size = p.Size;
             _Size.Width -= 200;
@@ -59,7 +64,6 @@ namespace particles_env
                     break;
 
                 case ExpirementNeeds.XNA: break;//включить 3д-режим
- 				case ExpirementNeeds.XNA: break;//включить 3д-режим
                 case ExpirementNeeds.Graph:
                         ZedGraphControl graph = new ZedGraphControl();
                         graph.Size = _Size;
@@ -72,11 +76,10 @@ namespace particles_env
                         graph.Width = this.Width;
                         */
                         myPane = graph.GraphPane;
-                        c.ExpirementObject.Graphics.SetGraphInfo(myPane);
+                        p.Expirement.Graphics.SetGraphInfo(myPane);
                         myPane.Legend.IsVisible = false;
                         myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
                         break;
-                }
             }
 
             p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
