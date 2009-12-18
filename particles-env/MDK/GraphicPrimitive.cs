@@ -12,7 +12,7 @@ namespace MDK
         /// <summary>
         /// Нужды эксперимента
         /// </summary>
-        public ExpirementNeeds Needs;
+        public ExperimentNeeds Needs;
 
         /// <summary>
         /// Координаты объекта(Top,Left - обязательны).
@@ -33,9 +33,9 @@ namespace MDK
         public ParameterList ParameterListTemplate;
 
 
-        public virtual ExpirementAbout GetAbout()
+        public virtual ExperimentAbout GetAbout()
         {
-            return new ExpirementAbout();
+            return new ExperimentAbout();
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace MDK
             throw new Exception("Abstract CreateControl recieved");
         }
 
-        /* ExpirimentNeeds.Graph */
+        /* ExperimentNeeds.Graph */
 
         /// <summary>
         /// Поставка информации о графике: заголовок, x title, y title
@@ -137,17 +137,17 @@ namespace MDK
         }
     }
 
-    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA, Graph, OpenGL };
+    public enum ExperimentNeeds { None, Normal, ZedGraph, XNA, Graph, OpenGL };
 
-    public class ExpirementAbout
+    public class ExperimentAbout
     {
         public string sName;
         public string Name;
         public string Description;
 
-        public ExpirementAbout() { }
+        public ExperimentAbout() { }
 
-        public ExpirementAbout(string _sName, string _Name, string _Description)
+        public ExperimentAbout(string _sName, string _Name, string _Description)
         {
             this.sName = _sName;
             this.Name = _Name;

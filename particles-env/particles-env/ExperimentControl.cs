@@ -12,55 +12,55 @@ namespace particles_env
     public partial class ExperimentControl : UserControl
     {
         bool df;
-        public Experiment Expirement;
+        public Experiment Experiment;
         Bitmap Drawing;
 
         public ExperimentControl()
         {
             InitializeComponent();
-            this.Expirement = new Experiment();
+            this.Experiment = new Experiment();
         }
 
         private void setParameters_Click(object sender, EventArgs e)
         {
             ParametersEdit EditDialog = new ParametersEdit();
 
-            EditDialog.eList = this.Expirement.Graphics.GetParameters(); // метод, обратный SetParameters'у
+            EditDialog.eList = this.Experiment.Graphics.GetParameters(); // метод, обратный SetParameters'у
             
             if (EditDialog.ShowDialog() != DialogResult.Cancel)
             {
-                this.Expirement.pList = EditDialog.eList;
+                this.Experiment.pList = EditDialog.eList;
 
-                this.Expirement.Graphics.SetParameters(this.Expirement.pList);
+                this.Experiment.Graphics.SetParameters(this.Experiment.pList);
                 Refresh();
             }
         }
 
-        private void ExpirementControl_Paint(object sender, PaintEventArgs e)
+        private void ExperimentControl_Paint(object sender, PaintEventArgs e)
         {
             if (Drawing == null) Drawing = new Bitmap(this.Width, this.Height);
             if (df)
             {
                 Drawing = new Bitmap(this.Width, this.Height);
                 
-                switch (this.Expirement.Graphics.Needs)
+                switch (this.Experiment.Graphics.Needs)
                 {
-                    case ExpirementNeeds.Normal:
+                    case ExperimentNeeds.Normal:
                         Size _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         PaintEventArgs a = new PaintEventArgs(Graphics.FromImage(Drawing), new Rectangle(new Point(this.Left, this.Top), _Size));
-                        this.Expirement.Graphics.Draw(a);
+                        this.Experiment.Graphics.Draw(a);
                         e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));
                         df = false;
                         break;
 
-                    case ExpirementNeeds.ZedGraph:
-                        this.Expirement.Graphics.Draw(e);
+                    case ExperimentNeeds.ZedGraph:
+                        this.Experiment.Graphics.Draw(e);
                         df = false;
                         break;
                     
-                    case ExpirementNeeds.Graph:
+                    case ExperimentNeeds.Graph:
                         ZedGraph.ZedGraphControl graph = (ZedGraph.ZedGraphControl)this.Controls.Find("ZedGraphControl", true)[0];
-                        ZedGraph.PointPairList points = this.Expirement.Graphics.GetPoints();
+                        ZedGraph.PointPairList points = this.Experiment.Graphics.GetPoints();
                         ZedGraph.LineItem curve;
                         graph.GraphPane.CurveList.Clear();
                         curve = graph.GraphPane.AddCurve("График", points, Color.Blue, ZedGraph.SymbolType.None);
@@ -73,7 +73,7 @@ namespace particles_env
                         graph.AxisChange();
                         graph.Refresh();
                         break;
-                    case ExpirementNeeds.OpenGL:
+                    case ExperimentNeeds.OpenGL:
                         break;
 
                 }
@@ -82,11 +82,11 @@ namespace particles_env
             }
             else
             {
-                switch (this.Expirement.Graphics.Needs)
+                switch (this.Experiment.Graphics.Needs)
                 {
-                    case ExpirementNeeds.Normal: 
+                    case ExperimentNeeds.Normal: 
                         e.Graphics.DrawImage(Drawing, new Point(this.Left, this.Top));  break;
-                    case ExpirementNeeds.ZedGraph:  break;
+                    case ExperimentNeeds.ZedGraph:  break;
                 }
                     
             }
@@ -95,7 +95,7 @@ namespace particles_env
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Expirement.Graphics.SetDrawingBorder(this.Left, this.Top, this.Size);
+            this.Experiment.Graphics.SetDrawingBorder(this.Left, this.Top, this.Size);
             df = true;
             Refresh();
         }
@@ -117,7 +117,7 @@ namespace particles_env
 
         public void LoadParameters(ParameterList List)
         {
-            Expirement.pList = List;
+            Experiment.pList = List;
             foreach (ParameterListUnit u in List.Parameters)
             {
                 int index = ParametersGrid.Rows.Add();
@@ -132,13 +132,13 @@ namespace particles_env
         private void ParametersGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             string ParameterName = (string) ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
-            //double value = Expirement.pList.Parameters[e.RowIndex].Value;
+           
             
-            if(!double.TryParse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value, out Expirement.pList.Parameters[e.RowIndex].Value))
+            if(!double.TryParse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value, out Experiment.pList.Parameters[e.RowIndex].Value))
             {
                 MessageBox.Show("Неправильно введён параметр!");
-                ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Expirement.pList.Parameters[e.RowIndex].dValue;
-                Expirement.pList.Parameters[e.RowIndex].Value = Expirement.pList.Parameters[e.RowIndex].dValue;
+                ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
+                Experiment.pList.Parameters[e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
             }
             /*
             try
@@ -151,9 +151,7 @@ namespace particles_env
             }
             */
 
-          //  Expirement.pList.Parameters[e.RowIndex].Value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
-
-            Expirement.Graphics.SetParameters(Expirement.pList);
+            Experiment.Graphics.SetParameters(Experiment.pList);
         }
     }
 }

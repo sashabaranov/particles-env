@@ -12,13 +12,13 @@ namespace particles_env
 {
     public partial class ExpStats : Form
     {
-        public Experiment ExpirementObject;
+        public Experiment ExperimentObject;
         public TabControl tc;
         public ExpStats(ExperimentList e, ref TabControl tabs)
         {
             InitializeComponent();
 
-            ExpirementObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
+            ExperimentObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
                                                     изминения, и который будет возвращёт обратно в MainForm    */
             tc = tabs;
             foreach (ExperimentInfo p in e.eList) // Создаём список типов экспериментов
@@ -45,11 +45,11 @@ namespace particles_env
                 
                 expCtrl = (ExperimentControl)tab.Controls[0];
 
-                if (expType == expCtrl.Expirement.Graphics.GetType())
+                if (expType == expCtrl.Experiment.Graphics.GetType())
                 {
                     myStatsParams.color.Add(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
                     myStatsParams.title.Add(string.Format("Эксперимент {0}", i));
-                    PointPairList results = expCtrl.Expirement.Graphics.GetResults();
+                    PointPairList results = expCtrl.Experiment.Graphics.GetResults();
                     if (results.Count == 0)
                     {
                         MessageBox.Show("Извините, данный эксперимент не поставляет статистики.");

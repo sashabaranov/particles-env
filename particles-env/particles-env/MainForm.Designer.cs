@@ -162,7 +162,7 @@ namespace particles_env
             this.addExpirementType.Text = "Добавить тип эксперимента";
             this.addExpirementType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addExpirementType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
+            this.addExpirementType.Click += new System.EventHandler(this.addExperimentType_Click);
             // 
             // MainForm
             // 

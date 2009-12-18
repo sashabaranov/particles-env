@@ -89,7 +89,7 @@ namespace particles_env
     public partial class ExperimentInfo
     {
         public string Path;
-        public ExpirementAbout About;
+        public ExperimentAbout About;
         public GraphicPrimitive GraphicsObj;
         
         public Bitmap Ico;

@@ -15,14 +15,14 @@ namespace particles_env
         /// <summary>
         /// Объект, который будем возвращать.
         /// </summary>
-        public Experiment ExpirementObject;
+        public Experiment ExperimentObject;
 
         public ExperimentAdd(ExperimentList e)
         {
             lst = e;
             InitializeComponent();
 
-            ExpirementObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
+            ExperimentObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
                                                     изминения, и который будет возвращёт обратно в MainForm    */
 
             foreach (ExperimentInfo p in e.eList) // Создаём список типов экспериментов
@@ -35,7 +35,7 @@ namespace particles_env
         {
             try
             {
-                ConstructExpirement();
+                ConstructExperiment();
             }
             catch (NullReferenceException) //если эксперимент не выбран, будет сгенерированно исключение.
             { 
@@ -43,18 +43,6 @@ namespace particles_env
                 return;
             }
 
-            #region старое использование EditDialog'а
-            /*
-            // всё хорошо, продолжаем создавать эксперимент
-
-            ParametersEdit EditDialog = new ParametersEdit(); // диалог редактирования параметров
-            
-            //передаём данные в новый диалог
-            EditDialog.eList = ExpirementObject.Graphics.ParameterListTemplate; // шаблон параметров и GraphicsPrimitive
-            EditDialog.Description = lst.eList[listBox1.SelectedIndex].About.Description;
-            EditDialog.ExpirementPicture = lst.eList[listBox1.SelectedIndex].BigIco;
-            */
-            #endregion
 
             Description.Text = lst.eList[listBox1.SelectedIndex].About.Description;
 
@@ -66,13 +54,13 @@ namespace particles_env
         private void DoneButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ConstructExpirement();
+            ConstructExperiment();
         }
 
-        private void ConstructExpirement()
+        private void ConstructExperiment()
         {
-            ExpirementObject = new Experiment();
-            ExpirementObject.Graphics = lst.eList[listBox1.SelectedIndex].GraphicsObj; // сырой шаблон
+            ExperimentObject = new Experiment();
+            ExperimentObject.Graphics = lst.eList[listBox1.SelectedIndex].GraphicsObj; // сырой шаблон
         }
 
 

@@ -12,7 +12,7 @@ namespace particles_env
     public partial class ParametersEdit : Form
     {
         #region Данные из внешнего мира
-        public Image ExpirementPicture;
+        public Image ExperimentPicture;
         public String Description;
 
         public ParameterList eList;
@@ -28,7 +28,7 @@ namespace particles_env
         private void ParametersEdit_Load(object sender, EventArgs e)
         {
             //передаём данные
-            pictureBox1.Image = this.ExpirementPicture;
+            pictureBox1.Image = this.ExperimentPicture;
             eDescription.Text = this.Description;
 
 

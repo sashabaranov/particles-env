@@ -17,7 +17,7 @@ namespace particles_env
 {
     public partial class MainForm : Form
     {
-        int ExpirementCount;
+        int ExperimentCount;
         static ExperimentList ExpList;
         List<string> Dlls;
 
@@ -29,19 +29,19 @@ namespace particles_env
 
         private void новыйЁкспериментToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExperimentAdd c = new ExperimentAdd(GenerateNewExpirementList()); //объект диалога
+            ExperimentAdd c = new ExperimentAdd(GenerateNewExperimentList()); //объект диалога
 
             if (c.ShowDialog() != DialogResult.Cancel)
             {
-                AddNewTabWithExpirement(c.ExpirementObject);
+                AddNewTabWithExperiment(c.ExperimentObject);
             }
 
         }
 
-        public void AddNewTabWithExpirement(Experiment c)
+        public void AddNewTabWithExperiment(Experiment c)
         {
             ExperimentControl p = new ExperimentControl();
-            p.Expirement = c;
+            p.Experiment = c;
             p.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
 
             p.Size = Tabs.Size;
@@ -51,24 +51,24 @@ namespace particles_env
             Size _Size = p.Size;
             _Size.Width -= 200;
 
-            p.Expirement.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
+            p.Experiment.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
 
             //ќбработчик нужд эксперимента
-            switch (p.Expirement.Graphics.Needs)
+            switch (p.Experiment.Graphics.Needs)
             {
-                case ExpirementNeeds.None: break;
-                case ExpirementNeeds.Normal: break; //нормальный обработчик
-                case ExpirementNeeds.ZedGraph:
+                case ExperimentNeeds.None: break;
+                case ExperimentNeeds.Normal: break; //нормальный обработчик
+                case ExperimentNeeds.ZedGraph:
                     //добавить контролл
                     ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
                     zgc.Size = _Size;
                     p.Controls.Add(zgc);
 
-                    p.Expirement.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
+                    p.Experiment.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
                     break;
 
-                case ExpirementNeeds.XNA: break;//включить 3д-режим
-                case ExpirementNeeds.Graph:
+                case ExperimentNeeds.XNA: break;//включить 3д-режим
+                case ExperimentNeeds.Graph:
                         ZedGraphControl graph = new ZedGraphControl();
                         graph.Size = _Size;
                         p.Controls.Add(graph);
@@ -80,11 +80,11 @@ namespace particles_env
                         graph.Width = this.Width;
                         */
                         myPane = graph.GraphPane;
-                        p.Expirement.Graphics.SetGraphInfo(myPane);
+                        p.Experiment.Graphics.SetGraphInfo(myPane);
                         myPane.Legend.IsVisible = false;
                         myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
                         break;
-                case ExpirementNeeds.OpenGL:
+                case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
                         tao_ctrl.Size = _Size;
                         p.Controls.Add(tao_ctrl);
@@ -108,20 +108,20 @@ namespace particles_env
                         break;
             }
 
-            p.LoadParameters(p.Expirement.Graphics.ParameterListTemplate);
-            p.Expirement.pList = p.Expirement.Graphics.ParameterListTemplate;
+            p.LoadParameters(p.Experiment.Graphics.ParameterListTemplate);
+            p.Experiment.pList = p.Experiment.Graphics.ParameterListTemplate;
 
-            p.Expirement.Graphics.SetParameters(p.Expirement.Graphics.ParameterListTemplate);
+            p.Experiment.Graphics.SetParameters(p.Experiment.Graphics.ParameterListTemplate);
             p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;
 
-            Tabs.TabPages.Add("exp" + ExpirementCount, "Ёксперимент " + ExpirementCount);
-            Tabs.TabPages[ExpirementCount].Controls.Add(p);
-            Tabs.TabPages[ExpirementCount].Focus();
+            Tabs.TabPages.Add("exp" + ExperimentCount, "Ёксперимент " + ExperimentCount);
+            Tabs.TabPages[ExperimentCount].Controls.Add(p);
+            Tabs.TabPages[ExperimentCount].Focus();
 
-            ExpirementCount++;
+            ExperimentCount++;
         }
 
-        private void addExpirementType_Click(object sender, EventArgs e)
+        private void addExperimentType_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -173,7 +173,7 @@ namespace particles_env
             this.Dispose();
         }
 
-        private ExperimentList GenerateNewExpirementList()
+        private ExperimentList GenerateNewExperimentList()
         {
             ExperimentList Lst = new ExperimentList();
 
@@ -188,19 +188,18 @@ namespace particles_env
 
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ExpirementStats c = new ExpirementStats(GenerateNewExpirementList()); //объект диалога
-            ExpStats c = new ExpStats(GenerateNewExpirementList(), ref this.Tabs);
+            ExpStats c = new ExpStats(GenerateNewExperimentList(), ref this.Tabs);
             if (c.ShowDialog() != DialogResult.Cancel)
             {
                 ExperimentControl p = new ExperimentControl();
-                p.Expirement = c.ExpirementObject;
+                p.Experiment = c.ExperimentObject;
 
 
-                Tabs.TabPages.Add("exp" + ExpirementCount, "Ёксперимент " + ExpirementCount);
-                Tabs.TabPages[ExpirementCount].Controls.Add(p);
-                Tabs.TabPages[ExpirementCount].Focus();
+                Tabs.TabPages.Add("exp" + ExperimentCount, "Ёксперимент " + ExperimentCount);
+                Tabs.TabPages[ExperimentCount].Controls.Add(p);
+                Tabs.TabPages[ExperimentCount].Focus();
 
-                ExpirementCount++;
+                ExperimentCount++;
 
             }
         }
@@ -225,7 +224,7 @@ namespace particles_env
                 c.Top  = Page.Top - 25;
                 c.Size = Page.Size; 
 
-                c.Expirement.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
+                c.Experiment.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
             }
         }
 
@@ -249,10 +248,10 @@ namespace particles_env
                     ExperimentControl p = (ExperimentControl)Tabs.TabPages[Tabs.SelectedIndex].Controls[0];
                     try
                     {
-                        XmlSerializer xmlFormat = new XmlSerializer(p.Expirement.GetType(), new Type[] {p.Expirement.Graphics.GetType()} );
+                        XmlSerializer xmlFormat = new XmlSerializer(p.Experiment.GetType(), new Type[] {p.Experiment.Graphics.GetType()} );
                         FileStream fStream = new FileStream(SaveDialog.FileName, FileMode.OpenOrCreate);
 
-                        xmlFormat.Serialize(fStream, p.Expirement);
+                        xmlFormat.Serialize(fStream, p.Experiment);
                    }
                     catch (Exception ex)
                     {
@@ -273,10 +272,10 @@ namespace particles_env
             {
                 try
                 {
-                    XmlSerializer xmlFormat = new XmlSerializer(typeof(Experiment), GenerateNewExpirementList().GetTypes());
+                    XmlSerializer xmlFormat = new XmlSerializer(typeof(Experiment), GenerateNewExperimentList().GetTypes());
                     Experiment obj = (Experiment)xmlFormat.Deserialize(new FileStream(openExperimentDialog.FileName, FileMode.Open));
 
-                    AddNewTabWithExpirement(obj);
+                    AddNewTabWithExperiment(obj);
                 }
                 catch (Exception ex)
                 {

@@ -42,7 +42,7 @@ namespace particles_env
 
             myPane.Title.Text = "Результаты эксперимента";
             myPane.XAxis.Title.Text = "Величина";
-            myPane.YAxis.Title.Text = "Эксперипент";
+            myPane.YAxis.Title.Text = "Эксперимент";
 
             List<BarItem> myCurves = new List<BarItem>();
             // create the curves

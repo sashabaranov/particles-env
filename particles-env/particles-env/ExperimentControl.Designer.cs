@@ -112,7 +112,7 @@ namespace particles_env
             this.Controls.Add(this.button1);
             this.Name = "ExperimentControl";
             this.Size = new System.Drawing.Size(643, 364);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExpirementControl_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExperimentControl_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ExperimentControl_MouseClick);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
