@@ -42,6 +42,7 @@ namespace particles_env
         {
             ExperimentControl p = new ExperimentControl();
             p.Expirement = c;
+            p.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
 
             p.Size = Tabs.Size;
             p.Left = Tabs.Left;
@@ -220,8 +221,8 @@ namespace particles_env
             {
                 ExperimentControl c = (ExperimentControl) Page.Controls[0];
                 
-                c.Left = Page.Left;
-                c.Top  = Page.Top;
+                c.Left = Page.Left - 5;
+                c.Top  = Page.Top - 25;
                 c.Size = Page.Size; 
 
                 c.Expirement.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);

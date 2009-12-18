@@ -41,9 +41,10 @@ namespace particles_env
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 3);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(443, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.Size = new System.Drawing.Size(200, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Рисовать";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,17 +73,17 @@ namespace particles_env
             // 
             this.ParametersGrid.AllowUserToAddRows = false;
             this.ParametersGrid.AllowUserToDeleteRows = false;
+            this.ParametersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ParametersGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ParametersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ParametersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Parameters,
             this.Values});
-            this.ParametersGrid.Dock = System.Windows.Forms.DockStyle.Right;
             this.ParametersGrid.EnableHeadersVisualStyles = false;
-            this.ParametersGrid.Location = new System.Drawing.Point(443, 0);
+            this.ParametersGrid.Location = new System.Drawing.Point(443, 32);
             this.ParametersGrid.Name = "ParametersGrid";
             this.ParametersGrid.RowHeadersVisible = false;
-            this.ParametersGrid.Size = new System.Drawing.Size(200, 364);
+            this.ParametersGrid.Size = new System.Drawing.Size(200, 329);
             this.ParametersGrid.TabIndex = 2;
             this.ParametersGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ParametersGrid_CellEndEdit);
             // 
