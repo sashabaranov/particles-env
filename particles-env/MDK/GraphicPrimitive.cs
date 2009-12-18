@@ -137,7 +137,7 @@ namespace MDK
         }
     }
 
-    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA, Graph };
+    public enum ExpirementNeeds { None, Normal, ZedGraph, XNA, Graph, OpenGL };
 
     public class ExpirementAbout
     {

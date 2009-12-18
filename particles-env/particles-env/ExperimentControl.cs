@@ -73,6 +73,8 @@ namespace particles_env
                         graph.AxisChange();
                         graph.Refresh();
                         break;
+                    case ExpirementNeeds.OpenGL:
+                        break;
 
                 }
 

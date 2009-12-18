@@ -9,6 +9,9 @@ using System.IO;
 using System.Xml.Serialization;
 using MDK;
 using ZedGraph;
+using Tao.OpenGl;
+using Tao.FreeGlut;
+using Tao.Platform.Windows;
 
 namespace particles_env
 {
@@ -79,6 +82,28 @@ namespace particles_env
                         p.Expirement.Graphics.SetGraphInfo(myPane);
                         myPane.Legend.IsVisible = false;
                         myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
+                        break;
+                case ExpirementNeeds.OpenGL:
+                        SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
+                        tao_ctrl.Size = _Size;
+                        p.Controls.Add(tao_ctrl);
+                        tao_ctrl.InitializeContexts();
+                        
+                        Glut.glutInit();
+                        Glut.glutInitDisplayMode(Glut.GLUT_RGB | Glut.GLUT_DOUBLE | Glut.GLUT_DEPTH);
+                    
+                        Gl.glClearColor(0, 0, 0, 1);
+                        Gl.glViewport(0, 0, tao_ctrl.Width, tao_ctrl.Height);
+
+                        Gl.glMatrixMode(Gl.GL_PROJECTION);
+                        Gl.glLoadIdentity();
+                        Glu.gluPerspective(45, (float)tao_ctrl.Width / (float)tao_ctrl.Height, 0.1, 200);
+                        Gl.glMatrixMode(Gl.GL_MODELVIEW);
+                        Gl.glLoadIdentity();
+
+                        Gl.glEnable(Gl.GL_DEPTH_TEST);
+                        Gl.glEnable(Gl.GL_LIGHTING);
+                        Gl.glEnable(Gl.GL_LIGHT0);
                         break;
             }
 
