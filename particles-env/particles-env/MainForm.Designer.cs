@@ -31,18 +31,18 @@ namespace particles_env
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.экспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.сохранитьЭкспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьЭкспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.openExperimentDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьЭкспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьЭкспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addExpirementType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,47 +78,15 @@ namespace particles_env
             this.экспериментToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.экспериментToolStripMenuItem.Text = "Эксперимент";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = global::particles_env.Properties.Resources.flag;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
-            this.toolStripMenuItem1.Text = "Новый эксперимент";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.новыйЭкспериментToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
             // 
-            // статистикаToolStripMenuItem
-            // 
-            this.статистикаToolStripMenuItem.Image = global::particles_env.Properties.Resources.diagram;
-            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
-            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.статистикаToolStripMenuItem.Text = "Статистика";
-            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(227, 6);
-            // 
-            // сохранитьЭкспериментToolStripMenuItem
-            // 
-            this.сохранитьЭкспериментToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.сохранитьЭкспериментToolStripMenuItem.Name = "сохранитьЭкспериментToolStripMenuItem";
-            this.сохранитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.сохранитьЭкспериментToolStripMenuItem.Text = "Сохранить эксперимент";
-            this.сохранитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.SaveExperiment);
-            // 
-            // загрузитьЭкспериментToolStripMenuItem
-            // 
-            this.загрузитьЭкспериментToolStripMenuItem.Name = "загрузитьЭкспериментToolStripMenuItem";
-            this.загрузитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.загрузитьЭкспериментToolStripMenuItem.Text = "Загрузить эксперимент";
-            this.загрузитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.LoadExperiment);
             // 
             // опцииToolStripMenuItem
             // 
@@ -130,18 +98,6 @@ namespace particles_env
             this.опцииToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.опцииToolStripMenuItem.Text = "Опции";
             this.опцииToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            // 
-            // addExpirementType
-            // 
-            this.addExpirementType.Image = global::particles_env.Properties.Resources.gear;
-            this.addExpirementType.Name = "addExpirementType";
-            this.addExpirementType.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.O)));
-            this.addExpirementType.Size = new System.Drawing.Size(304, 22);
-            this.addExpirementType.Text = "Добавить тип эксперимента";
-            this.addExpirementType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addExpirementType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
             // Tabs
             // 
@@ -161,6 +117,52 @@ namespace particles_env
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Библиотеки DLL|*.dll|Все файлы|*.*";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::particles_env.Properties.Resources.flag;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
+            this.toolStripMenuItem1.Text = "Новый эксперимент";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.новыйЭкспериментToolStripMenuItem_Click);
+            // 
+            // статистикаToolStripMenuItem
+            // 
+            this.статистикаToolStripMenuItem.Image = global::particles_env.Properties.Resources.diagram;
+            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
+            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.статистикаToolStripMenuItem.Text = "Статистика";
+            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
+            // 
+            // сохранитьЭкспериментToolStripMenuItem
+            // 
+            this.сохранитьЭкспериментToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.сохранитьЭкспериментToolStripMenuItem.Image = global::particles_env.Properties.Resources.save;
+            this.сохранитьЭкспериментToolStripMenuItem.Name = "сохранитьЭкспериментToolStripMenuItem";
+            this.сохранитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.сохранитьЭкспериментToolStripMenuItem.Text = "Сохранить эксперимент";
+            this.сохранитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.SaveExperiment);
+            // 
+            // загрузитьЭкспериментToolStripMenuItem
+            // 
+            this.загрузитьЭкспериментToolStripMenuItem.Image = global::particles_env.Properties.Resources.folder;
+            this.загрузитьЭкспериментToolStripMenuItem.Name = "загрузитьЭкспериментToolStripMenuItem";
+            this.загрузитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.загрузитьЭкспериментToolStripMenuItem.Text = "Загрузить эксперимент";
+            this.загрузитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.LoadExperiment);
+            // 
+            // addExpirementType
+            // 
+            this.addExpirementType.Image = global::particles_env.Properties.Resources.gear;
+            this.addExpirementType.Name = "addExpirementType";
+            this.addExpirementType.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                        | System.Windows.Forms.Keys.O)));
+            this.addExpirementType.Size = new System.Drawing.Size(304, 22);
+            this.addExpirementType.Text = "Добавить тип эксперимента";
+            this.addExpirementType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addExpirementType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addExpirementType.Click += new System.EventHandler(this.addExpirementType_Click);
             // 
             // MainForm
             // 
