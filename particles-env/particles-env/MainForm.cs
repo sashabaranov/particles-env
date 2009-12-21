@@ -87,6 +87,7 @@ namespace particles_env
                 case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
                         tao_ctrl.Size = _Size;
+                        tao_ctrl.Name = "TaoControl";
                         p.Controls.Add(tao_ctrl);
                         tao_ctrl.InitializeContexts();
                         

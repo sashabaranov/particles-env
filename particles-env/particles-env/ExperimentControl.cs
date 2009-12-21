@@ -74,6 +74,12 @@ namespace particles_env
                         graph.Refresh();
                         break;
                     case ExperimentNeeds.OpenGL:
+                        _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
+                        Tao.Platform.Windows.SimpleOpenGlControl tctrl = (Tao.Platform.Windows.SimpleOpenGlControl)this.Controls.Find("TaoControl", true)[0];
+                        tctrl.Size = _Size;
+                        this.Experiment.Graphics.Draw(e);
+                        df = false;
+                        tctrl.Invalidate();
                         break;
 
                 }
