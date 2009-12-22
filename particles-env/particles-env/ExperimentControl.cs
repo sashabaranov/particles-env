@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using MDK;
+using Tao.OpenGl;
 
 namespace particles_env
 {
@@ -77,6 +78,32 @@ namespace particles_env
                         _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         Tao.Platform.Windows.SimpleOpenGlControl tctrl = (Tao.Platform.Windows.SimpleOpenGlControl)this.Controls.Find("TaoControl", true)[0];
                         tctrl.Size = _Size;
+                        
+                        Gl.glMatrixMode(Tao.OpenGl.Gl.GL_PROJECTION);
+                        Gl.glLoadIdentity();
+                        Gl.glViewport(0, 0, tctrl.Width, tctrl.Height);
+                        Glu.gluPerspective(45, tctrl.Width / tctrl.Height, 0.1, 200);
+                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, 0, 200);
+
+                        Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
+                        Gl.glLoadIdentity();
+
+                        // setting up light
+                        float[] mat_specular = { 1, 1, 1, 1 };
+                        float[] mat_shininess = { 100.0f };
+                        float[] light_position = { -100, 50, -70 };
+                        float[] light_white = { 1, 1, 1, 1 };
+                        Gl.glShadeModel(Gl.GL_SMOOTH);
+                        Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_SPECULAR, mat_specular);
+                        Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_SHININESS, mat_shininess);
+                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light_position);
+                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_DIFFUSE, light_white);
+                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_SPECULAR, light_white);
+                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_AMBIENT, light_white);
+                        Gl.glLightModelfv(Gl.GL_LIGHT_MODEL_AMBIENT, new float[] { 0.1f, 0.1f, 0.1f, 1.0f});
+
+                        Gl.glEnable(Gl.GL_LIGHTING); Gl.glEnable(Gl.GL_LIGHT0); Gl.glEnable(Gl.GL_DEPTH_TEST);
+
                         this.Experiment.Graphics.Draw(e);
                         df = false;
                         tctrl.Invalidate();

@@ -104,9 +104,7 @@ namespace particles_env
                         Gl.glLoadIdentity();
 
                         Gl.glEnable(Gl.GL_DEPTH_TEST);
-                        Gl.glEnable(Gl.GL_LIGHTING);
-                        Gl.glEnable(Gl.GL_LIGHT0);
-                        break;
+                            break;
             }
 
             p.LoadParameters(p.Experiment.Graphics.ParameterListTemplate);
