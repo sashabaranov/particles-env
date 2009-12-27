@@ -86,9 +86,14 @@ namespace particles_env
                         break;
                 case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
-                        tao_ctrl.Size = _Size;
+                        tao_ctrl.Width = _Size.Width;
+                        tao_ctrl.Height = _Size.Height - 30;
                         tao_ctrl.Name = "TaoControl";
                         p.Controls.Add(tao_ctrl);
+                        tao_ctrl.MouseDown += p.OGL_MouseDown;
+                        tao_ctrl.MouseUp += p.OGL_MouseUp;
+                        tao_ctrl.MouseMove += p.OGL_MouseMove;
+
                         tao_ctrl.InitializeContexts();
                         
                         Glut.glutInit();
@@ -104,7 +109,8 @@ namespace particles_env
                         Gl.glLoadIdentity();
 
                         Gl.glEnable(Gl.GL_DEPTH_TEST);
-                            break;
+
+                        break;
             }
 
             p.LoadParameters(p.Experiment.Graphics.ParameterListTemplate);

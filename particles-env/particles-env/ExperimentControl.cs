@@ -16,6 +16,11 @@ namespace particles_env
         public Experiment Experiment;
         Bitmap Drawing;
 
+        // Needs.OpenGL
+        double[] cameraPos = { 0, 0, 0 };
+        double[] targetPos = { 0, 0, 5 };
+        double[] rotateA = { 0, 0, 0 };
+
         public ExperimentControl()
         {
             InitializeComponent();
@@ -82,8 +87,8 @@ namespace particles_env
                         Gl.glMatrixMode(Tao.OpenGl.Gl.GL_PROJECTION);
                         Gl.glLoadIdentity();
                         Gl.glViewport(0, 0, tctrl.Width, tctrl.Height);
-                        Glu.gluPerspective(45, tctrl.Width / tctrl.Height, 0.1, 200);
-                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, 0, 200);
+                        Glu.gluPerspective(45, tctrl.Width / tctrl.Height, 0.1, 100);
+                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, 0.1, 100);
 
                         Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
                         Gl.glLoadIdentity();
@@ -104,6 +109,14 @@ namespace particles_env
 
                         Gl.glEnable(Gl.GL_LIGHTING); Gl.glEnable(Gl.GL_LIGHT0); Gl.glEnable(Gl.GL_DEPTH_TEST);
 
+                        //camera
+                        //Glu.gluLookAt(0,0,-10,0,0,0,0,1,0);
+                        Glu.gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2], targetPos[0], targetPos[1], targetPos[2], 
+                            0, 1, 0); // еденичный вектор смотрит вверх
+                        Gl.glRotated(rotateA[0], 1, 0, 0);
+                        Gl.glRotated(rotateA[1], 0, 1, 0);
+                        Gl.glRotated(rotateA[2], 0, 0, 1);
+                        
                         this.Experiment.Graphics.Draw(e);
                         df = false;
                         tctrl.Invalidate();
@@ -144,6 +157,7 @@ namespace particles_env
 
         private void ExperimentControl_MouseClick(object sender, MouseEventArgs e)
         {
+            if (this.Experiment.Graphics.Needs == ExperimentNeeds.OpenGL) return;
             if (e.Button == MouseButtons.Right) contextMenuStrip1.Show(this, e.Location);
         }
 
@@ -185,6 +199,79 @@ namespace particles_env
             */
 
             Experiment.Graphics.SetParameters(Experiment.pList);
+        }
+
+        int prev_x, prev_y;
+        const double MouseDragSpeed = 0.2;
+        const double MouseRotateSpeed = 0.3;
+        enum CameraMode { Drag, Rotate, None };
+        CameraMode CMode = CameraMode.None;
+        public void OGL_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    CMode = CameraMode.Drag;
+                    break;
+                case MouseButtons.Right:
+                    CMode = CameraMode.Rotate;
+                    break;
+            }
+            prev_x = e.X;
+            prev_y = e.Y;
+        }
+
+        public void OGL_MouseUp(object sender, MouseEventArgs e)
+        {
+            CMode = CameraMode.None;
+        }
+
+        public void OGL_MouseMove(object sender, MouseEventArgs e)
+        {
+            double dx, dy;
+            switch (CMode)
+            {
+                   
+                case CameraMode.None:
+                    return;
+                    break;
+                case CameraMode.Drag:
+                    dx = e.X - prev_x;
+                    dx *= MouseDragSpeed;
+
+                    dy = e.Y - prev_y;
+                    dy *= MouseDragSpeed;
+                    
+                    cameraPos[0] += dx;
+                    cameraPos[1] += dy;
+
+                    targetPos[0] += dx;
+                    targetPos[1] += dy;
+
+                    df = true;
+                    Refresh();
+                    break;
+                case CameraMode.Rotate:
+                    dx = e.X - prev_x;
+                    dx *= MouseRotateSpeed;
+
+                    dy = e.Y - prev_y;
+                    dy *= MouseRotateSpeed;
+
+                    rotateA[0] += dy;
+                    rotateA[1] -= dx;
+
+                    if (rotateA[0] > 90)
+                        rotateA[0] = 90;
+                    if (rotateA[0] < -90)
+                        rotateA[0] = -90;
+
+                    df = true;
+                    Refresh();
+                    break;
+            }
+            prev_x = e.X;
+            prev_y = e.Y;
         }
     }
 }
