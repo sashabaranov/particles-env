@@ -87,36 +87,20 @@ namespace particles_env
                         Gl.glMatrixMode(Tao.OpenGl.Gl.GL_PROJECTION);
                         Gl.glLoadIdentity();
                         Gl.glViewport(0, 0, tctrl.Width, tctrl.Height);
-                        Glu.gluPerspective(45, tctrl.Width / tctrl.Height, 0.1, 100);
-                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, 0.1, 100);
+                        //Glu.gluPerspective(60, tctrl.Width / tctrl.Height, 0.1, 100);
+                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, -500, 500);
 
                         Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
                         Gl.glLoadIdentity();
-
-                        // setting up light
-                        float[] mat_specular = { 1, 1, 1, 1 };
-                        float[] mat_shininess = { 100.0f };
-                        float[] light_position = { -100, 50, -70 };
-                        float[] light_white = { 1, 1, 1, 1 };
-                        Gl.glShadeModel(Gl.GL_SMOOTH);
-                        Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_SPECULAR, mat_specular);
-                        Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_SHININESS, mat_shininess);
-                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light_position);
-                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_DIFFUSE, light_white);
-                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_SPECULAR, light_white);
-                        Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_AMBIENT, light_white);
-                        Gl.glLightModelfv(Gl.GL_LIGHT_MODEL_AMBIENT, new float[] { 0.1f, 0.1f, 0.1f, 1.0f});
-
-                        Gl.glEnable(Gl.GL_LIGHTING); Gl.glEnable(Gl.GL_LIGHT0); Gl.glEnable(Gl.GL_DEPTH_TEST);
 
                         //camera
                         //Glu.gluLookAt(0,0,-10,0,0,0,0,1,0);
                         Glu.gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2], targetPos[0], targetPos[1], targetPos[2], 
                             0, 1, 0); // еденичный вектор смотрит вверх
-                        Gl.glRotated(rotateA[0], 1, 0, 0);
-                        Gl.glRotated(rotateA[1], 0, 1, 0);
-                        Gl.glRotated(rotateA[2], 0, 0, 1);
-                        
+                        Gl.glRotated(-rotateA[0], 1, 0, 0);
+                        Gl.glRotated(-rotateA[1], 0, 1, 0);
+                        Gl.glRotated(-rotateA[2], 0, 0, 1);
+                        //Gl.glTranslated(0, 0, -10);
                         this.Experiment.Graphics.Draw(e);
                         df = false;
                         tctrl.Invalidate();
@@ -202,7 +186,7 @@ namespace particles_env
         }
 
         int prev_x, prev_y;
-        const double MouseDragSpeed = 0.2;
+        const double MouseDragSpeed = 0.5;
         const double MouseRotateSpeed = 0.3;
         enum CameraMode { Drag, Rotate, None };
         CameraMode CMode = CameraMode.None;
