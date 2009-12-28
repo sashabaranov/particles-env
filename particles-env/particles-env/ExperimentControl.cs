@@ -93,12 +93,14 @@ namespace particles_env
                         Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
                         Gl.glLoadIdentity();
 
+                        Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);        // Clear Screen And Depth Buffer
+                        Gl.glLoadIdentity();  
+                        
                         //camera
-                        //Glu.gluLookAt(0,0,-10,0,0,0,0,1,0);
                         Glu.gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2], targetPos[0], targetPos[1], targetPos[2], 
                             0, 1, 0); // еденичный вектор смотрит вверх
                         Gl.glRotated(-rotateA[0], 1, 0, 0);
-                        Gl.glRotated(-rotateA[1], 0, 1, 0);
+                        Gl.glRotated(rotateA[1], 0, 1, 0);
                         Gl.glRotated(-rotateA[2], 0, 0, 1);
                         //Gl.glTranslated(0, 0, -10);
                         this.Experiment.Graphics.Draw(e);
