@@ -49,11 +49,11 @@ namespace particles_env
                         break;
                     }
                 }
-                if (!isModule) MessageBox.Show("Файл "+Path+" не является модулем");
+               // if (!isModule) MessageBox.Show("Файл "+Path+" не является модулем");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Что-то пошло не так:\n" + e.ToString() + "\n К тому-же, мы пытались загрузить "+Path);
+              //  MessageBox.Show("Что-то пошло не так:\n" + e.ToString() + "\n К тому-же, мы пытались загрузить "+Path);
             }
         }
 

@@ -27,20 +27,6 @@ namespace particles_env
             this.Experiment = new Experiment();
         }
 
-        private void setParameters_Click(object sender, EventArgs e)
-        {
-            ParametersEdit EditDialog = new ParametersEdit();
-
-            EditDialog.eList = this.Experiment.Graphics.GetParameters(); // метод, обратный SetParameters'у
-            
-            if (EditDialog.ShowDialog() != DialogResult.Cancel)
-            {
-                this.Experiment.pList = EditDialog.eList;
-
-                this.Experiment.Graphics.SetParameters(this.Experiment.pList);
-                Refresh();
-            }
-        }
 
         private void ExperimentControl_Paint(object sender, PaintEventArgs e)
         {

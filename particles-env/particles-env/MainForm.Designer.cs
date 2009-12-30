@@ -31,19 +31,23 @@ namespace particles_env
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ıêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ñòàòèñòèêàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ñîõğàíèòüİêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çàãğóçèòüİêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.îïöèèToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addExperimentType = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.experimentAddControl1 = new particles_env.ExperimentAddControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.openExperimentDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ñòàòèñòèêàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ñîõğàíèòüİêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çàãğóçèòüİêñïåğèìåíòToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addExperimentType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.Tabs.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -78,46 +82,6 @@ namespace particles_env
             this.ıêñïåğèìåíòToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.ıêñïåğèìåíòToolStripMenuItem.Text = "İêñïåğèìåíò";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(227, 6);
-            // 
-            // îïöèèToolStripMenuItem
-            // 
-            this.îïöèèToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.îïöèèToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addExperimentType});
-            this.îïöèèToolStripMenuItem.Name = "îïöèèToolStripMenuItem";
-            this.îïöèèToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.îïöèèToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.îïöèèToolStripMenuItem.Text = "Îïöèè";
-            this.îïöèèToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            // 
-            // Tabs
-            // 
-            this.Tabs.AccessibleName = "TabView";
-            this.Tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tabs.Location = new System.Drawing.Point(0, 27);
-            this.Tabs.Name = "Tabs";
-            this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(845, 485);
-            this.Tabs.TabIndex = 2;
-            this.Tabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabs_Selecting);
-            this.Tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tabs_Selected);
-            this.Tabs.Resize += new System.EventHandler(this.Tabs_Resize);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.Filter = "Áèáëèîòåêè DLL|*.dll|Âñå ôàéëû|*.*";
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::particles_env.Properties.Resources.flag;
@@ -127,6 +91,11 @@ namespace particles_env
             this.toolStripMenuItem1.Text = "Íîâûé ıêñïåğèìåíò";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.íîâûéİêñïåğèìåíòToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
+            // 
             // ñòàòèñòèêàToolStripMenuItem
             // 
             this.ñòàòèñòèêàToolStripMenuItem.Image = global::particles_env.Properties.Resources.diagram;
@@ -134,6 +103,11 @@ namespace particles_env
             this.ñòàòèñòèêàToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.ñòàòèñòèêàToolStripMenuItem.Text = "Ñòàòèñòèêà";
             this.ñòàòèñòèêàToolStripMenuItem.Click += new System.EventHandler(this.ñòàòèñòèêàToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(227, 6);
             // 
             // ñîõğàíèòüİêñïåğèìåíòToolStripMenuItem
             // 
@@ -152,6 +126,17 @@ namespace particles_env
             this.çàãğóçèòüİêñïåğèìåíòToolStripMenuItem.Text = "Çàãğóçèòü ıêñïåğèìåíò";
             this.çàãğóçèòüİêñïåğèìåíòToolStripMenuItem.Click += new System.EventHandler(this.LoadExperiment);
             // 
+            // îïöèèToolStripMenuItem
+            // 
+            this.îïöèèToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.îïöèèToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addExperimentType});
+            this.îïöèèToolStripMenuItem.Name = "îïöèèToolStripMenuItem";
+            this.îïöèèToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.îïöèèToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.îïöèèToolStripMenuItem.Text = "Îïöèè";
+            this.îïöèèToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
             // addExperimentType
             // 
             this.addExperimentType.Image = global::particles_env.Properties.Resources.gear;
@@ -163,6 +148,42 @@ namespace particles_env
             this.addExperimentType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addExperimentType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addExperimentType.Click += new System.EventHandler(this.addExperimentType_Click);
+            // 
+            // Tabs
+            // 
+            this.Tabs.AccessibleName = "TabView";
+            this.Tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tabs.Controls.Add(this.tabPage1);
+            this.Tabs.Location = new System.Drawing.Point(0, 27);
+            this.Tabs.Name = "Tabs";
+            this.Tabs.SelectedIndex = 0;
+            this.Tabs.Size = new System.Drawing.Size(845, 485);
+            this.Tabs.TabIndex = 2;
+            this.Tabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabs_Selecting);
+            this.Tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tabs_Selected);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.experimentAddControl1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(837, 459);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Ñòàğòîâàÿ ñòğàíèöà";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // experimentAddControl1
+            // 
+            this.experimentAddControl1.Location = new System.Drawing.Point(8, 3);
+            this.experimentAddControl1.Name = "experimentAddControl1";
+            this.experimentAddControl1.Size = new System.Drawing.Size(773, 305);
+            this.experimentAddControl1.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Áèáëèîòåêè DLL|*.dll|Âñå ôàéëû|*.*";
             // 
             // MainForm
             // 
@@ -181,6 +202,8 @@ namespace particles_env
             this.Resize += new System.EventHandler(this.Tabs_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.Tabs.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +226,8 @@ namespace particles_env
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem çàãğóçèòüİêñïåğèìåíòToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openExperimentDialog;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ExperimentAddControl experimentAddControl1;
     }
 }
 

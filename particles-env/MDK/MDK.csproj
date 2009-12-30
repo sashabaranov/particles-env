@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LegendDrawer.cs" />
     <Compile Include="Physics\Collide.cs" />
     <Compile Include="Experiment.cs" />
     <Compile Include="GraphicPrimitive.cs">

@@ -17,7 +17,7 @@ namespace particles_env
 {
     public partial class MainForm : Form
     {
-        int ExperimentCount;
+        int ExperimentCount = 1;
         static ExperimentList ExpList;
         List<string> Dlls;
 
@@ -142,6 +142,16 @@ namespace particles_env
         {
             AddModulesFromDefaultFolder();
             this.DoubleBuffered = true;
+
+            ExperimentAddControl c = (ExperimentAddControl) tabPage1.Controls[0];
+
+            c.SetList(GenerateNewExperimentList());
+            c.UserSelected += new ExperimentAddControl.UserSelectedHandler(c_UserSelected);
+        }
+
+        void c_UserSelected(object sender, Experiment ExperimentObject)
+        {
+            AddNewTabWithExperiment(ExperimentObject);
         }
 
         private void AddModulesFromDefaultFolder()
@@ -167,7 +177,7 @@ namespace particles_env
             }
             catch (Exception e)
             {
-                MessageBox.Show("Что-то пошло не так:\n" + e.Message, "Ошибка");
+            //    MessageBox.Show("Что-то пошло не так:\n" + e.Message, "Ошибка");
             }
 
         }
@@ -223,13 +233,13 @@ namespace particles_env
         {
             foreach (TabPage Page in Tabs.TabPages)
             {
-                ExperimentControl c = (ExperimentControl) Page.Controls[0];
+                Control c =  Page.Controls[0];
                 
                 c.Left = Page.Left - 5;
                 c.Top  = Page.Top - 25;
                 c.Size = Page.Size; 
 
-                c.Experiment.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
+                //c.Experiment.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
             }
         }
 
@@ -289,6 +299,7 @@ namespace particles_env
             }
 
         }
+
 
 
     }
