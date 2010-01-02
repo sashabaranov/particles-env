@@ -36,7 +36,7 @@ namespace particles_env
                 Type[] types = asm.GetTypes();
 
                 object obj = new object();
-                bool isModule = false;
+               // bool isModule = false;
 
                 foreach (Type p in types)
                 {
@@ -45,7 +45,7 @@ namespace particles_env
                         object objj = Activator.CreateInstance(p);
                         eList.Add(new ExperimentInfo(Path, (GraphicPrimitive)objj));
 
-                        isModule = true;
+                       // isModule = true;
                         break;
                     }
                 }

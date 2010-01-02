@@ -29,7 +29,7 @@ namespace particles_env
 
         private void новыйЭкспериментToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExperimentAdd c = new ExperimentAdd(GenerateNewExperimentList()); //объект диалога
+            ExperimentAdd c = new ExperimentAdd(ExpList); //объект диалога
 
             if (c.ShowDialog() != DialogResult.Cancel)
             {
@@ -133,6 +133,8 @@ namespace particles_env
                 if(!Dlls.Contains(openFileDialog1.FileName)) // проверка на повторное добавление
                 {
                     Dlls.Add(openFileDialog1.FileName);
+
+                    ExpList = GenerateNewExperimentList();
                 }
             }
         }
@@ -141,12 +143,14 @@ namespace particles_env
         private void MainForm_Load(object sender, EventArgs e)
         {
             AddModulesFromDefaultFolder();
+            ExpList = GenerateNewExperimentList();
 
             ExperimentAddControl c = (ExperimentAddControl)tabPage1.Controls["experimentAddControl1"];
 
             c.Controls["DoneButton"].Text = "Добавить";
-            c.SetList(GenerateNewExperimentList());
+            c.SetList(ExpList);
             c.UserSelected += new ExperimentAddControl.UserSelectedHandler(c_UserSelected);
+            
         }
 
         void c_UserSelected(object sender, Experiment ExperimentObject)
@@ -166,7 +170,7 @@ namespace particles_env
 
                     foreach (FileInfo Module in Modules)
                     {
-                        if(Module.Name!="MDK.dll" && Module.Name!="ZedGraph")
+                        if (Module.Name != "MDK.dll" && Module.Name != "ZedGraph")
                             Dlls.Add(Module.FullName); // проверка неуместна, метод вызывается при загрузке программы.
                     }
                 }
@@ -176,11 +180,7 @@ namespace particles_env
                     throw new Exception("Стандартная директория модулей не найдена, создана новая директория modules.");
                 }
             }
-            catch (Exception e)
-            {
-            //    MessageBox.Show("Что-то пошло не так:\n" + e.Message, "Ошибка");
-            }
-
+            finally {  }
         }
 
 
@@ -193,7 +193,6 @@ namespace particles_env
         {
             ExperimentList Lst = new ExperimentList();
 
-            
             foreach (string p in Dlls)
             {
                 Lst.LoadDll(p);
@@ -205,6 +204,7 @@ namespace particles_env
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExpStats c = new ExpStats(GenerateNewExperimentList(), ref this.Tabs);
+
             if (c.ShowDialog() != DialogResult.Cancel)
             {
                 ExperimentControl p = new ExperimentControl();
@@ -219,17 +219,7 @@ namespace particles_env
 
             }
         }
-
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TabControl tab = new TabControl();
-            for (int i = 0; i < tab.TabPages.Count; i++)
-            {
-                MessageBox.Show(tab.TabPages[i].Name);
-            }
-
-        }
-
+        /*
         private void Tabs_Resize(object sender, EventArgs e)
         {
             foreach (TabPage Page in Tabs.TabPages)
@@ -242,18 +232,14 @@ namespace particles_env
 
                 //c.Experiment.Graphics.SetDrawingBorder(c.Left, c.Top, c.Size);
             }
-        }
-
-        private void Tabs_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            
-        }
+        }*/
 
         private void Tabs_Selected(object sender, TabControlEventArgs e)
         {
             Tabs.SelectedTab.Invalidate();
         }
 
+        #region Сохранение и Загрузка экспериментов
         private void SaveExperiment(object sender, EventArgs e)
         {
             if (Tabs.TabPages.Count > 0)
@@ -300,6 +286,6 @@ namespace particles_env
             }
 
         }
-
+        #endregion
     }
 }

@@ -162,7 +162,6 @@ namespace particles_env
             this.Tabs.SelectedIndex = 0;
             this.Tabs.Size = new System.Drawing.Size(957, 564);
             this.Tabs.TabIndex = 2;
-            this.Tabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabs_Selecting);
             this.Tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tabs_Selected);
             // 
             // tabPage1
@@ -217,7 +216,6 @@ namespace particles_env
             this.Text = "Среда для работы с элементарными частицами";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Resize += new System.EventHandler(this.Tabs_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.Tabs.ResumeLayout(false);
