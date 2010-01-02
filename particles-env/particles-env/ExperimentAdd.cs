@@ -50,6 +50,11 @@ namespace particles_env
             this.Refresh();*/
         }
 
+        private void experimentAddControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

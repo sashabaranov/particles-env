@@ -141,10 +141,10 @@ namespace particles_env
         private void MainForm_Load(object sender, EventArgs e)
         {
             AddModulesFromDefaultFolder();
-            this.DoubleBuffered = true;
 
-            ExperimentAddControl c = (ExperimentAddControl) tabPage1.Controls[0];
+            ExperimentAddControl c = (ExperimentAddControl)tabPage1.Controls["experimentAddControl1"];
 
+            c.Controls["DoneButton"].Text = "Добавить";
             c.SetList(GenerateNewExperimentList());
             c.UserSelected += new ExperimentAddControl.UserSelectedHandler(c_UserSelected);
         }
@@ -152,6 +152,7 @@ namespace particles_env
         void c_UserSelected(object sender, Experiment ExperimentObject)
         {
             AddNewTabWithExperiment(ExperimentObject);
+            Tabs.SelectTab(ExperimentCount - 1);
         }
 
         private void AddModulesFromDefaultFolder()
@@ -299,8 +300,6 @@ namespace particles_env
             }
 
         }
-
-
 
     }
 }

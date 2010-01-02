@@ -33,19 +33,25 @@
             // 
             // experimentAddControl1
             // 
-            this.experimentAddControl1.Location = new System.Drawing.Point(2, 12);
+            this.experimentAddControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.experimentAddControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.experimentAddControl1.Location = new System.Drawing.Point(12, 12);
             this.experimentAddControl1.Name = "experimentAddControl1";
-            this.experimentAddControl1.Size = new System.Drawing.Size(773, 305);
+            this.experimentAddControl1.Size = new System.Drawing.Size(728, 299);
             this.experimentAddControl1.TabIndex = 0;
+            this.experimentAddControl1.Load += new System.EventHandler(this.experimentAddControl1_Load);
             // 
             // ExperimentAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 321);
+            this.ClientSize = new System.Drawing.Size(752, 323);
             this.Controls.Add(this.experimentAddControl1);
             this.Name = "ExperimentAdd";
-            this.Text = "ExperimentAdd";
+            this.ShowIcon = false;
+            this.Text = "Добавить эксперимент";
             this.Load += new System.EventHandler(this.ExperimentAdd_Load);
             this.ResumeLayout(false);
 
@@ -54,6 +60,8 @@
         #endregion
 
         private ExperimentAddControl experimentAddControl1;
+
+
 
 
 

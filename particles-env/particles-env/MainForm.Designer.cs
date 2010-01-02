@@ -41,6 +41,7 @@ namespace particles_env
             this.addExperimentType = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.experimentAddControl1 = new particles_env.ExperimentAddControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
@@ -52,9 +53,9 @@ namespace particles_env
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 515);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 594);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(845, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(957, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -65,7 +66,7 @@ namespace particles_env
             this.опцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(957, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -159,26 +160,42 @@ namespace particles_env
             this.Tabs.Location = new System.Drawing.Point(0, 27);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(845, 485);
+            this.Tabs.Size = new System.Drawing.Size(957, 564);
             this.Tabs.TabIndex = 2;
             this.Tabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tabs_Selecting);
             this.Tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tabs_Selected);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.experimentAddControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(837, 459);
+            this.tabPage1.Size = new System.Drawing.Size(949, 538);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Стартовая страница";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(287, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Выберите эксперимент:";
+            // 
             // experimentAddControl1
             // 
-            this.experimentAddControl1.Location = new System.Drawing.Point(8, 3);
+            this.experimentAddControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.experimentAddControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.experimentAddControl1.Location = new System.Drawing.Point(8, 49);
             this.experimentAddControl1.Name = "experimentAddControl1";
-            this.experimentAddControl1.Size = new System.Drawing.Size(773, 305);
+            this.experimentAddControl1.Size = new System.Drawing.Size(917, 468);
             this.experimentAddControl1.TabIndex = 0;
             // 
             // openFileDialog1
@@ -189,11 +206,12 @@ namespace particles_env
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 537);
+            this.ClientSize = new System.Drawing.Size(957, 616);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Среда для работы с элементарными частицами";
@@ -204,6 +222,7 @@ namespace particles_env
             this.menuStrip1.PerformLayout();
             this.Tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +247,7 @@ namespace particles_env
         private System.Windows.Forms.OpenFileDialog openExperimentDialog;
         private System.Windows.Forms.TabPage tabPage1;
         private ExperimentAddControl experimentAddControl1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
