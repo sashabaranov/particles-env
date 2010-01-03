@@ -122,6 +122,7 @@ namespace particles_env
 
             Tabs.TabPages.Add("exp" + ExperimentCount, "Ёксперимент " + ExperimentCount);
             Tabs.TabPages[ExperimentCount].Controls.Add(p);
+            Tabs.SelectTab(ExperimentCount);
             Tabs.TabPages[ExperimentCount].Focus();
 
             ExperimentCount++;
@@ -157,7 +158,6 @@ namespace particles_env
         void c_UserSelected(object sender, Experiment ExperimentObject)
         {
             AddNewTabWithExperiment(ExperimentObject);
-            Tabs.SelectTab(ExperimentCount - 1);
         }
 
         private void AddModulesFromDefaultFolder()

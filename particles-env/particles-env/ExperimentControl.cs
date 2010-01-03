@@ -151,7 +151,6 @@ namespace particles_env
         private void ParametersGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             string ParameterName = (string) ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
-           
             
             if(!double.TryParse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value, out Experiment.pList.Parameters[e.RowIndex].Value))
             {
@@ -159,16 +158,6 @@ namespace particles_env
                 ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
                 Experiment.pList.Parameters[e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
             }
-            /*
-            try
-            {
-                value = double.Parse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Неправильно введено значение!");
-            }
-            */
 
             Experiment.Graphics.SetParameters(Experiment.pList);
         }
