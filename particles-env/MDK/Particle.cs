@@ -157,7 +157,7 @@ namespace MDK
             foreach (Particle p in FixedParticles)
             {
                 this.Energy  += p.Energy;
-                this.Impulse += p.Impulse; // TODO: сделать векторное сложение
+                this.Impulse += p.Impulse;
             }
 
             CountMassInvariant();

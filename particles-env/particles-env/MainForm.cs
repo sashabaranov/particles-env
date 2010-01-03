@@ -41,7 +41,8 @@ namespace particles_env
         public void AddNewTabWithExperiment(Experiment c)
         {
             ExperimentControl p = new ExperimentControl();
-            p.Experiment = c;
+            p.LoadExperiment(c);
+
             p.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
 
             p.Size = Tabs.Size;

@@ -245,5 +245,16 @@ namespace particles_env
             prev_x = e.X;
             prev_y = e.Y;
         }
+
+        internal void LoadExperiment(MDK.Experiment c)
+        {
+            descriptionLabel.Text = c.Graphics.GetAbout().Description;
+            this.Experiment = c;
+        }
+
+        private void ExperimentControl_Load(object sender, EventArgs e)
+        {
+            descriptionLabel.BackColor = SystemColors.Window;
+        }
     }
 }
