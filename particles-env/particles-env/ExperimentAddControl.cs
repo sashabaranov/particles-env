@@ -81,7 +81,7 @@ namespace particles_env
         private void ExperimentAddControl_Load(object sender, EventArgs e)
         {
             listBox1.ItemHeight = 60;
-            Description.Height = listBox1.Height;
+            DescriptionBox.Height = listBox1.Height;
         }
 
 
@@ -91,7 +91,7 @@ namespace particles_env
 
         private void ExperimentAddControl_Resize(object sender, EventArgs e)
         {
-            Description.Height = listBox1.Height;
+            DescriptionBox.Height = listBox1.Height;
         }
 
     }

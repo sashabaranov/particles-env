@@ -243,7 +243,7 @@ namespace particles_env
 
         private void ExperimentControl_Load(object sender, EventArgs e)
         {
-            descriptionLabel.BackColor = SystemColors.Window;
+            //descriptionLabel.BackColor = SystemColors.Window;
         }
     }
 }

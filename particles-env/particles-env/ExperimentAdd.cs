@@ -39,15 +39,7 @@ namespace particles_env
 
         private void ExperimentAdd_Load(object sender, EventArgs e)
         {
-            
-            /*
-            experimentAddControl.SetList(experimentList);
-            experimentAddControl.UserSelected += new ExperimentAddControl.UserSelectedHandler(experimentAddControl_UserSelected);
-
-            experimentAddControl.Size = new Size(852, 363);
-            this.Controls.Add(experimentAddControl);
-            this.Invalidate();
-            this.Refresh();*/
+            experimentAddControl1.Description.BackColor = SystemColors.Control;
         }
 
         private void experimentAddControl1_Load(object sender, EventArgs e)

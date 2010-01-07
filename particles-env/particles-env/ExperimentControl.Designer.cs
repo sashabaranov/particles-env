@@ -123,11 +123,12 @@ namespace particles_env
             this.descriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.descriptionLabel.BackColor = System.Drawing.SystemColors.Window;
             this.descriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.descriptionLabel.Enabled = false;
             this.descriptionLabel.Location = new System.Drawing.Point(5, 22);
             this.descriptionLabel.Multiline = true;
             this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.ReadOnly = true;
             this.descriptionLabel.Size = new System.Drawing.Size(186, 175);
             this.descriptionLabel.TabIndex = 0;
             // 

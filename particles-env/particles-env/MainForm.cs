@@ -149,9 +149,13 @@ namespace particles_env
 
             ExperimentAddControl c = (ExperimentAddControl)tabPage1.Controls["experimentAddControl1"];
 
-            c.Controls["DoneButton"].Text = "Добавить";
+            
             c.SetList(ExpList);
             c.UserSelected += new ExperimentAddControl.UserSelectedHandler(c_UserSelected);
+
+            //little fixup on the go
+            c.DoneButton.Text = "Добавить";
+            c.DescriptionBox.BackColor = SystemColors.Window;
             
         }
 
