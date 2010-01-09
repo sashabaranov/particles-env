@@ -69,25 +69,8 @@ namespace particles_env
                         _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         Tao.Platform.Windows.SimpleOpenGlControl tctrl = (Tao.Platform.Windows.SimpleOpenGlControl)this.Controls.Find("TaoControl", true)[0];
                         tctrl.Size = _Size;
-                        
-                        Gl.glMatrixMode(Tao.OpenGl.Gl.GL_PROJECTION);
-                        Gl.glLoadIdentity();
-                        Gl.glViewport(0, 0, tctrl.Width, tctrl.Height);
-                        //Glu.gluPerspective(60, tctrl.Width / tctrl.Height, 0.1, 100);
-                        Gl.glOrtho(-tctrl.Width / 2, tctrl.Width / 2, -tctrl.Height / 2, tctrl.Height / 2, -500, 500);
-
-                        Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
-                        Gl.glLoadIdentity();
-
-                        Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);        // Clear Screen And Depth Buffer
-                        Gl.glLoadIdentity();  
-                        
-                        //camera
-                        Glu.gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2], targetPos[0], targetPos[1], targetPos[2], 
-                            0, 1, 0); // еденичный вектор смотрит вверх
-                        Gl.glRotated(-rotateA[0], 1, 0, 0);
-                        Gl.glRotated(rotateA[1], 0, 1, 0);
-                        Gl.glRotated(-rotateA[2], 0, 0, 1);
+                        this.Experiment.Graphics.GL_init(_Size.Width, _Size.Height);
+                        this.Experiment.Graphics.GL_camera(cameraPos, targetPos, rotateA);
                         //Gl.glTranslated(0, 0, -10);
                         this.Experiment.Graphics.Draw(e);
                         df = false;

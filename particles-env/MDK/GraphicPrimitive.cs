@@ -100,6 +100,24 @@ namespace MDK
         }
 
         /// <summary>
+        /// Метод для инициализации экспериментов, использующих OpenGL
+        /// </summary>
+        /// <param name="w">Width эксперимента</param>
+        /// <param name="h">Height эксперимента</param>
+        public virtual void GL_init(int w, int h)
+        {
+            return;
+        }
+
+        /// <summary>
+        /// Функция для работы с камерой
+        /// </summary>
+        public virtual void GL_camera(double[] cameraPos, double[] targetPos, double[] rotateA)
+        {
+            return;
+        }
+
+        /// <summary>
         /// Виртуальный метод для возвращения параметров
         /// </summary>
         /// <returns>Список параметров</returns>

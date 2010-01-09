@@ -96,21 +96,6 @@ namespace particles_env
                         tao_ctrl.MouseMove += p.OGL_MouseMove;
 
                         tao_ctrl.InitializeContexts();
-                        
-                        Glut.glutInit();
-                        Glut.glutInitDisplayMode(Glut.GLUT_RGB | Glut.GLUT_DOUBLE | Glut.GLUT_DEPTH);
-                    
-                        Gl.glClearColor(0, 0, 0, 1);
-                        Gl.glViewport(0, 0, tao_ctrl.Width, tao_ctrl.Height);
-
-                        Gl.glMatrixMode(Gl.GL_PROJECTION);
-                        Gl.glLoadIdentity();
-                        Glu.gluPerspective(45, (float)tao_ctrl.Width / (float)tao_ctrl.Height, 0.1, 200);
-                        Gl.glMatrixMode(Gl.GL_MODELVIEW);
-                        Gl.glLoadIdentity();
-
-                        Gl.glEnable(Gl.GL_DEPTH_TEST);
-
                         break;
             }
 
