@@ -18,7 +18,7 @@ namespace particles_env
 
         // Needs.OpenGL
         double[] cameraPos = { 0, 0, 0 };
-        double[] targetPos = { 0, 0, 5 };
+        double[] targetPos = { 0, 0, 1, 1 }; // targetPos[3] - zoom
         double[] rotateA = { 0, 0, 0 };
 
         public ExperimentControl()
@@ -71,7 +71,6 @@ namespace particles_env
                         tctrl.Size = _Size;
                         this.Experiment.Graphics.GL_init(_Size.Width, _Size.Height);
                         this.Experiment.Graphics.GL_camera(cameraPos, targetPos, rotateA);
-                        //Gl.glTranslated(0, 0, -10);
                         this.Experiment.Graphics.Draw(e);
                         df = false;
                         tctrl.Invalidate();
@@ -148,7 +147,7 @@ namespace particles_env
         int prev_x, prev_y;
         const double MouseDragSpeed = 0.5;
         const double MouseRotateSpeed = 0.3;
-        enum CameraMode { Drag, Rotate, None };
+        enum CameraMode { Drag, Rotate, Zoom, None };
         CameraMode CMode = CameraMode.None;
         public void OGL_MouseDown(object sender, MouseEventArgs e)
         {
@@ -168,6 +167,31 @@ namespace particles_env
         public void OGL_MouseUp(object sender, MouseEventArgs e)
         {
             CMode = CameraMode.None;
+        }
+
+        public void OGL_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            
+            targetPos[3] -= e.Delta;
+            
+            Refresh();
+        }
+
+        public void OGL_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+          
+            switch (e.KeyCode)
+            {
+                case Keys.Z:
+                    targetPos[3] += 0.1;
+                    break;
+                case Keys.X:
+                    targetPos[3] -= 0.1;
+                    break;
+            }
+            df = true;
+            Refresh();
+            
         }
 
         public void OGL_MouseMove(object sender, MouseEventArgs e)
@@ -205,10 +229,10 @@ namespace particles_env
                     rotateA[0] += dy;
                     rotateA[1] -= dx;
 
-                    if (rotateA[0] > 90)
+                    /*if (rotateA[0] > 90)
                         rotateA[0] = 90;
                     if (rotateA[0] < -90)
-                        rotateA[0] = -90;
+                        rotateA[0] = -90;*/
 
                     df = true;
                     Refresh();

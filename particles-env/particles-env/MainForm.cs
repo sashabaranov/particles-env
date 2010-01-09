@@ -94,6 +94,8 @@ namespace particles_env
                         tao_ctrl.MouseDown += p.OGL_MouseDown;
                         tao_ctrl.MouseUp += p.OGL_MouseUp;
                         tao_ctrl.MouseMove += p.OGL_MouseMove;
+                        tao_ctrl.MouseWheel += p.OGL_MouseWheel;
+                        tao_ctrl.KeyDown += p.OGL_KeyDown;
 
                         tao_ctrl.InitializeContexts();
                         break;
