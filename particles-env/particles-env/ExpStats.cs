@@ -40,10 +40,11 @@ namespace particles_env
             ExperimentControl expCtrl;
             Random rnd = new Random(DateTime.Now.Millisecond);
             int i = 0;
+            
             foreach (TabPage tab in tc.TabPages)
             {
-                
-                expCtrl = (ExperimentControl)tab.Controls[0];
+                if (tab.Text == "Стартовая страница") continue;
+                expCtrl = (ExperimentControl)tab.Controls.Find("ExpCtrl", true)[0]; ;
 
                 if (expType == expCtrl.Experiment.Graphics.GetType())
                 {
@@ -61,6 +62,7 @@ namespace particles_env
             }
             Stats statsWin = new Stats(myStatsParams);
             statsWin.Show();
+            
         }
     }
 }

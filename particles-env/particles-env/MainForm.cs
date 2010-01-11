@@ -41,6 +41,7 @@ namespace particles_env
         public void AddNewTabWithExperiment(Experiment c)
         {
             ExperimentControl p = new ExperimentControl();
+            p.Name = "ExpCtrl";
             p.LoadExperiment(c);
 
             p.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
@@ -65,7 +66,8 @@ namespace particles_env
                     ZedGraph.ZedGraphControl zgc = new ZedGraph.ZedGraphControl();
                     zgc.Size = _Size;
                     p.Controls.Add(zgc);
-
+                    GraphPane zgcPane = zgc.GraphPane;
+                    zgcPane.Chart.Fill = new Fill(Color.Red, Color.Blue, 45.0F);
                     p.Experiment.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
                     break;
 
@@ -84,7 +86,7 @@ namespace particles_env
                         myPane = graph.GraphPane;
                         p.Experiment.Graphics.SetGraphInfo(myPane);
                         myPane.Legend.IsVisible = false;
-                        myPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0F);
+                        myPane.Chart.Fill = new Fill(Color.Red, Color.Blue, 45.0F);
                         break;
                 case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
