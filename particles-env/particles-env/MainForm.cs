@@ -51,6 +51,7 @@ namespace particles_env
 
             Size _Size = p.Size;
             _Size.Width -= 200;
+            _Size.Height -= 26;
 
             p.Experiment.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
 
