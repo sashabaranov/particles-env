@@ -46,12 +46,17 @@ namespace particles_env
                         break;
 
                     case ExperimentNeeds.ZedGraph:
+                        _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
+                        ZedGraph.ZedGraphControl zgc = (ZedGraph.ZedGraphControl)this.Controls.Find("ZedGraphControl", true)[0];
+                        zgc.Size = _Size;
                         this.Experiment.Graphics.Draw(e);
                         df = false;
                         break;
                     
                     case ExperimentNeeds.Graph:
+                        _Size = new Size(this.Width - ParametersGrid.Width, this.Height);
                         ZedGraph.ZedGraphControl graph = (ZedGraph.ZedGraphControl)this.Controls.Find("ZedGraphControl", true)[0];
+                        graph.Size = _Size;
                         ZedGraph.PointPairList points = this.Experiment.Graphics.GetPoints();
                         ZedGraph.LineItem curve;
                         graph.GraphPane.CurveList.Clear();
