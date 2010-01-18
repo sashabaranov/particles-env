@@ -57,9 +57,11 @@ namespace particles_env
             this.ClientSize = new System.Drawing.Size(292, 269);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ExpStats";
             this.ShowIcon = false;
             this.Text = "Статистика";
+            this.Load += new System.EventHandler(this.ExpStats_Load);
             this.ResumeLayout(false);
 
         }

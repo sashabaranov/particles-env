@@ -29,6 +29,7 @@ namespace particles_env
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedItem == null) return;
             //List<ExperimentInfo> experiments = new List<ExperimentInfo>();
             //foreach (ExperimentInfo l in listBox1.SelectedItems)
             //{
@@ -44,12 +45,12 @@ namespace particles_env
             foreach (TabPage tab in tc.TabPages)
             {
                 if (tab.Text == "Стартовая страница") continue;
-                expCtrl = (ExperimentControl)tab.Controls.Find("ExpCtrl", true)[0]; ;
+                expCtrl = (ExperimentControl)tab.Controls.Find("ExpCtrl", true)[0];
 
                 if (expType == expCtrl.Experiment.Graphics.GetType())
                 {
                     myStatsParams.color.Add(Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255)));
-                    myStatsParams.title.Add(string.Format("Эксперимент {0}", i));
+                    myStatsParams.title.Add(tab.Text);
                     PointPairList results = expCtrl.Experiment.Graphics.GetResults();
                     if (results.Count == 0)
                     {
@@ -62,6 +63,11 @@ namespace particles_env
             }
             Stats statsWin = new Stats(myStatsParams);
             statsWin.Show();
+            
+        }
+
+        private void ExpStats_Load(object sender, EventArgs e)
+        {
             
         }
     }

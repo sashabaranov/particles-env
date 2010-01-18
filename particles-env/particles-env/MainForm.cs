@@ -51,9 +51,9 @@ namespace particles_env
             p.Top = Tabs.Top - 25;
 
             Size _Size = p.Size;
-            _Size.Width -= 200;
+            _Size.Width -= 202;
             _Size.Height -= 26;
-
+            //p.Size = _Size;
             p.Experiment.Graphics.SetDrawingBorder(p.Left, p.Top, _Size);
 
             //Обработчик нужд эксперимента
@@ -90,8 +90,7 @@ namespace particles_env
                         break;
                 case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
-                        tao_ctrl.Width = _Size.Width;
-                        tao_ctrl.Height = _Size.Height - 30;
+                        tao_ctrl.Size = _Size;
                         tao_ctrl.Name = "TaoControl";
                         p.Controls.Add(tao_ctrl);
                         tao_ctrl.MouseDown += p.OGL_MouseDown;
@@ -198,7 +197,21 @@ namespace particles_env
 
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExpStats c = new ExpStats(GenerateNewExperimentList(), ref this.Tabs);
+            ExperimentList expsList = new ExperimentList();
+            ExperimentInfo expinf = new ExperimentInfo();
+            foreach (TabPage tab in Tabs.TabPages)
+            {
+                if (tab.Text == "Стартовая страница") continue;
+                expinf = new ExperimentInfo("", ((ExperimentControl)tab.Controls.Find("ExpCtrl", true)[0]).Experiment.Graphics);
+                //expinf.GraphicsObj = ((ExperimentControl)tab.Controls.Find("ExpCtrl", true)[0]).Experiment.Graphics;
+                bool k = false;
+                foreach (ExperimentInfo e_i in expsList.eList)
+                {
+                    if (e_i.GraphicsObj == expinf.GraphicsObj) k = true; 
+                }
+                if (!k) expsList.eList.Add(expinf);
+            }
+            ExpStats c = new ExpStats(expsList, ref this.Tabs);
 
             if (c.ShowDialog() != DialogResult.Cancel)
             {
