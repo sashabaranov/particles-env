@@ -67,7 +67,7 @@ namespace particles_env
                     zgc.Size = _Size;
                     p.Controls.Add(zgc);
                     GraphPane zgcPane = zgc.GraphPane;
-                    zgcPane.Chart.Fill = new Fill(Color.Red, Color.Blue, 45.0F);
+                    zgcPane.Chart.Fill = new Fill(Color.White, Color.LightBlue, 45.0F);
                     p.Experiment.Graphics.CreateControl(zgc); //добавить контрол Zedgraph'а
                     break;
 
@@ -86,7 +86,7 @@ namespace particles_env
                         myPane = graph.GraphPane;
                         p.Experiment.Graphics.SetGraphInfo(myPane);
                         myPane.Legend.IsVisible = false;
-                        myPane.Chart.Fill = new Fill(Color.Red, Color.Blue, 45.0F);
+                        myPane.Chart.Fill = new Fill(Color.White, Color.LightBlue, 45.0F);
                         break;
                 case ExperimentNeeds.OpenGL:
                         SimpleOpenGlControl tao_ctrl = new SimpleOpenGlControl();
