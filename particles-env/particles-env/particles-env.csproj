@@ -31,6 +31,8 @@
     <ApplicationRevision>1</ApplicationRevision>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile>Mono</TargetFrameworkProfile>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

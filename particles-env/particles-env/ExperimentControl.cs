@@ -135,14 +135,22 @@ namespace particles_env
 
         private void ParametersGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            string ParameterName = (string) ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
-            
-            if(!double.TryParse((string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value, out Experiment.pList.Parameters[e.RowIndex].Value))
+            try
             {
-                MessageBox.Show("Неправильно введён параметр!");
+                string ParameterName = (string)ParametersGrid.Rows[e.RowIndex].Cells[0].Value;
+
+                string NewValue = (string)ParametersGrid[e.ColumnIndex, e.RowIndex].Value;
+                NewValue.Replace(".", ",");
+
+                bool parsed = double.TryParse(NewValue, out Experiment.pList.Parameters[e.RowIndex].Value);
+                if (!parsed) throw new Exception("Can't parse!");
+            }
+            catch(Exception ex) 
+            {
                 ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
                 Experiment.pList.Parameters[e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
             }
+
 
             Experiment.Graphics.SetParameters(Experiment.pList);
         }
