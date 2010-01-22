@@ -75,6 +75,8 @@ namespace particles_env
             // ParametersGrid
             // 
             this.ParametersGrid.AllowUserToAddRows = false;
+            this.ParametersGrid.AllowUserToResizeRows = false;
+            this.ParametersGrid.AllowUserToResizeColumns = false;
             this.ParametersGrid.AllowUserToDeleteRows = false;
             this.ParametersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ParametersGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

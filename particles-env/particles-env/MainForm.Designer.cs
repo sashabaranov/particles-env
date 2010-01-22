@@ -210,7 +210,7 @@ namespace particles_env
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimizeBox = false;
+            this.MinimizeBox = true;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Среда для работы с элементарными частицами";
