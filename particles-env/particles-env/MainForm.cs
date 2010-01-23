@@ -104,7 +104,7 @@ namespace particles_env
             }
 
             p.LoadParameters(p.Experiment.Graphics.ParameterListTemplate);
-            p.Experiment.pList = p.Experiment.Graphics.ParameterListTemplate;
+        //    p.Experiment.pList = p.Experiment.Graphics.ParameterListTemplate;
 
             p.Experiment.Graphics.SetParameters(p.Experiment.Graphics.ParameterListTemplate);
             p.Anchor = AnchorStyles.Bottom & AnchorStyles.Right & AnchorStyles.Top & AnchorStyles.Left;

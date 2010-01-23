@@ -144,15 +144,13 @@ namespace particles_env
 
                 bool parsed = double.TryParse(NewValue, out Experiment.pList.Parameters[e.RowIndex].Value);
                 if (!parsed) throw new Exception("Can't parse!");
+                Experiment.Graphics.SetParameters(Experiment.pList);
             }
             catch(Exception ex) 
             {
                 ParametersGrid[e.ColumnIndex, e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
                 Experiment.pList.Parameters[e.RowIndex].Value = Experiment.pList.Parameters[e.RowIndex].dValue;
             }
-
-
-            Experiment.Graphics.SetParameters(Experiment.pList);
         }
 
         int prev_x, prev_y;

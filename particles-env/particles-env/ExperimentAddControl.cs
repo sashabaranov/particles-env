@@ -45,15 +45,16 @@ namespace particles_env
             }
             finally
             {
+                
                 if (flg) UserSelected(this, ExperimentObject);
             }
         }
 
         private void ConstructExperiment()
         {
-           
-                ExperimentObject = new Experiment();
-                ExperimentObject.Graphics = lst.eList[listBox1.SelectedIndex].GraphicsObj; // сырой шаблон
+            ExperimentObject = new Experiment();
+            //ExperimentObject.Graphics = (GraphicPrimitive) lst.eList[listBox1.SelectedIndex].GraphicsObj.Clone(); // сырой шаблон
+            ExperimentObject.Graphics = (GraphicPrimitive) Activator.CreateInstance(lst.eList[listBox1.SelectedIndex].GraphicsObj.GetType());
         }
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
