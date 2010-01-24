@@ -21,10 +21,15 @@ namespace particles_env
             ExperimentObject = new Experiment(); /* инициализация объекта эксперимента, в который будут вносится
                                                     изминения, и который будет возвращёт обратно в MainForm    */
             tc = tabs;
+            List<Object> types = new List<object>();
             foreach (ExperimentInfo p in e.eList) // Создаём список типов экспериментов
             {
-                listBox1.Items.Add(p); // в списке будут p.ToString();
-            }
+               if(!types.Contains(p.GraphicsObj.GetType()))
+               {
+                    listBox1.Items.Add(p); // в списке будут p.ToString();
+                    types.Add(p.GraphicsObj.GetType());
+               }
+              }
         }
 
         private void button1_Click(object sender, EventArgs e)
