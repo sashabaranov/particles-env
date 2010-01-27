@@ -282,7 +282,7 @@ namespace particles_env
             {
                 try
                 {
-                    XmlSerializer xmlFormat = new XmlSerializer(typeof(Experiment), GenerateNewExperimentList().GetTypes());
+                    XmlSerializer xmlFormat = new XmlSerializer(typeof(Experiment), ExpList.GetTypes());
                     Experiment obj = (Experiment)xmlFormat.Deserialize(new FileStream(openExperimentDialog.FileName, FileMode.Open));
 
                     AddNewTabWithExperiment(obj);

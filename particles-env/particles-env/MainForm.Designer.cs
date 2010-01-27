@@ -117,6 +117,7 @@ namespace particles_env
             this.сохранитьЭкспериментToolStripMenuItem.Name = "сохранитьЭкспериментToolStripMenuItem";
             this.сохранитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.сохранитьЭкспериментToolStripMenuItem.Text = "Сохранить эксперимент";
+            this.сохранитьЭкспериментToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.сохранитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.SaveExperiment);
             // 
             // загрузитьЭкспериментToolStripMenuItem
@@ -125,6 +126,7 @@ namespace particles_env
             this.загрузитьЭкспериментToolStripMenuItem.Name = "загрузитьЭкспериментToolStripMenuItem";
             this.загрузитьЭкспериментToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.загрузитьЭкспериментToolStripMenuItem.Text = "Загрузить эксперимент";
+            this.загрузитьЭкспериментToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.загрузитьЭкспериментToolStripMenuItem.Click += new System.EventHandler(this.LoadExperiment);
             // 
             // опцииToolStripMenuItem
