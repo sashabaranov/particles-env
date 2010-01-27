@@ -103,7 +103,7 @@ namespace particles_env
             Refresh();
         }
 
-        private void ñîõğàíèòüÑêğèíøîòToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveScreenshotToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() != DialogResult.Abort)
             {           

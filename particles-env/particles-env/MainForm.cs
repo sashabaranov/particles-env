@@ -10,8 +10,8 @@ using System.Xml.Serialization;
 using MDK;
 using ZedGraph;
 using Tao.OpenGl;
-using Tao.FreeGlut;
 using Tao.Platform.Windows;
+using Tao.FreeGlut;
 
 namespace particles_env
 {
@@ -27,7 +27,7 @@ namespace particles_env
             Dlls = new List<string>();
         }
 
-        private void íîâûéİêñïåğèìåíòToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newExperimentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExperimentAdd c = new ExperimentAdd(ExpList); //îáúåêò äèàëîãà
 
@@ -178,7 +178,7 @@ namespace particles_env
         }
 
 
-        private void âûõîäToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
@@ -195,7 +195,7 @@ namespace particles_env
             return Lst;
         }
 
-        private void ñòàòèñòèêàToolStripMenuItem_Click(object sender, EventArgs e)
+        private void statsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExperimentList expsList = new ExperimentList();
             ExperimentInfo expinf = new ExperimentInfo();

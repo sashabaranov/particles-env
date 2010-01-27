@@ -30,7 +30,7 @@ namespace particles_env
         {
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-            this.сохранить—криншотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveScreenshotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ParametersGrid = new System.Windows.Forms.DataGridView();
             this.Parameters = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,17 +56,17 @@ namespace particles_env
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранить—криншотToolStripMenuItem});
+            this.saveScreenshotToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(192, 26);
             // 
-            // сохранить—криншотToolStripMenuItem
+            // saveScreenshotToolStripMenuItem
             // 
-            this.сохранить—криншотToolStripMenuItem.Image = global::particles_env.Properties.Resources.monitor;
-            this.сохранить—криншотToolStripMenuItem.Name = "сохранить—криншотToolStripMenuItem";
-            this.сохранить—криншотToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.сохранить—криншотToolStripMenuItem.Text = "—охранить скриншот";
-            this.сохранить—криншотToolStripMenuItem.Click += new System.EventHandler(this.сохранить—криншотToolStripMenuItem_Click);
+            this.saveScreenshotToolStripMenuItem.Image = global::particles_env.Properties.Resources.monitor;
+            this.saveScreenshotToolStripMenuItem.Name = "saveScreenshotToolStripMenuItem";
+            this.saveScreenshotToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.saveScreenshotToolStripMenuItem.Text = "—охранить скриншот";
+            this.saveScreenshotToolStripMenuItem.Click += new System.EventHandler(this.saveScreenshotToolStripMenuItem_Click);
             // 
             // saveFileDialog1
             // 
@@ -159,7 +159,7 @@ namespace particles_env
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem сохранить—криншотToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveScreenshotToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DataGridView ParametersGrid;
         private System.Data.DataSet dataSet1;
