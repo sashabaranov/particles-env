@@ -215,7 +215,7 @@ namespace particles_env
             this.MinimizeBox = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.ShowIcon = false;
             this.Text = "Среда для работы с элементарными частицами";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

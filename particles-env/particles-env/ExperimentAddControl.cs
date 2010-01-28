@@ -16,6 +16,7 @@ namespace particles_env
         public ExperimentAddControl()
         {
             InitializeComponent();
+
         }
 
         public void SetList(ExperimentList e)
@@ -28,6 +29,12 @@ namespace particles_env
             {
                 listBox1.Items.Add(p.ToString()); // в списке будут p.ToString();
             }
+            listBox1.DoubleClick += new EventHandler(listBox1_DoubleClick);
+        }
+
+        void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            DoneButton_Click(sender, e);
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
