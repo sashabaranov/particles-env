@@ -110,8 +110,8 @@ namespace particles_env
 
         void MakeIcons()
         {
-            string IcoPath = @"modules\icons\" + About.sName + ".bmp";
-            string BigIcoPath = @"modules\icons\" + About.sName + ".bmp";
+            string IcoPath = @"modules/icons/" + About.sName + ".bmp";
+            string BigIcoPath = @"modules/icons/" + About.sName + ".bmp";
             
             if(File.Exists(IcoPath)) Ico = new Bitmap(IcoPath);
             if(File.Exists(BigIcoPath)) BigIco = new Bitmap(BigIcoPath);
