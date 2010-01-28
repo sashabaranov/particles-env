@@ -131,6 +131,15 @@ namespace particles_env
         }
 
 
+        private void MainForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (!e.Control) { return; }
+            switch (e.KeyCode)
+            {
+      
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             AddModulesFromDefaultFolder();

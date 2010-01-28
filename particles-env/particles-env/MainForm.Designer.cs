@@ -27,10 +27,10 @@ namespace particles_env
         /// the contents of this method with the code editor.
         /// 
         /// ======================================
-        /// GR33TZ:
-        ///     Nick Zavriev
-        ///     Stas K.
-        ///     Rozenstein S.
+        /// Крутые чуваки:
+        ///     Nick Zavriev (Ambidextrous)
+        ///     Stas K. (ziotan)
+        ///     Rozenshtein S. (Rozenshtein)
         ///     All testers(x-demon, gr8, ...)
         ///     Some Others
         /// ====================================== 
@@ -229,6 +229,7 @@ namespace particles_env
             this.Text = "Среда для работы с элементарными частицами";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyDown += this.MainForm_KeyDown;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.Tabs.ResumeLayout(false);
