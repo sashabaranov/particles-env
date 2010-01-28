@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
@@ -105,9 +106,18 @@ namespace particles_env
 
         private void saveScreenshotToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() != DialogResult.Abort)
-            {           
-                Drawing.Save(saveFileDialog1.FileName);
+            DialogResult d = saveFileDialog1.ShowDialog();
+            if (d != DialogResult.Cancel && d != DialogResult.Abort)
+            {
+
+
+                switch (saveFileDialog1.FilterIndex)
+                {
+                    case 1: Drawing.Save(saveFileDialog1.FileName, ImageFormat.Png); break;
+                    case 2: Drawing.Save(saveFileDialog1.FileName, ImageFormat.Bmp); break;
+                    case 3: Drawing.Save(saveFileDialog1.FileName, ImageFormat.Tiff); break;
+                }
+                
             }            
         }
 

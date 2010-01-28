@@ -70,7 +70,7 @@ namespace particles_env
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Изображение Bitmap|*.bmp";
+            this.saveFileDialog1.Filter = "Изображение PNG(*.png)|*.png|Изображение Bitmap(*.bmp)|*.bmp|Изображение Tiff(*.tif)|*.tif";
             // 
             // ParametersGrid
             // 
