@@ -75,6 +75,10 @@ namespace particles_env
             // ParametersGrid
             // 
             this.ParametersGrid.AllowUserToAddRows = false;
+            this.ParametersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ParametersGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            //'System.Windows.Forms.DataGridViewAutoSizeColumnsMode'	C:\Users\Dan\Documents\PROJECT\particles-env\particles-env\particles-env\ExperimentControl.Designer.cs	78	55	particles-env
+
             this.ParametersGrid.AllowUserToResizeRows = false;
             this.ParametersGrid.AllowUserToResizeColumns = false;
             this.ParametersGrid.AllowUserToDeleteRows = false;

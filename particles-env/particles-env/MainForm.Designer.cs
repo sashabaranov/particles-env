@@ -213,7 +213,9 @@ namespace particles_env
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimizeBox = true;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ShowIcon = false;
             this.Text = "Среда для работы с элементарными частицами";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -225,7 +227,6 @@ namespace particles_env
             this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -248,6 +249,7 @@ namespace particles_env
         private System.Windows.Forms.TabPage tabPage1;
         private ExperimentAddControl experimentAddControl1;
         private System.Windows.Forms.Label label1;
+
     }
 }
 

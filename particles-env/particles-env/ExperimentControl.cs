@@ -188,13 +188,13 @@ namespace particles_env
             CMode = CameraMode.None;
         }
 
-        public void OGL_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
+        /*public void OGL_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             
             targetPos[3] -= e.Delta;
             
             Refresh();
-        }
+        }*/
 
         public void OGL_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
@@ -206,6 +206,12 @@ namespace particles_env
                     break;
                 case Keys.X:
                     targetPos[3] -= 0.1;
+                    if (targetPos[3] <= 0) targetPos[3] = 0.1;
+                    break;
+                case Keys.C:
+                    cameraPos[0] = 0; cameraPos[1] = 0; cameraPos[2] = 0;
+                    targetPos[0] = 0; targetPos[1] = 0; targetPos[2] = 1; targetPos[3] = 1;// targetPos[3] - zoom
+                    rotateA[0] = 0; rotateA[1] = 0; rotateA[2] = 0;
                     break;
             }
             df = true;
