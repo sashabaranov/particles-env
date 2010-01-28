@@ -25,6 +25,15 @@ namespace particles_env
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
+        /// 
+        /// ======================================
+        /// GR33TZ:
+        ///     Nick Zavriev
+        ///     Stas K.
+        ///     Rozenstein S.
+        ///     All testers(x-demon, gr8, ...)
+        ///     Some Others
+        /// ====================================== 
         /// </summary>
         private void InitializeComponent()
         {
