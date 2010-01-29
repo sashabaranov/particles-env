@@ -83,7 +83,7 @@ namespace particles_env
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Description.Text = lst.eList[listBox1.SelectedIndex].About.Description;
+            if (listBox1.SelectedIndex != -1) Description.Text = lst.eList[listBox1.SelectedIndex].About.Description;
         }
 
         private void ExperimentAddControl_Load(object sender, EventArgs e)
